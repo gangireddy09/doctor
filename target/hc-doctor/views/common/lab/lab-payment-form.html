@@ -1,0 +1,51 @@
+<form name="form.salesPaymentForm" novalidate>
+	<input type="hidden" ng-model="payment.salesBill">
+	<div class="row">
+		<label class="grid-md-4" for="paidAmount">Paid Amount</label>
+		<div class="grid-md-8 no-padding">
+			<input id="paidAmount" type="text" class="form-field grid-md-12" name="paidAmount" placeholder="Paid Amount" ng-model="payment.paidAmount" ng-change="calPendingAmount()" ng-pattern="/^\d{0,9}(\.\d{1,9})?$/" required>
+			<span class="error-msg" ng-messages="form.salesPaymentForm.paidAmount.$error">
+				<span ng-message="required">Amount Is Required</span>
+				<span ng-message="pattern">Amount Is Number</span>
+			</span>
+			<strong ng-show="!form.salesPaymentForm.paidAmount.$invalid">
+				<span class="color-green" ng-if="pendingAmount > 0">{{pendingAmount}} Less.</span>
+				<span class="color-red"  ng-if="pendingAmount < 0">{{pendingAmount}} Exceeded.</span>
+			 	<span class="color-sky-blue"  ng-if="pendingAmount == 0" >Bill Amount Cleared.</span>
+			</strong>
+		</div>
+	</div>
+	<div class="row">
+		<label class="grid-md-4" for="paidOn">Paid On</label>
+		<div class="grid-md-8 no-padding">
+			<div class="relative">
+				<tc-date-picker placeholder="Select Date" ng-model="payment.paidOn"></tc-date-picker>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<label class="grid-md-4" for="paidBy">Paid By</label>
+		<div class="grid-md-8 no-padding">
+			<input id="paidBy" type="text" class="form-field grid-md-12" name="paidBy" placeholder="Paid By" ng-model="payment.paidBy" required>
+			<span class="error-msg" ng-messages="form.salesPaymentForm.paidBy.$error">
+				<span ng-message="required">Paid By Is Required</span>
+			</span>
+		</div>
+	</div>
+	<div class="row">
+		<label class="grid-md-4" for="collectedBy">Collected By</label>
+		<div class="grid-md-8 no-padding">
+			<select	id="collectedBy" class="grid-md-12 form-field" name="collectedBy" ng-model="payment.receivedBy"
+				ng-options="dispenser as dispenser for dispenser in dispenserList" required>
+				<option value="">Select Dispenser</option>
+			</select>
+			<span class="error-msg" ng-messages="form.salesPaymentForm.collectedBy.$error">
+				<span ng-message="required">Collected By Is Required</span>
+			</span>
+		</div>
+	</div>
+	<div class="row">
+		<label class="grid-md-4"></label>
+		<button class="btn btn-light-green btn-md" ng-disabled="form.salesPaymentForm.$invalid || pendingAmount < 0" name="salesPaymentFormBtn" ng-click="savePayment()">Submit</button>
+	</div>
+</form>

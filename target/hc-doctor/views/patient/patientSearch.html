@@ -1,0 +1,54 @@
+<style>
+	.img-patient{
+	    height: 40px;
+    	width: 45px;
+	}
+</style>
+<div class="patient-search-container">
+	<div class="grid-md-12">
+		<div class="grid-md-12">
+			<input type="search" class="grid-md-2 form-field" ng-model="searchObj.idLabel" placeholder="Enter IdLabel..." />
+			<input type="search" class="grid-md-2 form-field" ng-model="searchObj.name" placeholder="Enter Name..." />
+			<input type="search" class="grid-md-2 form-field" ng-model="searchObj.mobileNo" placeholder="Enter Mobile No..." />
+			<input type="search" class="grid-md-2 form-field" ng-model="searchObj.village" placeholder="Enter Village..." />
+			<button class="btn btn-sm btn-blue form-field" ng-click="searchPatient()">
+				<i class="fa fa-searh"></i> Search
+			</button>
+			<button class="btn btn-sm btn-sky-blue form-field pull-right" ng-click="patientForm()"><i class="fa fa-plus-circle"></i> PATIENT </button>
+		</div>
+	</div>
+	<div class="card grid-md-12">
+		<div class="grid-md-12">
+			<div class="text-bold text-center mar-top-20 color-red font-18 no-padding" ng-if="!patients.length" >
+				<strong>Patients Search...</strong>
+			</div>
+			<div class="card-full-height-40" ng-show="patients.length">
+				<div class="row border-bottom-2 text-bold">
+					<div class="grid-md-1">S.No</div>
+					<div class="grid-md-1">Photo</div>
+					<div class="grid-md-2">IdLabel</div>
+					<div class="grid-md-2pnt5">Name</div>
+					<div class="grid-md-2">Village</div>
+					<div class="grid-md-1pnt5">Actions</div>
+				</div>
+				<div class="card-full-height-32 vertical-scroll"  scroller-api = "scrollerApi" when-scrolled = "fewMorePatients()">
+					<div class="row border-around medicine-hover" ng-repeat="patient in patients">
+						<div class="grid-md-1">{{$index+1}}</div>
+						<div class="grid-md-1"><img  src="/hc-rest/patient/getphoto?patientId={{patient.id}}" class="img-patient"  style="border:2px solid gray" title="{{patient.idLabel}}"></div>
+						<div class="grid-md-2">{{patient.idLabel}}</div>
+						<div class="grid-md-2pnt5">{{patient.name|tcCamelCase}}</div>
+						<div class="grid-md-2">{{patient.village}}</div>
+						<div class="grid-md-1pnt5">
+							<button ng-click="selectPatient(patient,$index)" ng-if="select" ng-class="{'btn btn-md btn-purple' : selected_index == $index,'btn btn-md btn-info' : selected_index != $index}">{{(selected_index != $index) ? select : 'selected'}} </button>
+							<button ng-click="editPatient(patient,$index)" ng-if="edit" ng-class="{'btn btn-md btn-purple' : editIndex == $index,'btn btn-md btn-info' : editIndex != $index}">{{edit}} </button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="overlay absolute" ng-class="{'show':formLoader}"></div>
+		<div class="form-loader" ng-class="{'show':formLoader}">
+			<i class="fa fa-refresh fa-spin"></i>
+		</div>
+	</div>
+</div>

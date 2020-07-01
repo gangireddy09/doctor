@@ -1,0 +1,154 @@
+<style>
+	.text-bold{
+		fontweight:bold;
+	}
+	.font-size{
+	font-size:18px;
+	}
+	.mar-bot-5{
+	margin-bottom:5px; 
+	}
+	.pad-left-5{
+	padding-left:5px; 
+	}
+	.width-20 {
+		width:20%; 
+	}
+</style>
+<div class="row no-padding hidden-print">
+	<div class="grid-md-6 card card-full-height-88 vertical-scroll">
+		<div class="header card grid-md-12 card-full-height-88 padding-5" ng-if="labsData">
+			<lab-selector selected-labs="selectedLabs" labs-data="labsData" on-check="totalFeeCal()" options="dirOptions" ></lab-selector>
+		</div>
+	</div>
+	<div class="grid-md-6 no-padding-top no-padding-right">
+		<div class="grid-md-12 no-padding card card-full-height-86" >
+			<div class="grid-md-12">
+				<div class="card row mar-top-10 card-full-height-35 bordered" >
+					<div class="card row no-padding">
+						<div class="grid-md-12 text-center no-padding">
+							<div class="row padding-5 no-padding">
+								<div class="grid-md-6">
+									<b>Tests</b>
+								</div>
+								<div class="grid-md-3"><b>Cost</b></div>
+								<div class="grid-md-3"><input ng-if="!isSaved" id="selectAll"type="checkbox" class="form-field" ng-checked="selectAll" ng-model="selectAll" ng-change="totalFeeCal(true, selectAll)" /><b ng-if="!isSaved">Select All</b></div>
+							</div>
+						</div>
+					</div>
+					<div class="row vertical-scroll card-full-height-31" ng-if="(selectedLabs | json) != '{}'">
+						<div class="grid-md-12" >
+							<div class="grid-md-12 no-padding" ng-repeat="(category, tests) in selectedLabs" >
+								{{category}}
+								<div class="row padding-5" ng-repeat="test in tests track by $index" ng-if="test.isSelected">
+									<div class="grid-md-6">
+										<button ng-if="!isSaved" class="btn btn-sm btn-red form-field" title="delete"ng-click="deleteTest(test)"><i class="fa fa-trash"></i></button> <span class="padding-left-5">{{test.testName}}</span>  
+									</div>
+									<div class="grid-md-3 text-center" ng-if="!test.isWhatsapp">
+										{{test.cost}}
+									</div>
+									<div class="grid-md-3 text-center" ng-if="test.isWhatsapp">
+										{{test.whatsappCost}}(Whatsapp)
+									</div>
+									<div class="grid-md-3 text-center">
+										<input ng-if="!isSaved" type="checkbox" class="form-field" ng-model="test.isFeePaid" ng-change="totalFeeCal()" />
+										<span ng-show="test.whatsappCost"><input type="checkbox" class="form-field" ng-model="test.isWhatsapp" ng-change="totalFeeCal()" /><i class="fa fa-2x fa-whatsapp color-green"></i></span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="grid-md-12 text-bold text-center color-red font-18 " ng-if="(selectedLabs | json) == '{}'">
+						<strong>No test selected...</strong>
+					</div>
+				</div>
+			</div>
+		<div class="row card"  style="min-height:5vh">
+			<div class="grid-md-4">
+				<button type="button" title="Total Amount: {{cost}}" class="btn btn-purple btn-sm" 
+				ng-click="saveLabTestPatient()" ng-disabled="(selectedLabs | json) == '{}' || cost == 0 || isSaved">Save Labs</button>
+				<button type="button" class="btn btn-sm btn-green" ng-click="printCost()" title="Print Patient Investigations" ng-disabled="(selectedLabs | json) == '{}' || cost == 0 || !isSaved"><i class="fa  fa-print">Print</i></button>
+			</div>
+			<div class="grid-md-8 form-msg {{formMsgClass}}" ng-show="formMsgContent">
+				<i class="fa fa-times-circle pull-right" ng-click="formMsgContent=undefined"></i> 
+				<span ng-bind="formMsgContent"></span>
+			</div>
+			<div class="grid-md-6" ng-if="!formMsgContent">
+				<div class="grid-md-8 pull-right">
+					<b>Total Fee : </b><i class="fa fa-rupee"></i> {{cost}}
+				</div>
+			</div>
+			<div class="grid-md-2" >
+				<div class="grid-md-8 pull-right">
+					<button type="button" class="btn btn-red btn-sm" ng-click="clearAll()">Clear All</button>
+				</div>
+			</div>
+		</div>
+		<div class="row bordered">
+			<div  class="text-bold  font-size">
+				Previous Investigations
+			</div>
+		</div>
+		<div class="row card-full-height-35 vertical-scroll">
+			<uib-tabset>	
+				<uib-tab heading="Prescribed Labs">
+					<div class="row no-padding">
+						<div class="row border-bottom-2 card mar-top-5 no-padding">
+							<div class="grid-md-2"><b>S.No.</b></div>
+							<div class="grid-md-5"><b>Date</b></div>
+							<div class="grid-md-4"><b>Cost View</b></div>
+						</div>
+						<div class="row no-padding" ng-repeat="patientLab in patientLabs" ng-if="patientLabs.length">
+							<div class="grid-md-2">{{$index+1}}</div>
+							<div class="grid-md-5">
+								<i>{{patientLab.suggestedOn | date:'dd-MMM-yyyy'}}</i>
+							</div>
+							<div class="grid-md-4">
+								<button class="btn btn-sm btn-sky-blue" type="button" title="View Cost"ng-click="getPatientTests(patientLab)">
+									<i class="fa fa-eye"></i>
+								</button>
+								<button type="button" class="btn btn-sm btn-purple" ng-click="printCost(patientLab)" title="Print Patient Investigations"><i class="fa  fa-print">Print</i></button>
+							</div>
+						</div>
+						<div class="card card-min-height-100 font-18 color-red" ng-if="!patientLabs.length">
+									No Records Found.
+						</div>
+					</div>
+				</uib-tab>
+				<uib-tab heading="Tested Labs">
+					<div class="row no-padding">
+						<div class="form-msg {{formMsgClass}}" ng-show="formMsg">
+							<i class="fa fa-times-circle pull-right" ng-click="formMsg=undefined"></i> 
+							<span ng-bind="formMsg"></span>
+						</div>
+					</div>
+					<div class="row no-padding">
+						<div class="row border-bottom-2 card mar-top-5 no-padding">
+							<div class="grid-md-2"><b>S.No.</b></div>
+							<div class="grid-md-5"><b>Date</b></div>
+							<div class="grid-md-4"><b>Report View</b></div>
+						</div>
+						<div class="row no-padding" ng-repeat="patientLab in patientLabs" ng-if="patientLabs.length">
+							<div class="grid-md-2">{{$index+1}}</div>
+							<div class="grid-md-5">
+								<i>{{patientLab.suggestedOn | date:'dd-MMM-yyyy'}}</i>
+							</div>
+							<div class="grid-md-4">
+								<button class="btn btn-sm btn-sky-blue" type="button" title="View Report" ng-click="getPatientReport(patientLab,false)">
+									<i class="fa fa-eye"></i>
+								</button>
+								<button type="button" class="btn btn-sm btn-purple" title="print"ng-click="getPatientReport(patientLab,true)">
+									<i class="fa fa-print"></i>Print
+								</button>
+							</div>
+						</div>
+						<div class="card card-min-height-100 font-18 color-red" ng-if="!patientLabs.length">
+									No Records Found.
+						</div>
+					</div>
+				</uib-tab>
+			</uib-tabset>
+		</div>
+	</div>
+</div>
+</div>

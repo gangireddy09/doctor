@@ -1,0 +1,21 @@
+<div class="top-navbar relative">
+	<div class="logo-container pull-left">
+		<img class="logo" src="./assets/images/hospital-logo.png" alt="Hospital"/>
+		<div class="logo-title">Sura Reddy Hospital</div>
+	</div>
+	<div class="nav-menu pull-right">
+		<ul class="menu">
+			<li ui-sref="opList()"><strong>OP Search</strong></li>
+			<li ui-sref="doctorLabs()"><strong>Labs</strong></li>
+			<li ui-sref="patientList()"><strong>Patients List</strong></li>
+			<li ui-sref="alertInfo()"><strong>Alert info</strong></li>
+			<li> <a class="color-white" ui-sref="backUp" href="/hc-rest/common/dbbackup" target="blank" >Db BackUp</a></li>
+			<li><a href="#"><strong></strong></a></li>
+			<li><strong class="init-cap color-sky-blue" ng-bind="sessionUserName"></strong></li>
+			<li>
+				<a class="color-white" ui-sref="login()"><i class="fa fa-power-off color-red">
+				</i><span>Logout</span></a>
+			</li>
+		</ul>
+	</div>
+</div>

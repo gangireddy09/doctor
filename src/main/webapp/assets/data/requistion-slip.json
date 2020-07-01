@@ -1,0 +1,291 @@
+[
+	{
+	"categoryName":"BLOOD EXAMINATION",
+	"tests":[
+		{
+			"id": "05",
+      		"testName": "E.C.G.",
+      		"isSelected":false
+		},
+		{
+			 "id": "01_04_01",
+          	 "testName": "CBP",
+          	 "isSelected":false
+		},
+		{
+			"id": "01_04_01_04",
+              "testName": "T.W.B.C",
+      		"isSelected":false
+		},
+		{
+			"id": "01_04_03",
+              "testName": "D.C.",
+      		"isSelected":false
+		},
+		{
+			"id": "01_04_05",
+              "testName": "E.S.R",
+      		"isSelected":false
+		},{
+			 "id": "01_04_01_03",
+              "testName": "T.R.B.C",
+      		"isSelected":false
+		},{
+			 "id": "01_04_09",
+              "testName": "H.B%",
+      		"isSelected":false
+		},{
+			 "id": "01_04_06",
+              "testName": "A.E.COUNT",
+      		"isSelected":false
+		},{
+			 "id": "01_04_07",
+              "testName": "BLEEDING TIME (B.T)",
+      		"isSelected":false
+		},{
+			 "id": "01_04_08",
+              "testName": "CLOTTING TIME (C.T)",
+      		"isSelected":false
+		},{
+			 "id": "01_04_01_05",
+              "testName": "PLATELET COUNT",
+      		"isSelected":false
+		},{
+			 "id": "01_04_01_02",
+              "testName": "P.C.V",
+      		"isSelected":false
+		},{
+			 "id": "01_04_10",
+              "testName": "Blood Group&Rh.type",
+      		"isSelected":false
+		},{
+			 "id": "01_03_01",
+              "testName": "WIDAL",
+      		"isSelected":false
+		},{
+			 "id": "01_03_04",
+              "testName": "MF",
+      		"isSelected":false
+		},{
+	        "id": "01_03_02",
+	        "testName": "MALARIA Antigen",
+	        "isSelected": false
+	    },{
+	        "id": "01_08_04",
+	        "testName": "DENGUE",
+	        "isSelected": false
+	    },{
+			 "id": "01_01_01_01",
+              "testName": "Fasting",
+      		"isSelected":false
+		},{
+			 "id": "01_01_01_02",
+              "testName": "Post Prandial",
+      		"isSelected":false
+		},{
+			 "id": "01_01_01_03",
+              "testName": "Random",
+      		"isSelected":false
+		},{
+			 "id": "01_01_03_02",
+              "testName": "Blood Urea",
+      		"isSelected":false
+		},{
+			 "id": "01_01_03_01",
+              "testName": "Serum Creatinine",
+      		"isSelected":false
+		},{
+			 "id": "01_01_02_01",
+              "testName": "S.Bilirubin/Direct/Indirect",
+      		"isSelected":false
+		},{
+			 "id": "01_01_08_01",
+              "testName": "Serum Cholestrol",
+      		"isSelected":false
+		},{
+			 "id": "01_01_08",
+              "testName": "Lipid Profile",
+      		"isSelected":false
+		},{
+			 "id": "01_01_02",
+              "testName": "L.F.T (COMPLETE)",
+      		"isSelected":false
+		},{
+			 "id": "01_01_12",
+              "testName": "L.F.T",
+      		"isSelected":false
+		},{
+			 "id": "01_01_02_04",
+              "testName": "S.G.O.T",
+      		"isSelected":false
+		},{
+			 "id": "01_01_02_05",
+              "testName": "S.G.P.T",
+      		"isSelected":false
+		},{
+			 "id": "01_01_02_06",
+              "testName": "ALKALINE PHOSPHATE",
+      		"isSelected":false
+		},{
+			 "id": "01_01_01_04",
+              "testName": "G.T.T.",
+      		"isSelected":false
+		},{
+			 "id": "01_01_06_03",
+              "testName": "S. Calcium",
+      		"isSelected":false
+		},{
+			 "id": "01_01_06_01",
+              "testName": "S. Sodium (Na+)",
+      		"isSelected":false
+		},{
+			 "id": "01_01_06_02",
+              "testName": "S. Potassium (K+)",
+      		"isSelected":false
+		},{
+			 "id": "01_01_01_05",
+              "testName": "HbA 1c",
+      		"isSelected":false
+		},{
+			 "id": "01_01_11",
+              "testName": "Troponine",
+      		"isSelected":false
+		},{
+			 "id": "01_01_09",
+              "testName": "S. amalyse",
+      		"isSelected":false
+		},{
+			 "id": "01_01_10",
+              "testName": "Micro albumin",
+      		"isSelected":false
+		},{
+			 "id": "01_02_12",
+              "testName": "T3 T4 TSH",
+      		"isSelected":false
+		},{
+			 "id": "01_02_06",
+              "testName": "TSH",
+      		"isSelected":false
+		},{
+			 "id": "01_01_03_03",
+              "testName": "Uric Acid",
+      		"isSelected":false
+		},{
+			 "id": "01_03_07",
+              "testName": "C.R.P.",
+      		"isSelected":false
+		},{
+			 "id": "01_03_06",
+              "testName": "R.A. Factor",
+      		"isSelected":false
+		},{
+			 "id": "01_03_05",
+              "testName": "V.D.R.L.",
+      		"isSelected":false
+		},{
+			 "id": "01_03_09",
+              "testName": "TPHA",
+      		"isSelected":false
+		},{
+			 "id": "01_08_01",
+              "testName": "H.I.V./CD3,CD4,DNA",
+      		"isSelected":false
+		},{
+			 "id": "01_08_02",
+              "testName": "Hbs.Ag",
+      		"isSelected":false
+		},{
+			 "id": "01_08_03",
+              "testName": "H.C.V.",
+      		"isSelected":false
+		},{
+			 "id": "",
+              "testName": "Mantoux",
+      		"isSelected":false
+		},{
+			 "id": "01_03_08",
+             "testName": "A.S.O Titer",
+      		 "isSelected":false
+		}
+	  ]
+	},
+	{
+	"categoryName":"URINE ANALYSIS",
+	"tests":[
+		{
+			"id": "02_01",
+          	"testName": "SUGAR, ALBUMIN, MICROSCOPY",
+      		"isSelected":false
+		},
+		{
+			"id": "02_13",
+          	"testName": "Sug, Alb, Microscopy (M)",
+      		"isSelected":false
+		},{
+			"id": "02_14",
+          	"testName": "Sug, Alb, Microscopy (F)",
+      		"isSelected":false
+		},
+		{
+			"id": "02_05",
+          	"testName": "BILE SALTS, BILE PIGMENTS",
+      		"isSelected":false
+		},
+		{
+			"id": "02_11",
+          	"testName": "KEETONE BODIES",
+      		"isSelected":false
+		},
+		{
+			"id": "02_09",
+          	"testName": "CHYLE TEST",
+      		"isSelected":false
+		},{
+			 "id": "",
+             "testName": "UROBILNOGEN",
+      		"isSelected":false
+		},{
+			 "id": "",
+              "testName": "BENCE_JONESPROTIEN",
+      		"isSelected":false
+		},{
+			 "id": "02_10",
+              "testName": "Pregnancy Test",
+      		"isSelected":false
+		},{
+			 "id": "03",
+              "testName": "Semen Analysis",
+      		"isSelected":false
+		},{
+			 "id": "",
+              "testName": "Sputum ForA.F.B",
+      		"isSelected":false
+		}
+	  ]
+	},
+	{
+	"categoryName":"STOOL EXAMINATION",
+	"tests":[
+		{
+			"id": "04_01",
+          	"testName": "OVA",
+      		"isSelected":false
+		},
+		{
+			"id": "04_02",
+          	"testName": "CYST",
+      		"isSelected":false
+		},
+		{
+			"id": "04_03",
+          	"testName": "OCCULT BLOOD/SUGAR",
+      		"isSelected":false
+		},
+		{
+			"id": "04_04",
+          	"testName": "REDUCING SUBSTANCES",
+      		"isSelected":false
+		}
+	  ]
+	}
+]

@@ -1,0 +1,4753 @@
+{
+  "subTests": [
+    {
+      "id": "01",
+      "testName": "BLOOD",
+      "isTest": false,
+      "cost": "",
+      "subTests": [
+        {
+          "id": "01_01",
+          "testName": "BIO CHEMICAL ANALYSIS",
+          "isTest": false,
+          "cost": "",
+          "subTests": [
+            {
+              "id": "01_01_01",
+              "testName": "BLOOD SUGAR",
+              "isTest": false,
+              "cost": "",
+              "subTests": [
+                {
+                  "id": "01_01_01_01",
+                  "testName": "FBS",
+                  "isTest": true,
+                  "cost": "40",
+                  "report": "URINE_SUGAR_FASTING",
+                  "categoryName": "BLOOD SUGAR",
+                  "subTests": [],
+                  "parents": [
+                    "BLOOD SUGAR",
+                    "BIO CHEMICAL ANALYSIS",
+                    "BLOOD"
+                  ]
+                },
+                {
+                  "id": "01_01_01_02",
+                  "testName": "PPBS",
+                  "isTest": true,
+                  "cost": "40",
+                  "report": "URINE_SUGAR_PPBS_RBS",
+                  "categoryName": "BLOOD SUGAR",
+                  "subTests": [],
+                  "parents": [
+                    "BLOOD SUGAR",
+                    "BIO CHEMICAL ANALYSIS",
+                    "BLOOD"
+                  ]
+                },
+                {
+                  "id": "01_01_01_03",
+                  "testName": "RBS",
+                  "isTest": true,
+                  "cost": "40",
+                  "report": "URINE_SUGAR_PPBS_RBS",
+                  "categoryName": "BLOOD SUGAR",
+                  "subTests": [],
+                  "parents": [
+                    "BLOOD SUGAR",
+                    "BIO CHEMICAL ANALYSIS",
+                    "BLOOD"
+                  ]
+                },
+                {
+                  "id": "01_01_01_04",
+                  "testName": "GTT",
+                  "isTest": true,
+                  "cost": "300",
+                  "report": "BLOOD_GTT",
+                  "categoryName": "BLOOD SUGAR",
+                  "subTests": [],
+                  "parents": [
+                    "BLOOD SUGAR",
+                    "BIO CHEMICAL ANALYSIS",
+                    "BLOOD"
+                  ]
+                },
+                {
+                  "id": "01_01_01_05",
+                  "testName": "HbA1c",
+                  "isTest": true,
+                  "cost": "300",
+                  "report": "TEXT_0",
+                  "categoryName": "BLOOD SUGAR",
+                  "subTests": [],
+                  "parents": [
+                    "BLOOD SUGAR",
+                    "BIO CHEMICAL ANALYSIS",
+                    "BLOOD"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "01_01_02",
+              "testName": "LIVER FUNCTION TEST",
+              "isTest": false,
+              "cost": "",
+              "subTests": [
+                {
+                  "id": "01_01_02_01",
+                  "testName": "TOTAL BILIRUBIN",
+                  "isTest": true,
+                  "report": "TEXT_3",
+                  "cost": "50",
+                  "categoryName": "LIVER FUNCTION TEST",
+                  "subTests": [],
+                  "parents": [
+                    "LIVER FUNCTION TEST",
+                    "BIO CHEMICAL ANALYSIS",
+                    "BLOOD"
+                  ]
+                },
+                {
+                  "id": "01_01_02_02",
+                  "testName": "DIRECT BILIRUBIN",
+                  "isTest": true,
+                  "report": "TEXT_3",
+                  "cost": "50",
+                  "categoryName": "LIVER FUNCTION TEST",
+                  "subTests": [],
+                  "parents": [
+                    "LIVER FUNCTION TEST",
+                    "BIO CHEMICAL ANALYSIS",
+                    "BLOOD"
+                  ]
+                },
+                {
+                  "id": "01_01_02_03",
+                  "testName": "INDIRECT BILIRUBIN",
+                  "isTest": true,
+                  "report": "TEXT_4",
+                  "cost": "50",
+                  "categoryName": "LIVER FUNCTION TEST",
+                  "subTests": [],
+                  "parents": [
+                    "LIVER FUNCTION TEST",
+                    "BIO CHEMICAL ANALYSIS",
+                    "BLOOD"
+                  ]
+                },
+                {
+                  "id": "01_01_02_04",
+                  "testName": "SGOT",
+                  "isTest": true,
+                  "report": "TEXT_5",
+                  "cost": "100",
+                  "categoryName": "LIVER FUNCTION TEST",
+                  "subTests": [],
+                  "parents": [
+                    "LIVER FUNCTION TEST",
+                    "BIO CHEMICAL ANALYSIS",
+                    "BLOOD"
+                  ]
+                },
+                {
+                  "id": "01_01_02_05",
+                  "testName": "SGPT",
+                  "isTest": true,
+                  "report": "TEXT_5",
+                  "cost": "100",
+                  "categoryName": "LIVER FUNCTION TEST",
+                  "subTests": [],
+                  "parents": [
+                    "LIVER FUNCTION TEST",
+                    "BIO CHEMICAL ANALYSIS",
+                    "BLOOD"
+                  ]
+                },
+                {
+                  "id": "01_01_02_06",
+                  "testName": "ALKALINE PHOSPHATASE",
+                  "isTest": true,
+                  "report": "TEXT_6",
+                  "cost": "100",
+                  "categoryName": "LIVER FUNCTION TEST",
+                  "subTests": [],
+                  "parents": [
+                    "LIVER FUNCTION TEST",
+                    "BIO CHEMICAL ANALYSIS",
+                    "BLOOD"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "01_01_03",
+              "testName": "RENAL FUNCTION TEST",
+              "isTest": false,
+              "cost": "",
+              "subTests": [
+                {
+                  "id": "01_01_03_01",
+                  "testName": "S.CREATININE",
+                  "isTest": true,
+                  "report": "TEXT_8",
+                  "cost": "50",
+                  "categoryName": "RENAL FUNCTION TEST",
+                  "subTests": [],
+                  "parents": [
+                    "RENAL FUNCTION TEST",
+                    "BIO CHEMICAL ANALYSIS",
+                    "BLOOD"
+                  ]
+                },
+                {
+                  "id": "01_01_03_02",
+                  "testName": "BLOOD UREA",
+                  "isTest": true,
+                  "report": "TEXT_9",
+                  "cost": "50",
+                  "categoryName": "RENAL FUNCTION TEST",
+                  "subTests": [],
+                  "parents": [
+                    "RENAL FUNCTION TEST",
+                    "BIO CHEMICAL ANALYSIS",
+                    "BLOOD"
+                  ]
+                },
+                {
+                  "id": "01_01_03_03",
+                  "testName": "URIC ACID",
+                  "isTest": true,
+                  "report": "TEXT_10",
+                  "cost": "50",
+                  "categoryName": "RENAL FUNCTION TEST",
+                  "subTests": [],
+                  "parents": [
+                    "RENAL FUNCTION TEST",
+                    "BIO CHEMICAL ANALYSIS",
+                    "BLOOD"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "01_01_04",
+              "testName": "RENAL FUNCTION TEST",
+              "isTest": true,
+              "report": "RENAL_FUNCTION_TEST",
+              "cost": "100",
+              "categoryName": "RENAL FUNCTION TEST",
+              "subTests": []
+            },
+            {
+              "id": "01_01_05",
+              "testName": "SEUM URIC ACID",
+              "isTest": true,
+              "cost": "50",
+              "categoryName": "SERUM URIC ACID",
+              "subTests": [],
+              "report": "TEXT_AREA"
+            },
+            {
+              "id": "01_01_06",
+              "testName": "SERUM ELECRTOLYTES",
+              "isTest": false,
+              "cost": "",
+              "subTests": [
+                {
+                  "id": "01_01_06_01",
+                  "testName": "SODIUM",
+                  "isTest": true,
+                  "report": "TEXT_11",
+                  "cost": "100",
+                  "categoryName": "SERUM ELECRTOLYTES",
+                  "subTests": [],
+                  "parents": [
+                    "SERUM ELECRTOLYTES",
+                    "BIO CHEMICAL ANALYSIS",
+                    "BLOOD"
+                  ]
+                },
+                {
+                  "id": "01_01_06_02",
+                  "testName": "POTASSIUM",
+                  "isTest": true,
+                  "report": "TEXT_12",
+                  "cost": "100",
+                  "categoryName": "SERUM ELECRTOLYTES",
+                  "subTests": [],
+                  "parents": [
+                    "SERUM ELECRTOLYTES",
+                    "BIO CHEMICAL ANALYSIS",
+                    "BLOOD"
+                  ]
+                },
+                {
+                  "id": "01_01_06_03",
+                  "testName": "CALCIUM",
+                  "isTest": true,
+                  "report": "TEXT_13",
+                  "cost": "100",
+                  "categoryName": "SERUM ELECRTOLYTES",
+                  "subTests": [],
+                  "parents": [
+                    "SERUM ELECRTOLYTES",
+                    "BIO CHEMICAL ANALYSIS",
+                    "BLOOD"
+                  ]
+                },
+                {
+                  "id": "01_01_06_04",
+                  "testName": "CHLORIDES",
+                  "isTest": true,
+                  "report": "TEXT_14",
+                  "cost": "100",
+                  "categoryName": "SERUM ELECRTOLYTES",
+                  "subTests": [],
+                  "parents": [
+                    "SERUM ELECRTOLYTES",
+                    "BIO CHEMICAL ANALYSIS",
+                    "BLOOD"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "01_01_07",
+              "testName": "LIPID PROFILE",
+              "isTest": true,
+              "report": "LIPID_PROFILE",
+              "cost": "200",
+              "categoryName": "LIPID PROFILE",
+              "subTests": []
+            },
+            {
+              "id": "01_01_08",
+              "testName": "LIPID PROFILE",
+              "isTest": false,
+              "cost": "",
+              "subTests": [
+                {
+                  "id": "01_01_08_01",
+                  "testName": "TOTAL CHOLESTROL",
+                  "isTest": true,
+                  "report": "TEXT_15",
+                  "cost": "50",
+                  "categoryName": "LIPID PROFILE",
+                  "subTests": [],
+                  "parents": [
+                    "LIPID PROFILE",
+                    "BIO CHEMICAL ANALYSIS",
+                    "BLOOD"
+                  ]
+                },
+                {
+                  "id": "01_01_08_02",
+                  "testName": "TRYGLYCERIDES",
+                  "isTest": true,
+                  "report": "TEXT_16",
+                  "cost": "50",
+                  "categoryName": "LIPID PROFILE",
+                  "subTests": [],
+                  "parents": [
+                    "LIPID PROFILE",
+                    "BIO CHEMICAL ANALYSIS",
+                    "BLOOD"
+                  ]
+                },
+                {
+                  "id": "01_01_08_03",
+                  "testName": "HDL",
+                  "isTest": true,
+                  "report": "TEXT_17",
+                  "cost": "30",
+                  "categoryName": "LIPID PROFILE",
+                  "subTests": [],
+                  "parents": [
+                    "LIPID PROFILE",
+                    "BIO CHEMICAL ANALYSIS",
+                    "BLOOD"
+                  ]
+                },
+                {
+                  "id": "01_01_08_04",
+                  "testName": "VLDL",
+                  "isTest": true,
+                  "report": "TEXT_18",
+                  "cost": "30",
+                  "subTests": [],
+                  "categoryName": "LIPID PROFILE",
+                  "parents": [
+                    "LIPID PROFILE",
+                    "BIO CHEMICAL ANALYSIS",
+                    "BLOOD"
+                  ]
+                },
+                {
+                  "id": "01_01_08_05",
+                  "testName": "LDL",
+                  "isTest": true,
+                  "report": "TEXT_19",
+                  "cost": "40",
+                  "categoryName": "LIPID PROFILE",
+                  "subTests": [],
+                  "parents": [
+                    "LIPID PROFILE",
+                    "BIO CHEMICAL ANALYSIS",
+                    "BLOOD"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "01_01_09",
+              "testName": "SERUM AMYLASE",
+              "isTest": true,
+              "report": "TEXT_20",
+              "cost": 150,
+              "categoryName": "SERUM AMYLASE",
+              "subTests": []
+            },
+            {
+              "id": "01_01_10",
+              "testName": "MICRO ALBUMIN",
+              "isTest": true,
+              "cost": 300,
+              "categoryName": "MICRO ALBUMIN",
+              "subTests": [],
+              "report": "TEXT_AREA"
+            },
+            {
+              "id": "01_01_11",
+              "testName": "TROPONINE- I",
+              "isTest": true,
+              "report": "TEXT_21",
+              "cost": 700,
+              "categoryName": "TROPONINE",
+              "subTests": []
+            },
+            {
+              "id": "01_01_12",
+              "testName": "LIVER FUNCTION TEST",
+              "isTest": true,
+              "report": "LIVER_FUNCTION_TEST",
+              "cost": "200",
+              "categoryName": "LIVER FUNCTION TEST",
+              "subTests": []
+            }
+          ]
+        },
+        {
+          "id": "01_02",
+          "testName": "HORMONE ANALYSIS",
+          "isTest": false,
+          "cost": "",
+          "subTests": [
+            {
+              "id": "01_02_01",
+              "testName": "THYROID PROFILE",
+              "isTest": true,
+              "report": "TEXT_AREA",
+              "cost": "450",
+              "categoryName": "HORMONE ANALYSIS",
+              "subTests": [],
+              "parents": [
+                "HORMONE ANALYSIS",
+                "BLOOD"
+              ]
+            },
+            {
+              "id": "01_02_02",
+              "testName": "FSH",
+              "isTest": true,
+              "report": "TEXT_AREA",
+              "cost": "400",
+              "categoryName": "HORMONE ANALYSIS",
+              "subTests": [],
+              "parents": [
+                "HORMONE ANALYSIS",
+                "BLOOD"
+              ]
+            },
+            {
+              "id": "01_02_03",
+              "testName": "LH",
+              "isTest": true,
+              "report": "TEXT_AREA",
+              "cost": "400",
+              "categoryName": "HORMONE ANALYSIS",
+              "subTests": [],
+              "parents": [
+                "HORMONE ANALYSIS",
+                "BLOOD"
+              ]
+            },
+            {
+              "id": "01_02_04",
+              "testName": "PROLACTINE",
+              "isTest": true,
+              "report": "TEXT_AREA",
+              "cost": "400",
+              "categoryName": "HORMONE ANALYSIS",
+              "subTests": [],
+              "parents": [
+                "HORMONE ANALYSIS",
+                "BLOOD"
+              ]
+            },
+            {
+              "id": "01_02_05",
+              "testName": "GROWTH HORMONE",
+              "isTest": true,
+              "report": "TEXT_AREA",
+              "cost": "1000",
+              "categoryName": "HORMONE ANALYSIS",
+              "subTests": [],
+              "parents": [
+                "HORMONE ANALYSIS",
+                "BLOOD"
+              ]
+            },
+            {
+              "id": "01_02_06",
+              "testName": "TSH",
+              "isTest": true,
+              "report": "TEXT_AREA",
+              "cost": "300",
+              "categoryName": "HORMONE ANALYSIS",
+              "subTests": [],
+              "parents": [
+                "HORMONE ANALYSIS",
+                "BLOOD"
+              ]
+            },
+            {
+              "id": "01_02_07",
+              "testName": "TESTOSTERONE",
+              "isTest": true,
+              "report": "TEXT_AREA",
+              "cost": "600",
+              "categoryName": "HORMONE ANALYSIS",
+              "subTests": [],
+              "parents": [
+                "HORMONE ANALYSIS",
+                "BLOOD"
+              ]
+            },
+            {
+              "id": "01_02_08",
+              "testName": "INSULINE",
+              "isTest": true,
+              "report": "TEXT_AREA",
+              "cost": "1000",
+              "categoryName": "HORMONE ANALYSIS",
+              "subTests": [],
+              "parents": [
+                "HORMONE ANALYSIS",
+                "BLOOD"
+              ]
+            },
+            {
+              "id": "01_02_09",
+              "testName": "ESTERDIOL(E2)",
+              "isTest": true,
+              "report": "TEXT_AREA",
+              "cost": "600",
+              "categoryName": "HORMONE ANALYSIS",
+              "subTests": [],
+              "parents": [
+                "HORMONE ANALYSIS",
+                "BLOOD"
+              ]
+            },
+            {
+              "id": "01_02_10",
+              "testName": "FSH,LH,PRL",
+              "isTest": true,
+              "report": "TEXT_AREA",
+              "cost": "500",
+              "categoryName": "HORMONE ANALYSIS",
+              "subTests": [],
+              "parents": [
+                "HORMONE ANALYSIS",
+                "BLOOD"
+              ]
+            },
+            {
+              "id": "01_02_11",
+              "testName": "FREE TESTOSTERONE",
+              "isTest": true,
+              "report": "TEXT_AREA",
+              "cost": "1200",
+              "categoryName": "HORMONE ANALYSIS",
+              "subTests": [],
+              "parents": [
+                "HORMONE ANALYSIS",
+                "BLOOD"
+              ]
+            },
+            {
+              "id": "01_02_12",
+              "testName": "T3,T4,TSH",
+              "isTest": true,
+              "report": "TEXT_AREA",
+              "cost": "450",
+              "categoryName": "HORMONE ANALYSIS",
+              "subTests": [],
+              "parents": [
+                "HORMONE ANALYSIS",
+                "BLOOD"
+              ]
+            },
+            {
+              "id": "01_02_13",
+              "testName": "PARATHYROID HORMONE",
+              "isTest": true,
+              "report": "TEXT_AREA",
+              "cost": "1000",
+              "categoryName": "HORMONE ANALYSIS",
+              "subTests": [],
+              "parents": [
+                "HORMONE ANALYSIS",
+                "BLOOD"
+              ]
+            },
+            {
+              "id": "01_02_14",
+              "testName": "SERUM AMYLASE",
+              "isTest": true,
+              "report": "TEXT_AREA",
+              "cost": "150",
+              "categoryName": "HORMONE ANALYSIS",
+              "subTests": [],
+              "parents": [
+                "HORMONE ANALYSIS",
+                "BLOOD"
+              ]
+            },
+            {
+              "id": "01_02_15",
+              "testName": "TROPONIN I",
+              "isTest": true,
+              "report": "TEXT_AREA",
+              "cost": "700",
+              "categoryName": "HORMONE ANALYSIS",
+              "subTests": [],
+              "parents": [
+                "HORMONE ANALYSIS",
+                "BLOOD"
+              ]
+            },
+            {
+              "id": "01_02_16",
+              "testName": "HLAB 27",
+              "isTest": true,
+              "report": "TEXT_AREA",
+              "cost": "2500",
+              "categoryName": "HORMONE ANALYSIS",
+              "subTests": [],
+              "parents": [
+                "HORMONE ANALYSIS",
+                "BLOOD"
+              ]
+            },
+            {
+              "id": "01_02_17",
+              "testName": "INHIBIN A",
+              "isTest": true,
+              "report": "TEXT_AREA",
+              "cost": "1800",
+              "categoryName": "HORMONE ANALYSIS",
+              "subTests": [],
+              "parents": [
+                "HORMONE ANALYSIS",
+                "BLOOD"
+              ]
+            },
+            {
+              "id": "01_02_18",
+              "testName": "INHIBIN B",
+              "isTest": true,
+              "report": "TEXT_AREA",
+              "cost": "2000",
+              "categoryName": "HORMONE ANALYSIS",
+              "subTests": [],
+              "parents": [
+                "HORMONE ANALYSIS",
+                "BLOOD"
+              ]
+            },
+            {
+              "id": "01_02_19",
+              "testName": "ANTI MULLERIAN HORMONE",
+              "isTest": true,
+              "cost": "2000",
+              "categoryName": "HORMONE ANALYSIS",
+              "subTests": [],
+              "parents": [
+                "HORMONE ANALYSIS",
+                "BLOOD"
+              ],
+              "report": "TEXT_AREA"
+            },
+            {
+              "id": "01_02_20",
+              "testName": "ALFA FETO PROTEIN",
+              "isTest": true,
+              "cost": "600",
+              "categoryName": "HORMONE ANALYSIS",
+              "subTests": [],
+              "parents": [
+                "HORMONE ANALYSIS",
+                "BLOOD"
+              ],
+              "report": "TEXT_AREA"
+            },
+            {
+              "id": "01_02_21",
+              "testName": "TRIPLE TEST 1ST TRIMESTER",
+              "isTest": true,
+              "report": "TEXT_AREA",
+              "cost": "2000",
+              "categoryName": "HORMONE ANALYSIS",
+              "subTests": [],
+              "parents": [
+                "HORMONE ANALYSIS",
+                "BLOOD"
+              ]
+            },
+            {
+              "id": "01_02_22",
+              "testName": "TRIPLE TEST2ND TRIMSTER",
+              "isTest": true,
+              "report": "TEXT_AREA",
+              "cost": "2000",
+              "categoryName": "HORMONE ANALYSIS",
+              "subTests": [],
+              "parents": [
+                "HORMONE ANALYSIS",
+                "BLOOD"
+              ]
+            },
+            {
+              "id": "01_02_23",
+              "testName": "PAppa",
+              "isTest": true,
+              "report": "TEXT_AREA",
+              "cost": "1600",
+              "subTests": [],
+              "parents": [
+                "HORMONE ANALYSIS",
+                "BLOOD"
+              ]
+            },
+            {
+              "id": "01_02_24",
+              "testName": "FREE BETA HCG",
+              "isTest": true,
+              "report": "TEXT_AREA",
+              "cost": "1600",
+              "categoryName": "HORMONE ANALYSIS",
+              "subTests": [],
+              "parents": [
+                "HORMONE ANALYSIS",
+                "BLOOD"
+              ]
+            },
+            {
+              "id": "01_02_25",
+              "testName": "UNCONJUGATED ESTRIOL(UE3)",
+              "isTest": true,
+              "report": "TEXT_AREA",
+              "cost": "1500",
+              "categoryName": "HORMONE ANALYSIS",
+              "subTests": [],
+              "parents": [
+                "HORMONE ANALYSIS",
+                "BLOOD"
+              ]
+            },
+            {
+              "id": "01_02_26",
+              "testName": "LUPUS ANTICOAGULANT",
+              "isTest": true,
+              "report": "TEXT_AREA",
+              "cost": "1400",
+              "categoryName": "HORMONE ANALYSIS",
+              "subTests": [],
+              "parents": [
+                "HORMONE ANALYSIS",
+                "BLOOD"
+              ]
+            },
+            {
+              "id": "01_02_27",
+              "testName": "ANA IFA",
+              "isTest": true,
+              "report": "TEXT_AREA",
+              "cost": "800",
+              "categoryName": "HORMONE ANALYSIS",
+              "subTests": [],
+              "parents": [
+                "HORMONE ANALYSIS",
+                "BLOOD"
+              ]
+            },
+            {
+              "id": "01_02_28",
+              "testName": "KARIYOTYPING",
+              "isTest": true,
+              "report": "TEXT_AREA",
+              "cost": "2700",
+              "categoryName": "HORMONE ANALYSIS",
+              "subTests": [],
+              "parents": [
+                "HORMONE ANALYSIS",
+                "BLOOD"
+              ]
+            },
+            {
+              "id": "01_02_29",
+              "testName": "Ds DNA IFA",
+              "isTest": true,
+              "report": "TEXT_AREA",
+              "cost": "1200",
+              "categoryName": "HORMONE ANALYSIS",
+              "subTests": [],
+              "parents": [
+                "HORMONE ANALYSIS",
+                "BLOOD"
+              ]
+            },
+            {
+              "id": "01_02_30",
+              "testName": "DHEAs",
+              "isTest": true,
+              "report": "TEXT_AREA",
+              "cost": "1200",
+              "categoryName": "HORMONE ANALYSIS",
+              "subTests": []
+            },
+            {
+              "id": "01_02_31",
+              "testName": "phospholipid syndrom",
+              "isTest": true,
+              "report": "TEXT_AREA",
+              "cost": "3500",
+              "categoryName": "HORMONE ANALYSIS",
+              "subTests": [],
+              "parents": [
+                "HORMONE ANALYSIS",
+                "BLOOD"
+              ]
+            },
+            {
+              "id": "01_02_32",
+              "testName": "BOH PROFILE 1",
+              "isTest": true,
+              "report": "TEXT_AREA",
+              "cost": "12000",
+              "categoryName": "HORMONE ANALYSIS",
+              "subTests": [],
+              "parents": [
+                "HORMONE ANALYSIS",
+                "BLOOD"
+              ]
+            },
+            {
+              "id": "01_02_33",
+              "testName": "BOHPROFILE2",
+              "isTest": true,
+              "report": "TEXT_AREA",
+              "cost": "5500",
+              "categoryName": "HORMONE ANALYSIS",
+              "subTests": [],
+              "parents": [
+                "HORMONE ANALYSIS",
+                "BLOOD"
+              ]
+            },
+            {
+              "id": "01_02_34",
+              "testName": "THYROGLOBULINE",
+              "isTest": true,
+              "report": "TEXT_AREA",
+              "cost": "1600",
+              "categoryName": "HORMONE ANALYSIS",
+              "subTests": [],
+              "parents": [
+                "HORMONE ANALYSIS",
+                "BLOOD"
+              ]
+            },
+            {
+              "id": "01_02_35",
+              "testName": "THYROGLOBULINE Abs",
+              "isTest": true,
+              "report": "TEXT_AREA",
+              "cost": "800",
+              "categoryName": "HORMONE ANALYSIS",
+              "subTests": [],
+              "parents": [
+                "HORMONE ANALYSIS",
+                "BLOOD"
+              ]
+            },
+            {
+              "id": "01_02_36",
+              "testName": "VITAMIN B12",
+              "isTest": true,
+              "report": "TEXT_AREA",
+              "cost": "700",
+              "categoryName": "HORMONE ANALYSIS",
+              "subTests": [],
+              "parents": [
+                "HORMONE ANALYSIS",
+                "BLOOD"
+              ]
+            },
+            {
+              "id": "01_02_37",
+              "testName": "CA-125",
+              "isTest": true,
+              "report": "TEXT_AREA",
+              "cost": "700",
+              "categoryName": "HORMONE ANALYSIS",
+              "subTests": [],
+              "parents": [
+                "HORMONE ANALYSIS",
+                "BLOOD"
+              ]
+            },
+            {
+              "id": "01_02_38",
+              "testName": "INFERTILITY PROFILE ",
+              "isTest": true,
+              "report": "TEXT_AREA",
+              "cost": "4500",
+              "categoryName": "HORMONE ANALYSIS",
+              "subTests": [],
+              "parents": [
+                "HORMONE ANALYSIS",
+                "BLOOD"
+              ]
+            },
+            {
+              "id": "01_02_39",
+              "testName": "OVERIAN ANTIBODY ",
+              "isTest": true,
+              "report": "TEXT_AREA",
+              "cost": "2500",
+              "categoryName": "HORMONE ANALYSIS",
+              "subTests": [],
+              "parents": [
+                "HORMONE ANALYSIS",
+                "BLOOD"
+              ]
+            },
+            {
+              "id": "01_02_40",
+              "testName": "OVERIAN MARKER PROFILE",
+              "isTest": true,
+              "report": "TEXT_AREA",
+              "cost": "4600",
+              "categoryName": "HORMONE ANALYSIS",
+              "subTests": [],
+              "parents": [
+                "HORMONE ANALYSIS",
+                "BLOOD"
+              ]
+            },
+            {
+              "id": "01_02_41",
+              "testName": "QUADRUPLE TEST",
+              "isTest": true,
+              "report": "TEXT_AREA",
+              "cost": "3200",
+              "categoryName": "HORMONE ANALYSIS",
+              "subTests": [],
+              "parents": [
+                "HORMONE ANALYSIS",
+                "BLOOD"
+              ]
+            },
+            {
+              "id": "01_02_42",
+              "testName": "Rh ANTIBODIES COOMBS TOTA",
+              "isTest": true,
+              "report": "TEXT_AREA",
+              "cost": "700",
+              "categoryName": "HORMONE ANALYSIS",
+              "subTests": [],
+              "parents": [
+                "HORMONE ANALYSIS",
+                "BLOOD"
+              ]
+            },
+            {
+              "id": "01_02_43",
+              "testName": "FERRITIN",
+              "isTest": true,
+              "report": "TEXT_AREA",
+              "cost": "800",
+              "categoryName": "HORMONE ANALYSIS",
+              "subTests": [],
+              "parents": [
+                "HORMONE ANALYSIS",
+                "BLOOD"
+              ]
+            },
+            {
+              "id": "01_02_44",
+              "testName": "IRONE STUDIES",
+              "isTest": true,
+              "report": "TEXT_AREA",
+              "cost": "800",
+              "categoryName": "HORMONE ANALYSIS",
+              "subTests": [],
+              "parents": [
+                "HORMONE ANALYSIS",
+                "BLOOD"
+              ]
+            },
+            {
+              "id": "01_02_45",
+              "testName": "FOLIC ACID",
+              "isTest": true,
+              "report": "TEXT_AREA",
+              "cost": "1000",
+              "categoryName": "HORMONE ANALYSIS",
+              "subTests": [],
+              "parents": [
+                "HORMONE ANALYSIS",
+                "BLOOD"
+              ]
+            },
+            {
+              "id": "01_02_46",
+              "testName": "ANTI CADIOLIPIN ANTIBODIES-IgG",
+              "isTest": true,
+              "report": "TEXT_AREA",
+              "cost": "600",
+              "categoryName": "HORMONE ANALYSIS",
+              "subTests": [],
+              "parents": [
+                "HORMONE ANALYSIS",
+                "BLOOD"
+              ]
+            },
+            {
+              "id": "01_02_47",
+              "testName": "OANTICARDIOLIPIN ANTIBODIES-IgM",
+              "isTest": true,
+              "report": "TEXT_AREA",
+              "cost": "600",
+              "categoryName": "HORMONE ANALYSIS",
+              "subTests": [],
+              "parents": [
+                "HORMONE ANALYSIS",
+                "BLOOD"
+              ]
+            },
+            {
+              "id": "01_02_48",
+              "testName": "ANTI PHOSPHOLIPID ANTIBODIES-IgG",
+              "isTest": true,
+              "report": "TEXT_AREA",
+              "cost": "900",
+              "categoryName": "HORMONE ANALYSIS",
+              "subTests": [],
+              "parents": [
+                "HORMONE ANALYSIS",
+                "BLOOD"
+              ]
+            },
+            {
+              "id": "01_02_49",
+              "testName": "ANTI PHOSPHOLIPID ANTIBODIES-IGgM",
+              "isTest": true,
+              "report": "TEXT_AREA",
+              "cost": "900",
+              "categoryName": "HORMONE ANALYSIS",
+              "subTests": [],
+              "parents": [
+                "HORMONE ANALYSIS",
+                "BLOOD"
+              ]
+            },
+            {
+              "id": "01_02_50",
+              "testName": "beta-2-GLYCOPROTEIN ANTIBODIES-IgG",
+              "isTest": true,
+              "report": "TEXT_AREA",
+              "cost": "1400",
+              "categoryName": "HORMONE ANALYSIS",
+              "subTests": [],
+              "parents": [
+                "HORMONE ANALYSIS",
+                "BLOOD"
+              ]
+            },
+            {
+              "id": "01_02_51",
+              "testName": "beta-2-GLYCOPROTEIN ANTIBODIES-IgM",
+              "isTest": true,
+              "report": "TEXT_AREA",
+              "cost": "1400",
+              "categoryName": "HORMONE ANALYSIS",
+              "subTests": [],
+              "parents": [
+                "HORMONE ANALYSIS",
+                "BLOOD"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "01_03",
+          "testName": "FEVER",
+          "isTest": false,
+          "cost": "",
+          "subTests": [
+            {
+              "id": "01_03_01",
+              "testName": "WIDAL",
+              "isTest": true,
+              "report": "FEVER_WIDAL",
+              "cost": "50",
+              "categoryName": "FEVER",
+              "subTests": [],
+              "parents": [
+                "FEVER",
+                "BLOOD"
+              ]
+            },
+            {
+              "id": "01_03_02",
+              "testName": "MALARIA Antigen",
+              "isTest": true,
+              "report": "TEXT_21",
+              "cost": "150",
+              "categoryName": "FEVER",
+              "subTests": [],
+              "parents": [
+                "FEVER",
+                "BLOOD"
+              ]
+            },
+            {
+              "id": "01_03_03",
+              "testName": "MALARIA Antibody",
+              "isTest": true,
+              "report": "TEXT_21",
+              "cost": "150",
+              "categoryName": "FEVER",
+              "subTests": [],
+              "parents": [
+                "FEVER",
+                "BLOOD"
+              ]
+            },
+            {
+              "id": "01_03_04",
+              "testName": "MF",
+              "isTest": true,
+              "report": "TEXT_21",
+              "cost": "50",
+              "categoryName": "FEVER",
+              "subTests": [],
+              "parents": [
+                "FEVER",
+                "BLOOD"
+              ]
+            },
+            {
+              "id": "01_03_05",
+              "testName": "VDRL",
+              "isTest": true,
+              "report": "TEXT_21",
+              "cost": "50",
+              "categoryName": "FEVER",
+              "subTests": [],
+              "parents": [
+                "FEVER",
+                "BLOOD"
+              ]
+            },
+            {
+              "id": "01_03_06",
+              "testName": "R A FACTOR",
+              "isTest": true,
+              "report": "TEXT_21",
+              "cost": "50",
+              "categoryName": "FEVER",
+              "subTests": [],
+              "parents": [
+                "FEVER",
+                "BLOOD"
+              ]
+            },
+            {
+              "id": "01_03_07",
+              "testName": "CRP",
+              "isTest": true,
+              "report": "TEXT_21",
+              "cost": "80",
+              "categoryName": "FEVER",
+              "subTests": [],
+              "parents": [
+                "FEVER",
+                "BLOOD"
+              ]
+            },
+            {
+              "id": "01_03_08",
+              "testName": "A.S.O Titer",
+              "isTest": true,
+              "report": "TEXT_21",
+              "cost": "80",
+              "categoryName": "FEVER",
+              "subTests": [],
+              "parents": [
+                "FEVER",
+                "BLOOD"
+              ]
+            },
+            {
+              "id": "01_03_09",
+              "testName": "TPHA",
+              "isTest": true,
+              "report": "TEXT_21",
+              "cost": "100",
+              "categoryName": "FEVER",
+              "subTests": [],
+              "parents": [
+                "FEVER",
+                "BLOOD"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "01_04",
+          "testName": "HEMATOLOGY",
+          "isTest": false,
+          "cost": "",
+          "subTests": [
+            
+            {
+              "id": "01_04_01",
+              "testName": "CBP",
+              "isTest": false,
+              "cost": "",
+              "subTests": [
+              
+                {
+                  "id": "01_04_01_01",
+                  "testName": "HEMOGLOBINE",
+                  "isTest": true,
+                  "cost": "20",
+                  "report": "TEXT_37",
+                  "categoryName": "HEMATOLOGY-CBP",
+                  "subTests": [],
+                  "parents": [
+                    "CBP",
+                    "HEMATOLOGY",
+                    "BLOOD"
+                  ]
+                },
+                {
+                  "id": "01_04_01_02",
+                  "testName": "PACKED CEL VOLUME",
+                  "isTest": true,
+                  "cost": "20",
+                  "report": "TEXT_36",
+                  "categoryName": "HEMATOLOGY-CBP",
+                  "subTests": [],
+                  "parents": [
+                    "CBP",
+                    "HEMATOLOGY",
+                    "BLOOD"
+                  ]
+                },
+                {
+                  "id": "01_04_01_03",
+                  "testName": "T RBC",
+                  "isTest": true,
+                  "cost": "20",
+                  "report": "TEXT_35",
+                  "categoryName": "HEMATOLOGY-CBP",
+                  "subTests": [],
+                  "parents": [
+                    "CBP",
+                    "HEMATOLOGY",
+                    "BLOOD"
+                  ]
+                },
+                {
+                  "id": "01_04_01_04",
+                  "testName": "T WBC",
+                  "isTest": true,
+                  "report": "TEXT_22",
+                  "cost": "20",
+                  "categoryName": "HEMATOLOGY-CBP",
+                  "subTests": [],
+                  "parents": [
+                    "CBP",
+                    "HEMATOLOGY",
+                    "BLOOD"
+                  ]
+                },
+                {
+                  "id": "01_04_01_05",
+                  "testName": "PLATELET COUNT",
+                  "isTest": true,
+                  "report": "TEXT_23",
+                  "cost": "100",
+                  "categoryName": "HEMATOLOGY-CBP",
+                  "subTests": [],
+                  "parents": [
+                    "CBP",
+                    "HEMATOLOGY",
+                    "BLOOD"
+                  ]
+                },
+                {
+                  "id": "01_04_01_06",
+                  "testName": "MCV ",
+                  "isTest": true,
+                  "report": "TEXT_24",
+                  "cost": "00",
+                  "categoryName": "HEMATOLOGY-CBP",
+                  "subTests": [],
+                  "parents": [
+                    "CBP",
+                    "HEMATOLOGY",
+                    "BLOOD"
+                  ]
+                },
+                {
+                  "id": "01_04_01_07",
+                  "testName": "MCH",
+                  "isTest": true,
+                  "report": "TEXT_25",
+                  "cost": "00",
+                  "categoryName": "HEMATOLOGY-CBP",
+                  "subTests": [],
+                  "parents": [
+                    "CBP",
+                    "HEMATOLOGY",
+                    "BLOOD"
+                  ]
+                },
+                {
+                  "id": "01_04_01_08",
+                  "testName": "MCHC",
+                  "isTest": true,
+                  "report": "TEXT_26",
+                  "cost": "00",
+                  "categoryName": "HEMATOLOGY-CBP",
+                  "subTests": [],
+                  "parents": [
+                    "CBP",
+                    "HEMATOLOGY",
+                    "BLOOD"
+                  ]
+                },
+                {
+	              "id": "01_04_01_09",
+	              "testName": "DIFFRENTIAL COUNT",
+	              "isTest": false,
+	              "cost": "",
+	              "subTests": [
+	                {
+	                  "id": "01_04_01_09_01",
+	                  "testName": "EOSINOPHIL",
+	                  "isTest": true,
+	                  "report": "TEXT_29",
+	                  "cost": "04",
+	                  "categoryName": "HEMATOLOGY-DIFFRENTIAL COUNT",
+	                  "subTests": [],
+	                  "parents": [
+	                    "DIFFRENTIAL COUNT",
+	                    "HEMATOLOGY",
+	                    "BLOOD"
+	                  ]
+	                },
+	                {
+	                  "id": "01_04_01_09_02",
+	                  "testName": "BASOPHIL",
+	                  "isTest": true,
+	                  "report": "TEXT_30",
+	                  "cost": "04",
+	                  "categoryName": "HEMATOLOGY-DIFFRENTIAL COUNT",
+	                  "subTests": [],
+	                  "parents": [
+	                    "DIFFRENTIAL COUNT",
+	                    "HEMATOLOGY",
+	                    "BLOOD"
+	                  ]
+	                },
+	                {
+	                  "id": "01_04_01_09_03",
+	                  "testName": "MONOCYTE",
+	                  "isTest": true,
+	                  "cost": "04",
+	                  "categoryName": "HEMATOLOGY-DIFFRENTIAL COUNT",
+	                  "subTests": [],
+	                  "parents": [
+	                    "DIFFRENTIAL COUNT",
+	                    "HEMATOLOGY",
+	                    "BLOOD"
+	                  ],
+	                  "report": "TEXT_AREA"
+	                },
+	                {
+	                  "id": "01_04_01_09_04",
+	                  "testName": "NEUTROPHIL",
+	                  "isTest": true,
+	                  "report": "TEXT_27",
+	                  "cost": "04",
+	                  "categoryName": "HEMATOLOGY-DIFFRENTIAL COUNT",
+	                  "subTests": [],
+	                  "parents": [
+	                    "CBP",
+	                    "HEMATOLOGY",
+	                    "BLOOD"
+	                  ]
+	                },
+	                {
+	                  "id": "01_04_01_09_05",
+	                  "testName": "LYMPHOCYTE",
+	                  "isTest": true,
+	                  "report": "TEXT_28",
+	                  "cost": "04",
+	                  "categoryName": "HEMATOLOGY-DIFFRENTIAL COUNT",
+	                  "subTests": [],
+	                  "parents": [
+	                    "CBP",
+	                    "HEMATOLOGY",
+	                    "BLOOD"
+	                  ]
+	                }
+	               ]
+	              }
+	          ]
+	        },
+            {
+              "id": "01_04_02",
+              "testName": "CBP",
+              "isTest": true,
+              "cost": "200",
+              "categoryName": "CBP",
+              "subTests": [],
+              "report": "TEXT_AREA"
+            },
+            {
+              "id": "01_04_03",
+              "testName": "DIFFRENTIAL COUNT",
+              "isTest": false,
+              "cost": "",
+              "subTests": [
+                {
+                  "id": "01_04_03_01",
+                  "testName": "EOSINOPHIL",
+                  "isTest": true,
+                  "report": "TEXT_29",
+                  "cost": "04",
+                  "categoryName": "HEMATOLOGY-DIFFRENTIAL COUNT",
+                  "subTests": [],
+                  "parents": [
+                    "DIFFRENTIAL COUNT",
+                    "HEMATOLOGY",
+                    "BLOOD"
+                  ]
+                },
+                {
+                  "id": "01_04_03_02",
+                  "testName": "BASOPHIL",
+                  "isTest": true,
+                  "report": "TEXT_30",
+                  "cost": "04",
+                  "categoryName": "HEMATOLOGY-DIFFRENTIAL COUNT",
+                  "subTests": [],
+                  "parents": [
+                    "DIFFRENTIAL COUNT",
+                    "HEMATOLOGY",
+                    "BLOOD"
+                  ]
+                },
+                {
+                  "id": "01_04_03_03",
+                  "testName": "MONOCYTE",
+                  "isTest": true,
+                  "cost": "04",
+                  "categoryName": "HEMATOLOGY-DIFFRENTIAL COUNT",
+                  "subTests": [],
+                  "parents": [
+                    "DIFFRENTIAL COUNT",
+                    "HEMATOLOGY",
+                    "BLOOD"
+                  ],
+                  "report": "TEXT_AREA"
+                },
+                {
+                  "id": "01_04_03_03_04",
+                  "testName": "NEUTROPHIL",
+                  "isTest": true,
+                  "report": "TEXT_27",
+                  "cost": "04",
+                  "categoryName": "HEMATOLOGY-DIFFRENTIAL COUNT",
+                  "subTests": [],
+                  "parents": [
+                    "CBP",
+                    "HEMATOLOGY",
+                    "BLOOD"
+                  ]
+                },
+                {
+                  "id": "01_04_03_03_05",
+                  "testName": "LYMPHOCYTE",
+                  "isTest": true,
+                  "report": "TEXT_28",
+                  "cost": "04",
+                  "categoryName": "HEMATOLOGY-DIFFRENTIAL COUNT",
+                  "subTests": [],
+                  "parents": [
+                    "CBP",
+                    "HEMATOLOGY",
+                    "BLOOD"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "01_04_05",
+              "testName": "ESR",
+              "isTest": true,
+              "categoryName": "E.S.R",
+              "report": "TEXT_31",
+              "cost": "20",
+              "subTests": []
+            },
+            {
+              "id": "01_04_06",
+              "testName": "ABSOLUTE EOSINOPHIL COUNT",
+              "isTest": true,
+              "report": "TEXT_32",
+              "cost": "50",
+              "categoryName": "ABSOLUTE EOSINOPHIL COUNT",
+              "subTests": []
+            },
+            {
+              "id": "01_04_07",
+              "testName": "BLEEDING TIME",
+              "isTest": true,
+              "report": "TEXT_33",
+              "cost": "20",
+              "categoryName": "BLEEDING TIME",
+              "subTests": []
+            },
+            {
+              "id": "01_04_08",
+              "testName": "CLOTTING TIME",
+              "isTest": true,
+              "report": "TEXT_34",
+              "cost": "20",
+              "categoryName": "CLOTTING TIME",
+              "subTests": []
+            },
+            {
+              "id": "01_04_09",
+              "testName": "HEMOGLOBINE",
+              "isTest": true,
+              "cost": "20",
+              "report": "TEXT_37",
+              "categoryName": "HEMATOLOGY",
+              "subTests": [],
+              "parents": [
+                "HEMATOLOGY"
+              ]
+            },
+            {
+              "id": "01_04_10",
+              "testName": "BLOOD GROUP and RH TYPING",
+              "isTest": true,
+              "report": "VIRAL_MARKER_BG_RH_TYPE",
+              "cost": "30",
+              "categoryName": "HEMATOLOGY",
+              "subTests": []
+            }
+          ]
+        },
+        {
+          "id": "01_05",
+          "testName": "VIRAL MARKERS",
+          "isTest": false,
+          "cost": "",
+          "subTests": [
+            {
+              "id": "01_05_02",
+              "testName": "CD3,CD4,CD8",
+              "isTest": true,
+              "report": "TEXT_AREA",
+              "cost": "1600",
+              "categoryName": "VIRAL MARKERS",
+              "subTests": []
+            },
+            {
+              "id": "01_05_03",
+              "testName": "HIV VIRALOAD",
+              "isTest": true,
+              "report": "TEXT_AREA",
+              "cost": "5500",
+              "categoryName": "VIRAL MARKERS",
+              "subTests": [],
+              "parents": [
+                "SEROLOGY"
+              ]
+            },
+            {
+              "id": "01_05_04",
+              "testName": "HIV DNA PCR",
+              "isTest": true,
+              "report": "TEXT_AREA",
+              "cost": "3500",
+              "categoryName": "VIRAL MARKERS",
+              "subTests": []
+            },
+            {
+              "id": "01_05_05",
+              "testName": "HEPATITIS B VIRAL LOAD",
+              "isTest": true,
+              "report": "TEXT_AREA",
+              "cost": "6000",
+              "categoryName": "VIRAL MARKERS",
+              "subTests": []
+            },
+            {
+              "id": "01_05_06",
+              "testName": "HEPATITIS DNA PCR",
+              "isTest": true,
+              "report": "TEXT_AREA",
+              "cost": "5000",
+              "categoryName": "VIRAL MARKERS",
+              "subTests": []
+            },
+            {
+              "id": "01_05_07",
+              "testName": "HEPATITIS C VIRAL LOAD",
+              "isTest": true,
+              "report": "TEXT_AREA",
+              "cost": "7000",
+              "categoryName": "VIRAL MARKERS",
+              "subTests": []
+            },
+            {
+              "id": "01_05_08",
+              "testName": "HEPATITIS C DNA PCR",
+              "isTest": true,
+              "report": "TEXT_AREA",
+              "cost": "5000",
+              "categoryName": "VIRAL MARKERS",
+              "subTests": []
+            },
+            {
+              "id": "01_05_09",
+              "testName": "HPV DNA DETECTION AND TYPING",
+              "isTest": true,
+              "report": "TEXT_AREA",
+              "cost": "2600",
+              "categoryName": "VIRAL MARKERS",
+              "subTests": []
+            }
+          ]
+        },
+        {
+          "id": "01_06",
+          "testName": "A.B.G.ANALYSIS",
+          "isTest": true,
+          "cost": "700",
+          "categoryName": "A.B.G.ANALYSIS",
+          "subTests": [],
+          "report": "TEXT_AREA"
+        },
+        {
+          "id": "01_07",
+          "testName": "BLOOD CULTURE  AND SENSITIVITY",
+          "isTest": true,
+          "report": "TEXT_AREA",
+          "cost": 500,
+          "categoryName": "BLOOD CULTURE AND SENSITIVITY",
+          "subTests": []
+        },
+        {
+          "id": "01_08",
+          "testName": "SEROLOGY",
+          "isTest": false,
+          "cost": "",
+          "subTests": [
+            {
+              "id": "01_08_01",
+              "testName": "HIV",
+              "isTest": true,
+              "report": "TEXT_21",
+              "cost": "200",
+              "categoryName": "SEROLOGY",
+              "subTests": [],
+              "parents": [
+                "SEROLOGY"
+              ]
+            },
+            {
+              "id": "01_08_02",
+              "testName": "HBSAG",
+              "isTest": true,
+              "report": "TEXT_21",
+              "cost": "100",
+              "categoryName": "SEROLOGY",
+              "subTests": [],
+              "parents": [
+                "SEROLOGY"
+              ]
+            },
+            {
+              "id": "01_08_03",
+              "testName": "HCV",
+              "isTest": true,
+              "report": "TEXT_21",
+              "cost": "300",
+              "categoryName": "SEROLOGY",
+              "subTests": [],
+              "parents": [
+                "SEROLOGY"
+              ]
+            },
+            {
+              "id": "01_08_04",
+              "testName": "DENGUE",
+              "isTest": true,
+              "report": "DENGUE_TEST",
+              "cost": "650",
+              "categoryName": "SEROLOGY",
+              "subTests": [],
+              "parents": [
+                "SEROLOGY",
+                "BLOOD"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "02",
+      "testName": "URINE ANALYSIS",
+      "isTest": false,
+      "cost": "",
+      "subTests": [
+        {
+          "id": "02_01",
+          "testName": "SUGAR, ALBUMIN, MICROSCOPY",
+          "isTest": false,
+          "cost": "20",
+          "categoryName": "URINE ANALYSIS",
+          "subTests": [
+            {
+              "id": "02_01_01",
+              "testName": "SUGAR",
+              "report": "TEXT_0",
+              "isTest": true,
+              "cost": "05",
+              "categoryName": "URINE ANALYSIS",
+              "subTests": []
+            },
+            {
+              "id": "02_01_02",
+              "testName": "ALBUMIN",
+              "report": "TEXT_0",
+              "isTest": true,
+              "cost": "05",
+              "categoryName": "URINE ANALYSIS",
+              "subTests": []
+            },
+            {
+              "id": "02_01_03",
+              "testName": "MICROSCOPY",
+              "report": "MICROSCOPY",
+              "isTest": true,
+              "cost": "10",
+              "categoryName": "URINE ANALYSIS",
+              "subTests": []
+            }
+          ],
+          "report": "TEXT_AREA"
+        },
+        {
+          "id": "02_02",
+          "testName": "SUGAR",
+          "report": "TEXT_0",
+          "isTest": true,
+          "cost": "20",
+          "categoryName": "URINE ANALYSIS",
+          "subTests": []
+        },
+        {
+          "id": "02_03",
+          "testName": "ALBUMIN",
+          "report": "TEXT_0",
+          "isTest": true,
+          "cost": "20",
+          "categoryName": "URINE ANALYSIS",
+          "subTests": []
+        },
+        {
+          "id": "02_04",
+          "testName": "MICROSCOPY",
+          "report": "MICROSCOPY",
+          "isTest": true,
+          "cost": "20",
+          "categoryName": "URINE ANALYSIS",
+          "subTests": []
+        },
+        {
+          "id": "02_05",
+          "testName": "BILE SALTS, BILE PIGMENTS",
+          "isTest": false,
+          "cost": "20",
+          "categoryName": "BILE SALTS, BILE PIGMENTS",
+          "subTests": [
+            {
+              "id": "02_05_01",
+              "testName": "BILE SALTS",
+              "isTest": true,
+              "report": "TEXT_21",
+              "cost": "10",
+              "categoryName": "BILE SALTS, BILE PIGMENTS",
+              "subTests": []
+            },
+            {
+              "id": "02_05_02",
+              "testName": "BILE PIGMENTS",
+              "isTest": true,
+              "report": "TEXT_21",
+              "cost": "10",
+              "categoryName": "BILE SALTS, BILE PIGMENTS",
+              "subTests": []
+            }
+          ],
+          "report": "TEXT_AREA"
+        },
+        {
+          "id": "02_06",
+          "testName": "BILE SALTS",
+          "isTest": true,
+          "report": "TEXT_21",
+          "cost": "10",
+          "categoryName": "URINE ANALYSIS",
+          "subTests": []
+        },
+        {
+          "id": "02_07",
+          "testName": "BILE PIGMENTS",
+          "isTest": true,
+          "report": "TEXT_21",
+          "cost": "10",
+          "categoryName": "URINE ANALYSIS",
+          "subTests": []
+        },
+        {
+          "id": "02_09",
+          "testName": "CHYLE",
+          "isTest": true,
+          "report": "TEXT_21",
+          "cost": "10",
+          "categoryName": "URINE ANALYSIS",
+          "subTests": []
+        },
+        {
+          "id": "02_10",
+          "testName": "PREGNANCY TEST",
+          "isTest": true,
+          "report": "TEXT_21",
+          "cost": "50",
+          "categoryName": "URINE ANALYSIS",
+          "subTests": []
+        },
+        {
+          "id": "02_11",
+          "testName": "KEETONE BODIES",
+          "isTest": true,
+          "report": "TEXT_21",
+          "cost": "20",
+          "categoryName": "URINE ANALYSIS",
+          "subTests": []
+        },
+        {
+          "id": "02_12",
+          "testName": "URINE CULTURE AND SENSITIVITY",
+          "isTest": true,
+          "report": "TEXT_AREA",
+          "cost": "500",
+          "categoryName": "URINE ANALYSIS",
+          "subTests": []
+        },
+        {
+          "id": "02_13",
+          "testName": "SUGAR, ALBUMIN, MICROSCOPY",
+          "isTest": false,
+          "cost": "20",
+          "categoryName": "URINE ANALYSIS (M)",
+          "subTests": [
+            {
+              "id": "02_13_01",
+              "testName": "SUGAR",
+              "report": "TEXT_0",
+              "isTest": true,
+              "cost": "05",
+              "categoryName": "URINE ANALYSIS (M)",
+              "subTests": []
+            },
+            {
+              "id": "02_13_02",
+              "testName": "ALBUMIN",
+              "report": "TEXT_0",
+              "isTest": true,
+              "cost": "05",
+              "categoryName": "URINE ANALYSIS (M)",
+              "subTests": []
+            },
+            {
+              "id": "02_13_03",
+              "testName": "MICROSCOPY",
+              "report": "MICROSCOPY_MALE",
+              "isTest": true,
+              "cost": "10",
+              "categoryName": "URINE ANALYSIS (M)",
+              "subTests": []
+            }
+          ],
+          "report": "TEXT_AREA"
+        },
+        {
+          "id": "02_14",
+          "testName": "SUGAR, ALBUMIN, MICROSCOPY",
+          "isTest": false,
+          "cost": "20",
+          "categoryName": "URINE ANALYSIS (F)",
+          "subTests": [
+            {
+              "id": "02_14_01",
+              "testName": "SUGAR",
+              "report": "TEXT_0",
+              "isTest": true,
+              "cost": "05",
+              "categoryName": "URINE ANALYSIS (F)",
+              "subTests": []
+            },
+            {
+              "id": "02_14_02",
+              "testName": "ALBUMIN",
+              "report": "TEXT_0",
+              "isTest": true,
+              "cost": "05",
+              "categoryName": "URINE ANALYSIS (F)",
+              "subTests": []
+            },
+            {
+              "id": "02_14_03",
+              "testName": "MICROSCOPY",
+              "report": "MICROSCOPY_FEMALE",
+              "isTest": true,
+              "cost": "10",
+              "categoryName": "URINE ANALYSIS (F)",
+              "subTests": []
+            }
+          ],
+          "report": "TEXT_AREA"
+        }
+      ]
+    },
+    {
+      "id": "03",
+      "testName": "SEMEN ANALYSIS",
+      "isTest": true,
+      "cost": "150",
+      "categoryName": "SEMEN ANALYSIS",
+      "subTests": [],
+      "report": "SEMEN_TEST"
+    },
+    {
+      "id": "04",
+      "testName": "STOOL EXAMINATION",
+      "isTest": false,
+      "cost": "",
+      "subTests": [
+        {
+          "id": "04_01",
+          "testName": "OVA",
+          "isTest": true,
+          "report": "TEXT_21",
+          "cost": "100",
+          "categoryName": "STOOL EXAMINATION",
+          "subTests": []
+        },
+        {
+          "id": "04_02",
+          "testName": "CYST",
+          "isTest": true,
+          "report": "TEXT_21",
+          "cost": "100",
+          "categoryName": "STOOL EXAMINATION",
+          "subTests": []
+        },
+        {
+          "id": "04_03",
+          "testName": "OCCULT BLOOD/SUGAR",
+          "isTest": true,
+          "report": "TEXT_21",
+          "cost": "100",
+          "categoryName": "STOOL EXAMINATION",
+          "subTests": []
+        },
+        {
+          "id": "04_04",
+          "testName": "REDUCING SUBSTANCES",
+          "isTest": true,
+          "cost": 200,
+          "categoryName": "STOOL EXAMINATION",
+          "subTests": [],
+          "report": "TEXT_AREA"
+        }
+      ]
+    },
+    {
+      "id": "05",
+      "testName": "ECG",
+      "isTest": true,
+      "cost": "150",
+      "categoryName": "ECG",
+      "subTests": [],
+      "report": "THIRD_PARTY"
+    },
+    {
+      "id": "06",
+      "testName": "X RAY",
+      "isTest": false,
+      "cost": "",
+      "subTests": [
+        {
+          "id": "06_01",
+          "testName": "SKULL",
+          "isTest": false,
+          "cost": "",
+          "subTests": [
+            {
+              "id": "06_01_01",
+              "testName": "AP",
+              "isTest": true,
+              "categoryName": "X RAY-SKULL",
+              "cost": "200",
+              "subTests": [],
+              "report": "THIRD_PARTY",
+              "whatsappCost": 100
+            },
+            {
+              "id": "06_01_02",
+              "testName": "LATERAL",
+              "isTest": true,
+              "cost": "200",
+              "categoryName": "X RAY-SKULL",
+              "subTests": [],
+              "report": "THIRD_PARTY",
+              "whatsappCost": 100
+            },
+            {
+              "id": "06_01_03",
+              "testName": "AP-LATERAL",
+              "isTest": true,
+              "cost": "300",
+              "categoryName": "X RAY-SKULL",
+              "subTests": [],
+              "report": "THIRD_PARTY",
+              "whatsappCost": 100
+            }
+          ]
+        },
+        {
+          "id": "06_02",
+          "testName": "PNS",
+          "isTest": false,
+          "cost": "",
+          "subTests": [
+            {
+              "id": "06_02_01",
+              "testName": "SKY-LINE VIEW",
+              "isTest": true,
+              "cost": "200",
+              "categoryName": "X RAY-PNS",
+              "subTests": [],
+              "report": "THIRD_PARTY",
+              "whatsappCost": 100
+            }
+          ]
+        },
+        {
+          "id": "06_03",
+          "testName": "C- SPINE",
+          "isTest": false,
+          "cost": "",
+          "subTests": [
+            {
+              "id": "06_03_01",
+              "testName": "AP",
+              "isTest": true,
+              "cost": "200",
+              "categoryName": "X RAY-C- SPINE",
+              "subTests": [],
+              "report": "THIRD_PARTY",
+              "whatsappCost": 100
+            },
+            {
+              "id": "06_03_02",
+              "testName": "LATERAL",
+              "isTest": true,
+              "cost": "200",
+              "categoryName": "X RAY-C- SPINE",
+              "subTests": [],
+              "report": "THIRD_PARTY",
+              "whatsappCost": 100
+            },
+            {
+              "id": "06_03_03",
+              "testName": "AP-LATERAL",
+              "isTest": true,
+              "cost": "300",
+              "categoryName": "X RAY-C- SPINE",
+              "subTests": [],
+              "report": "THIRD_PARTY",
+              "whatsappCost": 100
+            }
+          ]
+        },
+        {
+          "id": "06_04",
+          "testName": "CHEST",
+          "isTest": false,
+          "cost": "",
+          "subTests": [
+            {
+              "id": "06_04_01",
+              "testName": "AP",
+              "isTest": true,
+              "cost": "200",
+              "categoryName": "X RAY-CHEST",
+              "subTests": [],
+              "report": "THIRD_PARTY",
+              "whatsappCost": 100
+            },
+            {
+              "id": "06_04_02",
+              "testName": "PA",
+              "isTest": true,
+              "cost": "200",
+              "categoryName": "X RAY-CHEST",
+              "subTests": [],
+              "report": "THIRD_PARTY",
+              "whatsappCost": 100
+            }
+          ]
+        },
+        {
+          "id": "06_05",
+          "testName": "SHOULDER",
+          "isTest": false,
+          "cost": "",
+          "subTests": [
+            {
+              "id": "06_05_01",
+              "testName": "RIGHT",
+              "isTest": false,
+              "cost": "",
+              "subTests": [
+                {
+                  "id": "06_05_01_01",
+                  "testName": "AP",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-SHOULDER-RIGHT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_05_01_02",
+                  "testName": "Oblique View",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-SHOULDER-RIGHT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_05_01_03",
+                  "testName": "AP-Oblique View",
+                  "isTest": true,
+                  "cost": "300",
+                  "categoryName": "X RAY-SHOULDER-RIGHT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                }
+              ]
+            },
+            {
+              "id": "06_05_02",
+              "testName": "LEFT",
+              "isTest": false,
+              "cost": "",
+              "subTests": [
+                {
+                  "id": "06_05_02_01",
+                  "testName": "AP",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-SHOULDER-LEFT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_05_02_02",
+                  "testName": "Oblique View",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-SHOULDER-LEFT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_05_02_03",
+                  "testName": "AP-Oblique View",
+                  "isTest": true,
+                  "cost": "300",
+                  "categoryName": "X RAY-SHOULDER-LEFT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "06_06",
+          "testName": "SHOULDER With ARM",
+          "isTest": false,
+          "cost": "",
+          "subTests": [
+            {
+              "id": "06_06_01",
+              "testName": "RIGHT",
+              "isTest": false,
+              "cost": "",
+              "subTests": [
+                {
+                  "id": "06_06_01_01",
+                  "testName": "AP",
+                  "isTest": true,
+                  "categoryName": "X RAY-SHOULDER With ARM-RIGHT",
+                  "cost": "200",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_06_01_02",
+                  "testName": "LATERAL",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-SHOULDER With ARM-RIGHT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_06_01_03",
+                  "testName": "AP-LATERAL",
+                  "isTest": true,
+                  "cost": "300",
+                  "categoryName": "X RAY-SHOULDER With ARM-RIGHT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                }
+              ]
+            },
+            {
+              "id": "06_06_02",
+              "testName": "LEFT",
+              "isTest": false,
+              "cost": "",
+              "subTests": [
+                {
+                  "id": "06_06_02_01",
+                  "testName": "AP",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-SHOULDER With ARM-LEFT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_06_02_02",
+                  "testName": "LATERAL",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-SHOULDER With ARM-LEFT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_06_02_03",
+                  "testName": "AP-LATERAL",
+                  "isTest": true,
+                  "cost": "300",
+                  "categoryName": "X RAY-SHOULDER With ARM-LEFT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "06_07",
+          "testName": "ARM with ELBOW",
+          "isTest": false,
+          "cost": "",
+          "subTests": [
+            {
+              "id": "06_07_01",
+              "testName": "RIGHT",
+              "isTest": false,
+              "cost": "",
+              "subTests": [
+                {
+                  "id": "06_07_01_01",
+                  "testName": "AP",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-ARM with ELBOW-RIGHT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_07_01_02",
+                  "testName": "LATERAL",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-ARM with ELBOW-RIGHT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_07_01_03",
+                  "testName": "AP-LATERAL",
+                  "isTest": true,
+                  "cost": "300",
+                  "categoryName": "X RAY-ARM with ELpriBOW-RIGHT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                }
+              ]
+            },
+            {
+              "id": "06_07_02",
+              "testName": "LEFT",
+              "isTest": false,
+              "cost": "",
+              "subTests": [
+                {
+                  "id": "06_07_02_01",
+                  "testName": "AP",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-ARM with ELBOW-LEFT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_07_02_02",
+                  "testName": "LATERAL",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-ARM with ELBOW-LEFT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_07_02_03",
+                  "testName": "AP-LATERAL",
+                  "isTest": true,
+                  "cost": "300",
+                  "categoryName": "X RAY-ARM with ELBOW-LEFT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "06_08",
+          "testName": "ELBOW with FOREARM",
+          "isTest": false,
+          "cost": "",
+          "subTests": [
+            {
+              "id": "06_08_01",
+              "testName": "RIGHT",
+              "isTest": false,
+              "cost": "",
+              "subTests": [
+                {
+                  "id": "06_08_01_01",
+                  "testName": "AP",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-ELBOW with FOREARM-RIGHT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_08_01_02",
+                  "testName": "LATERAL",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-ELBOW with FOREARM-RIGHT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_08_01_03",
+                  "testName": "AP-LATERAL",
+                  "isTest": true,
+                  "cost": "300",
+                  "categoryName": "X RAY-ELBOW with FOREARM-RIGHT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                }
+              ]
+            },
+            {
+              "id": "06_08_02",
+              "testName": "LEFT",
+              "isTest": false,
+              "cost": "",
+              "subTests": [
+                {
+                  "id": "06_08_02_01",
+                  "testName": "AP",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-ELBOW with FOREARM-LEFT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_08_02_02",
+                  "testName": "LATERAL",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-ELBOW with FOREARM-LEFT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_08_02_03",
+                  "testName": "AP-LATERAL",
+                  "isTest": true,
+                  "cost": "300",
+                  "categoryName": "X RAY-ELBOW with FOREARM-LEFT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "06_09",
+          "testName": "FOREARM,HAND with WRIST",
+          "isTest": false,
+          "cost": "",
+          "subTests": [
+            {
+              "id": "06_09_01",
+              "testName": "RIGHT",
+              "isTest": false,
+              "cost": "",
+              "subTests": [
+                {
+                  "id": "06_09_01_01",
+                  "testName": "AP",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-FOREARM,HAND with WRIST-RIGHT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_09_01_02",
+                  "testName": "LATERAL",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-FOREARM,HAND with WRIST-RIGHT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_09_01_03",
+                  "testName": "AP-LATERAL",
+                  "isTest": true,
+                  "cost": "300",
+                  "categoryName": "X RAY-FOREARM,HAND with WRIST-RIGHT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                }
+              ]
+            },
+            {
+              "id": "06_09_02",
+              "testName": "LEFT",
+              "isTest": false,
+              "cost": "",
+              "subTests": [
+                {
+                  "id": "06_09_02_01",
+                  "testName": "AP",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-FOREARM,HAND with WRIST-LEFT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_09_02_02",
+                  "testName": "LATERAL",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-FOREARM,HAND with WRIST-LEFT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_09_02_03",
+                  "testName": "AP-LATERAL",
+                  "isTest": true,
+                  "cost": "300",
+                  "categoryName": "X RAY-FOREARM,HAND with WRIST-LEFT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "06_10",
+          "testName": "FOREARM",
+          "isTest": false,
+          "cost": "",
+          "subTests": [
+            {
+              "id": "06_10_01",
+              "testName": "RIGHT",
+              "isTest": false,
+              "cost": "",
+              "subTests": [
+                {
+                  "id": "06_10_01_01",
+                  "testName": "AP",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-FOREARM-RIGHT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_10_01_02",
+                  "testName": "LATERAL",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-FOREARM-RIGHT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_10_01_03",
+                  "testName": "AP-LATERAL",
+                  "isTest": true,
+                  "cost": "300",
+                  "categoryName": "X RAY-FOREARM-RIGHT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                }
+              ]
+            },
+            {
+              "id": "06_10_02",
+              "testName": "LEFT",
+              "isTest": false,
+              "cost": "",
+              "subTests": [
+                {
+                  "id": "06_10_02_01",
+                  "testName": "AP",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-FOREARM-LEFT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_10_02_02",
+                  "testName": "LATERAL",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-FOREARM-LEFT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_10_02_03",
+                  "testName": "AP-LATERAL",
+                  "isTest": true,
+                  "cost": "300",
+                  "categoryName": "X RAY-FOREARM-LEFT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "06_11",
+          "testName": "FOREARM with WRIST",
+          "isTest": false,
+          "cost": "",
+          "subTests": [
+            {
+              "id": "06_11_01",
+              "testName": "RIGHT",
+              "isTest": false,
+              "cost": "",
+              "subTests": [
+                {
+                  "id": "06_11_01_01",
+                  "testName": "AP",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-FOREARM with WRIST-RIGHT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_11_01_02",
+                  "testName": "LATERAL",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-FOREARM with WRIST-RIGHT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_11_01_03",
+                  "testName": "AP-LATERAL",
+                  "isTest": true,
+                  "cost": "300",
+                  "categoryName": "X RAY-FOREARM with WRIST-RIGHT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                }
+              ]
+            },
+            {
+              "id": "06_11_02",
+              "testName": "LEFT",
+              "isTest": false,
+              "cost": "",
+              "subTests": [
+                {
+                  "id": "06_11_02_01",
+                  "testName": "AP",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-FOREARM with WRIST-LEFT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_11_02_02",
+                  "testName": "LATERAL",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-FOREARM with WRIST-LEFT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_11_02_03",
+                  "testName": "AP-LATERAL",
+                  "isTest": true,
+                  "cost": "300",
+                  "categoryName": "X RAY-FOREARM with WRIST-LEFT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "06_12",
+          "testName": "HAND",
+          "isTest": false,
+          "cost": "",
+          "subTests": [
+            {
+              "id": "06_12_01",
+              "testName": "RIGHT",
+              "isTest": false,
+              "cost": "",
+              "subTests": [
+                {
+                  "id": "06_12_01_01",
+                  "testName": "AP",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-HAND-RIGHT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_12_01_02",
+                  "testName": "LATERAL",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-HAND-RIGHT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_12_01_03",
+                  "testName": "AP-LATERAL",
+                  "isTest": true,
+                  "cost": "300",
+                  "categoryName": "X RAY-HAND-RIGHT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                }
+              ]
+            },
+            {
+              "id": "06_12_02",
+              "testName": "LEFT",
+              "isTest": false,
+              "cost": "",
+              "subTests": [
+                {
+                  "id": "06_12_02_01",
+                  "testName": "AP",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-HAND-LEFT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_12_02_02",
+                  "testName": "LATERAL",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-HAND-LEFT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_12_02_03",
+                  "testName": "AP-LATERAL",
+                  "isTest": true,
+                  "cost": "300",
+                  "categoryName": "X RAY-HAND-LEFT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "06_13",
+          "testName": "HAND with WRIST",
+          "isTest": false,
+          "cost": "",
+          "subTests": [
+            {
+              "id": "06_13_01",
+              "testName": "RIGHT",
+              "isTest": false,
+              "cost": "",
+              "subTests": [
+                {
+                  "id": "06_13_01_01",
+                  "testName": "AP",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-HAND with WRIST-RIGHT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_13_01_02",
+                  "testName": "LATERAL",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-HAND with WRIST-RIGHT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_13_01_03",
+                  "testName": "AP-LATERAL",
+                  "isTest": true,
+                  "cost": "300",
+                  "categoryName": "X RAY-HAND with WRIST-RIGHT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                }
+              ]
+            },
+            {
+              "id": "06_13_02",
+              "testName": "LEFT",
+              "isTest": false,
+              "cost": "",
+              "subTests": [
+                {
+                  "id": "06_13_02_01",
+                  "testName": "AP",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-HAND with WRIST-LEFT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_13_02_02",
+                  "testName": "LATERAL",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-HAND with WRIST-LEFT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_13_02_03",
+                  "testName": "AP-LATERAL",
+                  "isTest": true,
+                  "cost": "300",
+                  "categoryName": "X RAY-HAND with WRIST-LEFT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "06_14",
+          "testName": "ABDOMEN",
+          "isTest": false,
+          "cost": "",
+          "subTests": [
+            {
+              "id": "06_14_01",
+              "testName": "ERECT POSITION",
+              "isTest": true,
+              "cost": "200",
+              "categoryName": "X RAY-ABDOMEN",
+              "subTests": [],
+              "report": "THIRD_PARTY",
+              "whatsappCost": 100
+            }
+          ]
+        },
+        {
+          "id": "06_15",
+          "testName": "K U B ",
+          "isTest": false,
+          "cost": "",
+          "subTests": [
+            {
+              "id": "06_15_01",
+              "testName": "RIGHT",
+              "isTest": true,
+              "cost": "200",
+              "categoryName": "X RAY-K U B-RIGHT",
+              "subTests": [],
+              "report": "THIRD_PARTY",
+              "whatsappCost": 100
+            },
+            {
+              "id": "06_15_02",
+              "testName": "LEFT",
+              "isTest": true,
+              "cost": "200",
+              "categoryName": "X RAY-K U B-LEFT",
+              "subTests": [],
+              "report": "THIRD_PARTY",
+              "whatsappCost": 100
+            }
+          ]
+        },
+        {
+          "id": "06_16",
+          "testName": "THORACO-LUMBAR SPINE",
+          "isTest": false,
+          "cost": "",
+          "subTests": [
+            {
+              "id": "06_16_01",
+              "testName": "AP",
+              "isTest": true,
+              "cost": "200",
+              "categoryName": "X RAY-THORACO-LUMBAR SPINE",
+              "subTests": [],
+              "report": "THIRD_PARTY",
+              "whatsappCost": 100
+            },
+            {
+              "id": "06_16_02",
+              "testName": "LATERAL",
+              "isTest": true,
+              "cost": "200",
+              "categoryName": "X RAY-THORACO-LUMBAR SPINE",
+              "subTests": [],
+              "report": "THIRD_PARTY",
+              "whatsappCost": 100
+            },
+            {
+              "id": "06_16_03",
+              "testName": "AP-LATERAL",
+              "isTest": true,
+              "cost": "300",
+              "categoryName": "X RAY-THORACO-LUMBAR SPINE",
+              "subTests": [],
+              "report": "THIRD_PARTY",
+              "whatsappCost": 100
+            }
+          ]
+        },
+        {
+          "id": "06_17",
+          "testName": "LUMBAR SPINE",
+          "isTest": false,
+          "cost": "",
+          "subTests": [
+            {
+              "id": "06_17_01",
+              "testName": "AP",
+              "isTest": true,
+              "cost": "200",
+              "categoryName": "X RAY-LUMBAR SPINE",
+              "subTests": [],
+              "report": "THIRD_PARTY",
+              "whatsappCost": 100
+            },
+            {
+              "id": "06_17_02",
+              "testName": "LATERAL",
+              "isTest": true,
+              "cost": "200",
+              "categoryName": "X RAY-LUMBAR SPINE",
+              "subTests": [],
+              "whatsappCost": 100
+            },
+            {
+              "id": "06_17_03",
+              "testName": "AP-LATERAL",
+              "isTest": true,
+              "cost": "300",
+              "categoryName": "X RAY-LUMBAR SPINE",
+              "subTests": [],
+              "report": "THIRD_PARTY",
+              "whatsappCost": 100
+            }
+          ]
+        },
+        {
+          "id": "06_18",
+          "testName": "LUMB0 - SACRAL SPINE",
+          "isTest": false,
+          "cost": "",
+          "subTests": [
+            {
+              "id": "06_18_01",
+              "testName": "AP",
+              "isTest": true,
+              "cost": "200",
+              "categoryName": "X RAY-LUMB0 - SACRAL SPINE",
+              "subTests": [],
+              "report": "THIRD_PARTY",
+              "whatsappCost": 100
+            },
+            {
+              "id": "06_18_02",
+              "testName": "LATERAL",
+              "isTest": true,
+              "cost": "200",
+              "categoryName": "X RAY-LUMB0 - SACRAL SPINE",
+              "subTests": [],
+              "report": "THIRD_PARTY",
+              "whatsappCost": 100
+            },
+            {
+              "id": "06_18_03",
+              "testName": "AP-LATERAL",
+              "isTest": true,
+              "cost": "300",
+              "categoryName": "X RAY-LUMB0 - SACRAL SPINE",
+              "subTests": [],
+              "report": "THIRD_PARTY",
+              "whatsappCost": 100
+            }
+          ]
+        },
+        {
+          "id": "06_19",
+          "testName": "COCYX",
+          "isTest": false,
+          "cost": "",
+          "subTests": [
+            {
+              "id": "06_19_01",
+              "testName": "AP",
+              "isTest": true,
+              "cost": "200",
+              "categoryName": "X RAY-COCYX",
+              "subTests": [],
+              "report": "THIRD_PARTY",
+              "whatsappCost": 100
+            },
+            {
+              "id": "06_19_02",
+              "testName": "LATERAL",
+              "isTest": true,
+              "cost": "200",
+              "categoryName": "X RAY-COCYX",
+              "subTests": [],
+              "report": "THIRD_PARTY",
+              "whatsappCost": 100
+            },
+            {
+              "id": "06_19_03",
+              "testName": "AP-LATERAL",
+              "isTest": true,
+              "cost": "300",
+              "categoryName": "X RAY-COCYX",
+              "subTests": [],
+              "report": "THIRD_PARTY",
+              "whatsappCost": 100
+            }
+          ]
+        },
+        {
+          "id": "06_20",
+          "testName": "PELVIS with Both HIP JOINTS",
+          "isTest": false,
+          "cost": "",
+          "subTests": [
+            {
+              "id": "06_20_01",
+              "testName": "AP",
+              "isTest": true,
+              "cost": "200",
+              "categoryName": "X RAY-PELVIS with Both HIP JOINTS",
+              "subTests": [],
+              "report": "THIRD_PARTY",
+              "whatsappCost": 100
+            }
+          ]
+        },
+        {
+          "id": "06_21",
+          "testName": "HIP JOINT",
+          "isTest": false,
+          "cost": "",
+          "subTests": [
+            {
+              "id": "06_21_01",
+              "testName": "RIGHT",
+              "isTest": false,
+              "cost": "",
+              "subTests": [
+                {
+                  "id": "06_21_01_01",
+                  "testName": "AP",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-HIP JOINT-RIGHT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_21_01_02",
+                  "testName": "Oblique View",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-HIP JOINT-RIGHT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_21_01_03",
+                  "testName": "AP-Oblique View",
+                  "isTest": true,
+                  "cost": "300",
+                  "categoryName": "X RAY-HIP JOINT-RIGHT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                }
+              ]
+            },
+            {
+              "id": "06_21_02",
+              "testName": "LEFT",
+              "isTest": false,
+              "cost": "",
+              "subTests": [
+                {
+                  "id": "06_21_02_01",
+                  "testName": "AP",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-HIP JOINT-LEFT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_21_02_02",
+                  "testName": "Oblique View",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-HIP JOINT-LEFT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_21_02_03",
+                  "testName": "AP-Oblique View",
+                  "isTest": true,
+                  "cost": "300",
+                  "categoryName": "X RAY-HIP JOINT-LEFT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "06_22",
+          "testName": "HIP Joint With Femur",
+          "isTest": false,
+          "cost": "",
+          "subTests": [
+            {
+              "id": "06_22_01",
+              "testName": "RIGHT",
+              "isTest": false,
+              "cost": "",
+              "subTests": [
+                {
+                  "id": "06_22_01_01",
+                  "testName": "AP",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-HIP Joint With Femur-RIGHT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_22_01_02",
+                  "testName": "LATERAL",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-HIP Joint With Femur-RIGHT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_22_01_03",
+                  "testName": "AP-LATERAL",
+                  "isTest": true,
+                  "cost": "300",
+                  "categoryName": "X RAY-HIP Joint With Femur-RIGHT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                }
+              ]
+            },
+            {
+              "id": "06_22_02",
+              "testName": "LEFT",
+              "isTest": false,
+              "cost": "",
+              "subTests": [
+                {
+                  "id": "06_22_02_01",
+                  "testName": "AP",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-HIP Joint With Femur-LEFT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_22_02_02",
+                  "testName": "LATERAL",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-HIP Joint With Femur-LEFT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_22_02_03",
+                  "testName": "AP-LATERAL",
+                  "isTest": true,
+                  "cost": "300",
+                  "categoryName": "X RAY-HIP Joint With Femur-LEFT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "06_23",
+          "testName": "FEMUR with KNEE JOINT",
+          "isTest": false,
+          "cost": "",
+          "subTests": [
+            {
+              "id": "06_23_01",
+              "testName": "RIGHT",
+              "isTest": false,
+              "cost": "",
+              "subTests": [
+                {
+                  "id": "06_23_01_01",
+                  "testName": "AP",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-FEMUR with KNEE JOINT-RIGHT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_23_01_02",
+                  "testName": "LATERAL",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-FEMUR with KNEE JOINT-RIGHT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_23_01_03",
+                  "testName": "AP-LATERAL",
+                  "isTest": true,
+                  "cost": "300",
+                  "categoryName": "X RAY-FEMUR with KNEE JOINT-RIGHT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                }
+              ]
+            },
+            {
+              "id": "06_23_02",
+              "testName": "LEFT",
+              "isTest": false,
+              "cost": "",
+              "subTests": [
+                {
+                  "id": "06_23_02_01",
+                  "testName": "AP",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-FEMUR with KNEE JOINT-LEFT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_23_02_02",
+                  "testName": "LATERAL",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-FEMUR with KNEE JOINT-LEFT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_23_02_03",
+                  "testName": "AP-LATERAL",
+                  "isTest": true,
+                  "cost": "300",
+                  "categoryName": "X RAY-FEMUR with KNEE JOINT-LEFT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "06_24",
+          "testName": "KNEE JOINT with LEG",
+          "isTest": false,
+          "cost": "",
+          "subTests": [
+            {
+              "id": "06_24_01",
+              "testName": "RIGHT",
+              "isTest": false,
+              "cost": "",
+              "subTests": [
+                {
+                  "id": "06_24_01_01",
+                  "testName": "AP",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-KNEE JOINT with LEG-RIGHT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_24_01_02",
+                  "testName": "LATERAL",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-KNEE JOINT with LEG-RIGHT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_24_01_03",
+                  "testName": "AP-LATERAL",
+                  "isTest": true,
+                  "cost": "300",
+                  "categoryName": "X RAY-KNEE JOINT with LEG-RIGHT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                }
+              ]
+            },
+            {
+              "id": "06_24_02",
+              "testName": "LEFT",
+              "isTest": false,
+              "cost": "",
+              "subTests": [
+                {
+                  "id": "06_24_02_01",
+                  "testName": "AP",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-KNEE JOINT with LEG-LEFT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_24_02_02",
+                  "testName": "LATERAL",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-KNEE JOINT with LEG-LEFT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_24_02_03",
+                  "testName": "AP-LATERAL",
+                  "isTest": true,
+                  "cost": "300",
+                  "categoryName": "X RAY-KNEE JOINT with LEG-LEFT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "06_25",
+          "testName": "LEG, ANKLE with FOOT",
+          "isTest": false,
+          "cost": "",
+          "subTests": [
+            {
+              "id": "06_25_01",
+              "testName": "RIGHT",
+              "isTest": false,
+              "cost": "",
+              "subTests": [
+                {
+                  "id": "06_25_01_01",
+                  "testName": "AP",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-LEG, ANKLE with FOOT-RIGHT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_25_01_02",
+                  "testName": "LATERAL",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-LEG, ANKLE with FOOT-RIGHT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_25_01_03",
+                  "testName": "AP-LATERAL",
+                  "isTest": true,
+                  "cost": "300",
+                  "categoryName": "X RAY-LEG, ANKLE with FOOT-RIGHT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                }
+              ]
+            },
+            {
+              "id": "06_25_02",
+              "testName": "LEFT",
+              "isTest": false,
+              "cost": "",
+              "subTests": [
+                {
+                  "id": "06_25_02_01",
+                  "testName": "AP",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-LEG, ANKLE with FOOT-LEFT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_25_02_02",
+                  "testName": "LATERAL",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-LEG, ANKLE with FOOT-LEFT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_25_02_03",
+                  "testName": "AP-LATERAL",
+                  "isTest": true,
+                  "cost": "300",
+                  "categoryName": "X RAY-LEG, ANKLE with FOOT-LEFT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "06_26",
+          "testName": "LEG, With ANKLE",
+          "isTest": false,
+          "cost": "",
+          "subTests": [
+            {
+              "id": "06_26_01",
+              "testName": "RIGHT",
+              "isTest": false,
+              "cost": "",
+              "subTests": [
+                {
+                  "id": "06_26_01_01",
+                  "testName": "AP",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-LEG, With ANKLE-RIGHT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_26_01_02",
+                  "testName": "LATERAL",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-LEG, With ANKLE-RIGHT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_26_01_03",
+                  "testName": "AP-LATERAL",
+                  "isTest": true,
+                  "cost": "300",
+                  "categoryName": "X RAY-LEG, With ANKLE-RIGHT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                }
+              ]
+            },
+            {
+              "id": "06_26_02",
+              "testName": "LEFT",
+              "isTest": false,
+              "cost": "",
+              "subTests": [
+                {
+                  "id": "06_26_02_01",
+                  "testName": "AP",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-LEG, With ANKLE-LEFT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_26_02_02",
+                  "testName": "LATERAL",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-LEG, With ANKLE-LEFT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_26_02_03",
+                  "testName": "AP-LATERAL",
+                  "isTest": true,
+                  "cost": "300",
+                  "categoryName": "X RAY-LEG, With ANKLE-LEFT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "06_27",
+          "testName": "ANKLE with FOOT",
+          "isTest": false,
+          "cost": "",
+          "subTests": [
+            {
+              "id": "06_27_01",
+              "testName": "RIGHT",
+              "isTest": false,
+              "cost": "",
+              "subTests": [
+                {
+                  "id": "06_27_01_01",
+                  "testName": "AP",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-ANKLE with FOOT-RIGHT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_27_01_02",
+                  "testName": "LATERAL",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-ANKLE with FOOT-RIGHT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_27_01_03",
+                  "testName": "AP-LATERAL",
+                  "isTest": true,
+                  "cost": "300",
+                  "categoryName": "X RAY-ANKLE with FOOT-RIGHT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                }
+              ]
+            },
+            {
+              "id": "06_27_02",
+              "testName": "LEFT",
+              "isTest": false,
+              "cost": "",
+              "subTests": [
+                {
+                  "id": "06_27_02_01",
+                  "testName": "AP",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-ANKLE with FOOT-LEFT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_27_02_02",
+                  "testName": "LATERAL",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-ANKLE with FOOT-LEFT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_27_02_03",
+                  "testName": "AP-LATERAL",
+                  "isTest": true,
+                  "cost": "300",
+                  "categoryName": "X RAY-ANKLE with FOOT-LEFT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "06_28",
+          "testName": "FOOT",
+          "isTest": false,
+          "cost": "",
+          "subTests": [
+            {
+              "id": "06_28_01",
+              "testName": "RIGHT",
+              "isTest": false,
+              "cost": "",
+              "subTests": [
+                {
+                  "id": "06_28_01_01",
+                  "testName": "AP",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-FOOT-RIGHT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_28_01_02",
+                  "testName": "LATERAL",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-FOOT-RIGHT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_28_01_03",
+                  "testName": "AP-LATERAL",
+                  "isTest": true,
+                  "cost": "300",
+                  "categoryName": "X RAY-FOOT-RIGHT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                }
+              ]
+            },
+            {
+              "id": "06_28_02",
+              "testName": "LEFT",
+              "isTest": false,
+              "cost": "",
+              "subTests": [
+                {
+                  "id": "06_28_02_01",
+                  "testName": "AP",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-FOOT-LEFT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_28_02_02",
+                  "testName": "LATERAL",
+                  "isTest": true,
+                  "cost": "200",
+                  "categoryName": "X RAY-FOOT-LEFT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                },
+                {
+                  "id": "06_28_02_03",
+                  "testName": "AP-LATERAL",
+                  "isTest": true,
+                  "cost": "300",
+                  "categoryName": "X RAY-FOOT-LEFT",
+                  "subTests": [],
+                  "report": "THIRD_PARTY",
+                  "whatsappCost": 100
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "07",
+      "testName": "ULTRASOUND",
+      "isTest": false,
+      "cost": "",
+      "subTests": [
+        {
+          "id": "07_01",
+          "testName": "ABDOMEN",
+          "isTest": true,
+          "cost": 500,
+          "categoryName": "ULTRASOUND",
+          "subTests": [],
+          "report": "THIRD_PARTY"
+        },
+        {
+          "id": "07_02",
+          "testName": "PELVIS",
+          "isTest": true,
+          "cost": 500,
+          "categoryName": "ULTRASOUND",
+          "subTests": [],
+          "report": "THIRD_PARTY"
+        },
+        {
+          "id": "07_03",
+          "testName": "ABDOMEN and PELVIS",
+          "isTest": true,
+          "cost": 500,
+          "categoryName": "ULTRASOUND",
+          "subTests": [],
+          "report": "THIRD_PARTY"
+        },
+        {
+          "id": "07_04",
+          "testName": "TVS",
+          "isTest": true,
+          "cost": 550,
+          "categoryName": "ULTRASOUND",
+          "subTests": [],
+          "report": "THIRD_PARTY"
+        },
+        {
+          "id": "07_05",
+          "testName": "RECTAL",
+          "isTest": true,
+          "cost": 550,
+          "categoryName": "ULTRASOUND",
+          "subTests": [],
+          "report": "THIRD_PARTY"
+        },
+        {
+          "id": "07_06",
+          "testName": "2D ECHO",
+          "isTest": true,
+          "cost": 750,
+          "categoryName": "ULTRASOUND",
+          "subTests": [],
+          "report": "THIRD_PARTY"
+        },
+        {
+          "id": "07_07",
+          "testName": "COLOR DOPPLER",
+          "isTest": false,
+          "cost": "",
+          "subTests": [
+            {
+              "id": "07_07_01",
+              "testName": "UPPER LIMB",
+              "isTest": false,
+              "cost": "",
+              "subTests": [
+                {
+                  "id": "07_07_01_01",
+                  "testName": "LEFT",
+                  "isTest": true,
+                  "cost": "",
+                  "categoryName": "UPPER LIMB",
+                  "subTests": [],
+                  "report": "THIRD_PARTY"
+                },
+                {
+                  "id": "07_07_01_02",
+                  "testName": "RIGHT",
+                  "isTest": true,
+                  "cost": "",
+                  "categoryName": "UPPER LIMB",
+                  "subTests": [],
+                  "report": "THIRD_PARTY"
+                }
+              ]
+            },
+            {
+              "id": "07_07_02",
+              "testName": "UPPER LIMB",
+              "isTest": true,
+              "cost": "",
+              "categoryName": "UPPER LIMB",
+              "subTests": [],
+              "report": "THIRD_PARTY"
+            },
+            {
+              "id": "07_07_03",
+              "testName": "LOWER LIMB",
+              "isTest": false,
+              "cost": "",
+              "subTests": [
+                {
+                  "id": "07_07_03_01",
+                  "testName": "LEFT",
+                  "isTest": true,
+                  "cost": "",
+                  "categoryName": "LOWER LIMB",
+                  "subTests": [],
+                  "report": "THIRD_PARTY"
+                },
+                {
+                  "id": "07_07_03_02",
+                  "testName": "RIGHT",
+                  "isTest": true,
+                  "cost": "",
+                  "categoryName": "LOWER LIMB",
+                  "subTests": [],
+                  "report": "THIRD_PARTY"
+                }
+              ]
+            },
+            {
+              "id": "07_07_04",
+              "testName": "LOWER LIMB",
+              "isTest": true,
+              "cost": "",
+              "categoryName": "LOWER LIMB",
+              "subTests": [],
+              "report": "THIRD_PARTY"
+            },
+            {
+              "id": "07_07_05",
+              "testName": "RENAL DOPPLER",
+              "isTest": false,
+              "cost": "",
+              "subTests": [
+                {
+                  "id": "07_07_05_01",
+                  "testName": "LEFT",
+                  "isTest": true,
+                  "cost": "",
+                  "categoryName": "RENAL DOPPLER",
+                  "subTests": [],
+                  "report": "THIRD_PARTY"
+                },
+                {
+                  "id": "07_07_05_02",
+                  "testName": "RIGHT",
+                  "isTest": true,
+                  "cost": "",
+                  "categoryName": "RENAL DOPPLER",
+                  "subTests": [],
+                  "report": "THIRD_PARTY"
+                }
+              ]
+            },
+            {
+              "id": "07_07_06",
+              "testName": "RENAL DOPPLER",
+              "isTest": true,
+              "cost": "",
+              "subTests": [],
+              "report": "THIRD_PARTY"
+            },
+            {
+              "id": "07_07_07",
+              "testName": "CAROTID DOPPLER",
+              "isTest": true,
+              "cost": "",
+              "subTests": [],
+              "report": "THIRD_PARTY"
+            }
+          ]
+        },
+        {
+          "id": "07_08",
+          "testName": "OTHERS",
+          "isTest": true,
+          "cost": "",
+          "categoryName": "OTHERS",
+          "subTests": [],
+          "report": "THIRD_PARTY"
+        }
+      ]
+    },
+    {
+      "id": "08",
+      "testName": "FNAC",
+      "isTest": true,
+      "cost": "",
+      "categoryName": "FNAC",
+      "subTests": [],
+      "report": "THIRD_PARTY"
+    },
+    {
+      "id": "09",
+      "testName": "BIOPSY",
+      "isTest": false,
+      "cost": "",
+      "subTests": [
+        {
+          "id": "09_01",
+          "testName": "D and C",
+          "isTest": true,
+          "cost": 500,
+          "categoryName": "BIOPSY",
+          "subTests": [],
+          "report": "THIRD_PARTY"
+        },
+        {
+          "id": "09_02",
+          "testName": "UTERUS",
+          "isTest": true,
+          "cost": 500,
+          "categoryName": "BIOPSY",
+          "subTests": [],
+          "report": "THIRD_PARTY"
+        },
+        {
+          "id": "09_03",
+          "testName": "OVARIES",
+          "isTest": true,
+          "cost": 500,
+          "categoryName": "BIOPSY",
+          "subTests": [],
+          "report": "THIRD_PARTY"
+        },
+        {
+          "id": "09_04",
+          "testName": "CERVIX",
+          "isTest": true,
+          "cost": 500,
+          "categoryName": "BIOPSY",
+          "subTests": [],
+          "report": "THIRD_PARTY"
+        },
+        {
+          "id": "09_05",
+          "testName": "APPENDIX",
+          "isTest": true,
+          "cost": 500,
+          "categoryName": "BIOPSY",
+          "subTests": [],
+          "report": "THIRD_PARTY"
+        },
+        {
+          "id": "09_06",
+          "testName": "OTHERS",
+          "isTest": true,
+          "cost": 500,
+          "categoryName": "BIOPSY",
+          "subTests": [],
+          "report": "THIRD_PARTY"
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "testName": "CT SCAN",
+      "isTest": false,
+      "cost": "",
+      "subTests": [
+        {
+          "id": "10_01",
+          "testName": "BRAIN",
+          "isTest": true,
+          "cost": "",
+          "categoryName": "CT SCAN",
+          "subTests": [],
+          "report": "THIRD_PARTY"
+        },
+        {
+          "id": "10_02",
+          "testName": "PNS",
+          "isTest": false,
+          "cost": "",
+          "subTests": []
+        },
+        {
+          "id": "10_03",
+          "testName": "CERVICAL SPINE",
+          "isTest": true,
+          "cost": "",
+          "categoryName": "CT SCAN",
+          "subTests": [],
+          "report": "THIRD_PARTY"
+        },
+        {
+          "id": "10_04",
+          "testName": "SHOULDER - LEFT",
+          "isTest": true,
+          "cost": "",
+          "categoryName": "CT SCAN",
+          "subTests": [],
+          "report": "THIRD_PARTY"
+        },
+        {
+          "id": "10_05",
+          "testName": "SHOULDER - RIGHT",
+          "isTest": true,
+          "cost": "",
+          "categoryName": "CT SCAN",
+          "subTests": [],
+          "report": "THIRD_PARTY"
+        },
+        {
+          "id": "10_06",
+          "testName": "ARM - RIGHT",
+          "isTest": true,
+          "cost": "",
+          "categoryName": "CT SCAN",
+          "subTests": [],
+          "report": "THIRD_PARTY"
+        },
+        {
+          "id": "10_07",
+          "testName": "ARM - LEFT",
+          "isTest": true,
+          "cost": "",
+          "categoryName": "CT SCAN",
+          "subTests": [],
+          "report": "THIRD_PARTY"
+        },
+        {
+          "id": "10_08",
+          "testName": "ELBOW - RIGHT",
+          "isTest": true,
+          "cost": "",
+          "categoryName": "CT SCAN",
+          "subTests": [],
+          "report": "THIRD_PARTY"
+        },
+        {
+          "id": "10_09",
+          "testName": "ELBOW - LEFT",
+          "isTest": true,
+          "cost": "",
+          "categoryName": "CT SCAN",
+          "subTests": [],
+          "report": "THIRD_PARTY"
+        },
+        {
+          "id": "10_10",
+          "testName": "FORE ARM - RIGHT",
+          "isTest": true,
+          "cost": "",
+          "categoryName": "CT SCAN",
+          "subTests": [],
+          "report": "THIRD_PARTY"
+        },
+        {
+          "id": "10_11",
+          "testName": "FORE ARM - LEFT",
+          "isTest": true,
+          "cost": "",
+          "categoryName": "CT SCAN",
+          "subTests": [],
+          "report": "THIRD_PARTY"
+        },
+        {
+          "id": "10_12",
+          "testName": "WRIST - RIGHT",
+          "isTest": true,
+          "cost": "",
+          "categoryName": "CT SCAN",
+          "subTests": [],
+          "report": "THIRD_PARTY"
+        },
+        {
+          "id": "10_13",
+          "testName": "WRIST- LEFT",
+          "isTest": true,
+          "cost": "",
+          "categoryName": "CT SCAN",
+          "subTests": [],
+          "report": "THIRD_PARTY"
+        },
+        {
+          "id": "10_14",
+          "testName": "HAND - RIGHT",
+          "isTest": true,
+          "cost": "",
+          "categoryName": "CT SCAN",
+          "subTests": [],
+          "report": "THIRD_PARTY"
+        },
+        {
+          "id": "10_15",
+          "testName": "HAND - LEFT",
+          "isTest": true,
+          "cost": "",
+          "categoryName": "CT SCAN",
+          "subTests": [],
+          "report": "THIRD_PARTY"
+        },
+        {
+          "id": "10_16",
+          "testName": "THORAX",
+          "isTest": true,
+          "cost": "",
+          "categoryName": "CT SCAN",
+          "subTests": [],
+          "report": "THIRD_PARTY"
+        },
+        {
+          "id": "10_17",
+          "testName": "ABDOMEN",
+          "isTest": true,
+          "cost": "",
+          "categoryName": "CT SCAN",
+          "subTests": [],
+          "report": "THIRD_PARTY"
+        },
+        {
+          "id": "10_18",
+          "testName": "PELVIS",
+          "isTest": true,
+          "cost": "",
+          "categoryName": "CT SCAN",
+          "subTests": [],
+          "report": "THIRD_PARTY"
+        },
+        {
+          "id": "10_19",
+          "testName": "HIP JOINT - RIGHT",
+          "isTest": true,
+          "cost": "",
+          "categoryName": "CT SCAN",
+          "subTests": [],
+          "report": "THIRD_PARTY"
+        },
+        {
+          "id": "10_20",
+          "testName": "HIP JOINT - LEFT",
+          "isTest": true,
+          "cost": "",
+          "categoryName": "CT SCAN",
+          "subTests": [],
+          "report": "THIRD_PARTY"
+        },
+        {
+          "id": "10_21",
+          "testName": "THIGH - RIGHT",
+          "isTest": false,
+          "cost": "",
+          "subTests": []
+        },
+        {
+          "id": "10_22",
+          "testName": "THIGH - LEFT",
+          "isTest": false,
+          "cost": "",
+          "subTests": []
+        },
+        {
+          "id": "10_23",
+          "testName": "KNEE JOINT - RIGHT",
+          "isTest": true,
+          "cost": "",
+          "categoryName": "CT SCAN",
+          "subTests": [],
+          "report": "THIRD_PARTY"
+        },
+        {
+          "id": "10_24",
+          "testName": "KNEE JOINT - LEFT",
+          "isTest": true,
+          "cost": "",
+          "categoryName": "CT SCAN",
+          "subTests": [],
+          "report": "THIRD_PARTY"
+        },
+        {
+          "id": "10_25",
+          "testName": "LEG - RIGHT",
+          "isTest": true,
+          "cost": "",
+          "categoryName": "CT SCAN",
+          "subTests": [],
+          "report": "THIRD_PARTY"
+        },
+        {
+          "id": "10_26",
+          "testName": "LEG - LEFT",
+          "isTest": true,
+          "cost": "",
+          "categoryName": "CT SCAN",
+          "subTests": [],
+          "report": "THIRD_PARTY"
+        },
+        {
+          "id": "10_27",
+          "testName": "ANKLE JOINT - RIGHT",
+          "isTest": true,
+          "cost": "",
+          "categoryName": "CT SCAN",
+          "subTests": [],
+          "report": "THIRD_PARTY"
+        },
+        {
+          "id": "10_28",
+          "testName": "ANKLE JOINT - LEFT",
+          "isTest": true,
+          "cost": "",
+          "categoryName": "CT SCAN",
+          "subTests": [],
+          "report": "THIRD_PARTY"
+        },
+        {
+          "id": "10_29",
+          "testName": "FOOT - RIGHT",
+          "isTest": true,
+          "cost": "",
+          "categoryName": "CT SCAN",
+          "subTests": [],
+          "report": "THIRD_PARTY"
+        },
+        {
+          "id": "10_30",
+          "testName": "FOOT - LEFT",
+          "isTest": true,
+          "cost": "",
+          "categoryName": "CT SCAN",
+          "subTests": [],
+          "report": "THIRD_PARTY"
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "testName": "M R I SCAN",
+      "isTest": false,
+      "cost": "",
+      "subTests": [
+        {
+          "id": "11_01",
+          "testName": "BRAIN",
+          "isTest": true,
+          "cost": "",
+          "categoryName": "M R I SCAN",
+          "subTests": [],
+          "report": "THIRD_PARTY"
+        },
+        {
+          "id": "11_02",
+          "testName": "PNS",
+          "isTest": true,
+          "cost": "",
+          "categoryName": "M R I SCAN",
+          "subTests": [],
+          "report": "THIRD_PARTY"
+        },
+        {
+          "id": "11_03",
+          "testName": "CERVICAL SPINE",
+          "isTest": true,
+          "cost": "",
+          "categoryName": "M R I SCAN",
+          "subTests": [],
+          "report": "THIRD_PARTY"
+        },
+        {
+          "id": "11_04",
+          "testName": "SHOULDER",
+          "isTest": false,
+          "cost": "",
+          "subTests": [
+            {
+              "id": "11_04_01",
+              "testName": "RIGHT",
+              "isTest": true,
+              "cost": "",
+              "categoryName": "M R I SCAN-SHOULDER",
+              "subTests": [],
+              "report": "THIRD_PARTY"
+            },
+            {
+              "id": "11_04_02",
+              "testName": "LEFT",
+              "isTest": true,
+              "cost": "",
+              "categoryName": "M R I SCAN-SHOULDER",
+              "subTests": [],
+              "report": "THIRD_PARTY"
+            }
+          ]
+        },
+        {
+          "id": "11_05",
+          "testName": "ARM",
+          "isTest": false,
+          "cost": "",
+          "subTests": [
+            {
+              "id": "11_05_01",
+              "testName": "RIGHT",
+              "isTest": false,
+              "cost": "",
+              "subTests": []
+            },
+            {
+              "id": "11_05_02",
+              "testName": "LEFT",
+              "isTest": false,
+              "cost": "",
+              "subTests": []
+            }
+          ]
+        },
+        {
+          "id": "11_06",
+          "testName": "ELBOW",
+          "isTest": false,
+          "cost": "",
+          "subTests": [
+            {
+              "id": "11_06_01",
+              "testName": "RIGHT",
+              "isTest": false,
+              "cost": "",
+              "subTests": []
+            },
+            {
+              "id": "11_06_02",
+              "testName": "LEFT",
+              "isTest": false,
+              "cost": "",
+              "subTests": []
+            }
+          ]
+        },
+        {
+          "id": "11_07",
+          "testName": "FORE ARM",
+          "isTest": false,
+          "cost": "",
+          "subTests": [
+            {
+              "id": "11_07_01",
+              "testName": "RIGHT",
+              "isTest": false,
+              "cost": "",
+              "subTests": []
+            },
+            {
+              "id": "11_07_02",
+              "testName": "LEFT",
+              "isTest": false,
+              "cost": "",
+              "subTests": []
+            }
+          ]
+        },
+        {
+          "id": "11_08",
+          "testName": "WRIST",
+          "isTest": false,
+          "cost": "",
+          "subTests": [
+            {
+              "id": "11_08_01",
+              "testName": "RIGHT",
+              "isTest": false,
+              "cost": "",
+              "subTests": []
+            },
+            {
+              "id": "11_08_02",
+              "testName": "LEFT",
+              "isTest": false,
+              "cost": "",
+              "subTests": []
+            }
+          ]
+        },
+        {
+          "id": "11_09",
+          "testName": "HAND",
+          "isTest": false,
+          "cost": "",
+          "subTests": [
+            {
+              "id": "11_09_01",
+              "testName": "RIGHT",
+              "isTest": false,
+              "cost": "",
+              "subTests": []
+            },
+            {
+              "id": "11_09_02",
+              "testName": "LEFT",
+              "isTest": false,
+              "cost": "",
+              "subTests": []
+            }
+          ]
+        },
+        {
+          "id": "11_10",
+          "testName": "THORAX",
+          "isTest": false,
+          "cost": "",
+          "subTests": []
+        },
+        {
+          "id": "11_11",
+          "testName": "ABDOMEN",
+          "isTest": false,
+          "cost": "",
+          "subTests": []
+        },
+        {
+          "id": "11_12",
+          "testName": "L-S SPINE",
+          "isTest": false,
+          "cost": "",
+          "subTests": []
+        },
+        {
+          "id": "11_13",
+          "testName": "COCCYX",
+          "isTest": false,
+          "cost": "",
+          "subTests": []
+        },
+        {
+          "id": "11_14",
+          "testName": "PELVIS",
+          "isTest": false,
+          "cost": "",
+          "subTests": []
+        },
+        {
+          "id": "11_15",
+          "testName": "HIP JOINT",
+          "isTest": false,
+          "cost": "",
+          "subTests": [
+            {
+              "id": "11_15_01",
+              "testName": "RIGHT",
+              "isTest": true,
+              "cost": "",
+              "categoryName": "M R I SCAN-HIP JOINT",
+              "subTests": [],
+              "report": "THIRD_PARTY"
+            },
+            {
+              "id": "11_15_02",
+              "testName": "LEFT",
+              "isTest": false,
+              "cost": "",
+              "categoryName": "LEFT",
+              "subTests": []
+            }
+          ]
+        },
+        {
+          "id": "11_16",
+          "testName": "THIGH",
+          "isTest": false,
+          "cost": "",
+          "categoryName": "THIGH",
+          "subTests": [
+            {
+              "id": "11_16_01",
+              "testName": "RIGHT",
+              "isTest": false,
+              "cost": "",
+              "categoryName": "RIGHT",
+              "subTests": []
+            },
+            {
+              "id": "11_16_02",
+              "testName": "LEFT",
+              "isTest": false,
+              "cost": "",
+              "categoryName": "LEFT",
+              "subTests": []
+            }
+          ]
+        },
+        {
+          "id": "11_17",
+          "testName": "KNEE JOINT",
+          "isTest": false,
+          "cost": "",
+          "categoryName": "KNEE JOINT",
+          "subTests": [
+            {
+              "id": "11_17_01",
+              "testName": "RIGHT",
+              "isTest": false,
+              "cost": "",
+              "categoryName": "RIGHT",
+              "subTests": []
+            },
+            {
+              "id": "11_17_02",
+              "testName": "LEFT",
+              "isTest": false,
+              "cost": "",
+              "categoryName": "LEFT",
+              "subTests": []
+            }
+          ]
+        },
+        {
+          "id": "11_18",
+          "testName": "LEG",
+          "isTest": false,
+          "cost": "",
+          "categoryName": "LEG",
+          "subTests": [
+            {
+              "id": "11_18_01",
+              "testName": "RIGHT",
+              "isTest": false,
+              "cost": "",
+              "categoryName": "RIGHT",
+              "subTests": []
+            },
+            {
+              "id": "11_18_02",
+              "testName": "LEFT",
+              "isTest": false,
+              "cost": "",
+              "categoryName": "LEFT",
+              "subTests": []
+            }
+          ]
+        },
+        {
+          "id": "11_19",
+          "testName": "ANKLE JOINT",
+          "isTest": false,
+          "cost": "",
+          "categoryName": "ANKLE JOINT",
+          "subTests": [
+            {
+              "id": "11_19_01",
+              "testName": "RIGHT",
+              "isTest": false,
+              "cost": "",
+              "categoryName": "RIGHT",
+              "subTests": []
+            },
+            {
+              "id": "11_19_02",
+              "testName": "LEFT",
+              "isTest": false,
+              "cost": "",
+              "categoryName": "LEFT",
+              "subTests": []
+            }
+          ]
+        },
+        {
+          "id": "11_20",
+          "testName": "FOOT",
+          "isTest": false,
+          "cost": "",
+          "categoryName": "FOOT",
+          "subTests": [
+            {
+              "id": "11_20_01",
+              "testName": "RIGHT",
+              "isTest": false,
+              "cost": "",
+              "categoryName": "RIGHT",
+              "subTests": []
+            },
+            {
+              "id": "11_20_02",
+              "testName": "LEFT",
+              "isTest": false,
+              "cost": "",
+              "categoryName": "LEFT",
+              "subTests": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "testName": "PUS CULTURE AND SENSITIVITY",
+      "isTest": true,
+      "cost": 500,
+      "categoryName": "PUS CULTURE AND SENSITIVITY",
+      "subTests": [],
+      "report": "THIRD_PARTY"
+    },
+    {
+      "id": "13",
+      "testName": "STOOL EXAMINATION",
+      "isTest": true,
+      "cost": 200,
+      "categoryName": "STOOL EXAMINATION",
+      "subTests": [],
+      "report": "TEXT_AREA"
+    },
+    {
+      "id": "14",
+      "testName": "EOSINOPHIL",
+      "isTest": true,
+      "report": "TEXT_29",
+      "cost": "20",
+      "categoryName": "DIFFRENTIAL COUNT",
+      "subTests": [],
+      "parents": [
+        "DIFFRENTIAL COUNT"
+      ]
+    },
+    {
+      "id": "15",
+      "testName": "BASOPHIL",
+      "isTest": true,
+      "report": "TEXT_30",
+      "cost": "20",
+      "categoryName": "DIFFRENTIAL COUNT",
+      "subTests": [],
+      "parents": [
+        "DIFFRENTIAL COUNT"
+      ]
+    },
+    {
+      "id": "16",
+      "testName": "MONOCYTE",
+      "isTest": true,
+      "cost": "20",
+      "categoryName": "DIFFRENTIAL COUNT",
+      "subTests": [],
+      "parents": [
+        "DIFFRENTIAL COUNT"
+      ],
+      "report": "TEXT_AREA"
+    }
+  ]
+}

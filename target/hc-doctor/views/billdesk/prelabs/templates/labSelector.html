@@ -1,0 +1,16 @@
+<uib-tabset >
+    <uib-tab heading="Requisition Slip">
+    	<div class="vertical-scroll card-full-height-80 no-padding">
+			<requisition-slip on-check="selectedObject($test,$checkStatus)"></requisition-slip>
+		</div>
+	</uib-tab>
+	<uib-tab heading="Lab Search">
+		<div class="tree-selector child">
+			<input type="text" class="form-control form-field grid-md-12" ng-model="searchInput" placeholder="Search Labs" ng-change="onSearch(searchInput)"/>
+			<div class="vertical-scroll card-full-height-80">
+				<tree-node tree="filteredData" on-check="selectedObject($tests,$checkStatus)"></tree-node>
+			</div>
+			<div class="color-white" ng-if="!searchInput && !filteredData">Lab tests search</div>
+		</div>
+	</uib-tab>
+</uib-tabset>

@@ -1,0 +1,11 @@
+
+<div class="padding-5 " ng-repeat="lab in consolidatedLabs track by $index" ng-init="parentIdx = $index">
+	<div class="test-selector parent padding-5">{{lab.categoryName | tcCamelCase}}</div>
+	<div class="row no-padding">
+		<div class="grid-md-6 no-padding" ng-repeat="test in lab.tests track by $index">
+			<div class="test-selector child padding-5" ng-click="onCheckCallBack(test, true)" ng-if="test.id">
+				{{test.testName | tcCamelCase}}
+			</div>
+		</div>
+	</div>
+</div>

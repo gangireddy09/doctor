@@ -1,0 +1,245 @@
+<style>
+	.color-dark-orange{
+		color:#CA6F1E;
+	}
+	
+	.table tr td,.table tr th {
+		padding-left: 16px;
+		font-size:12px;
+	}
+	.hsptl-address{
+		padding-top:5px;
+	}
+	.hsptl-name{
+		font-weight:bold;
+		font-size:13.5px;
+	}
+	
+	.patient-card tr td,.patient-card tr th {
+		padding:1.8px !important;
+		border:none;
+		
+	}
+	.bordered{
+		border:1px solid lightgrey;
+	}
+	.patient-picture{
+		position: absolute;
+	    top: 5px;
+	    right: 6px;
+	    width: 100px;
+	    height: 110px;
+	}
+	.v-line{
+	    height: 110px;
+	    border-left: 1px solid lightgrey;
+	    position: absolute;
+	    left: 611px;
+	    top: 5px;
+	}
+	.mar-top-15{
+		margin-top:15px; 
+	}
+	
+	.mar-left-160{
+		margin-left: 160px;
+	}
+</style>
+<div class="row card ">
+	<table class="table  no-padding bordered">
+	<tr>
+		<td class="grid-md-6 no-padding">
+			<table class="grid-md-12  no-padding">
+				<tr>
+					<td class="grid-md-2" >
+						<img src="./assets/images/hospital-logo.png" style="width: 95px;height: 80px;"/ >
+					</td>
+					<td class="text-center grid-md-10  mar-top-15 font-16">
+						<div  class="hsptl-name hsptl-address">SURA REDDY NURSING HOME</div>
+						<div class="hsptl-address">High School Road, Pandalapaka</div>
+						<div> Ph.No: 08857 &#8722 233454</div>
+						<strong class="hsptl-address"></strong>
+					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="grid-md-6 no-padding" >
+			<table class="grid-md-12 patient-card mar-left-160 no-padding">
+				<tr>
+					<td>Name </td>
+					<th colspan="3">: {{opPatient.patient.name}}</th>
+				</tr>
+				<tr>
+					<td>P ID </td>
+					<th colspan="3">:  {{opPatient.patient.idLabel}}</th>
+				</tr>
+				<tr>
+					<td>Age/Sex </td>
+					<th class="grid-md-10">: {{opPatient.patient.age}}/{{opPatient.patient.gender}}</th>
+				</tr>
+				<tr>
+					<td >Ph.No </td>
+					<th colspan="3">: {{opPatient.patient.mobileNo}}</th>
+				</tr>
+				<tr>
+					<td>Reg Date </td>
+					<th colspan="3">: {{opPatient.patient.createdOn | date: 'dd-MMM-yyyy'}}</th>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<div class="v-line">
+</div>
+<div>
+	<!-- <img  class="patient-picture pull-right" ng-src="../patient/getphoto?patientId={{printOpPatient.patient.id}}"> -->
+	<!-- <img  class="patient-picture pull-right" ng-src='../patient/getphoto?patientId={{opPatient.patient.id}}'/> -->
+	
+</div>
+<div class="clear"></div>
+</div>
+<div class="row no-padding">
+	
+	<div class="grid-md-12 card card-full-height-73 vertical-scroll" style="padding-left: 15px;">
+		<div class="row no-padding">
+			<div>
+				<div class="border-bottom-2 font-16 text-bold color-dark-orange">
+					<strong>Complaint</strong>
+				</div>
+				<table class="table">
+					<tr>
+						<th>Complaint Name</th>
+						<th>Complaint Description</th>
+					</tr>
+					<tr>
+						<td>
+							{{previousComplaints.complaint.comShortName}}
+						</td>
+						<td>
+							{{previousComplaints.complaint.comDesc}}
+						</td>
+					</tr>
+				</table>
+			</div>		
+		</div>
+		<div ng-if="patientCurrentCaseSheet">
+		<div class="border-bottom-2 text-bold font-16 color-dark-orange" >
+			<strong>Case Sheet</strong>
+		</div>
+			<div class="row no-padding" >
+				<div class="row"> 
+					<div class="row">
+						<div class="grid-md-12 "><strong>Chief Complaint:</strong></div>
+						<div class="grid-md-1"></div><div class="grid-md-10 wrap-word ">{{patientCurrentCaseSheet.chiefComplaint}}</div>
+						
+					</div>
+				</div>
+				<div class="row"> 
+					<div class="row">
+						<div class="grid-md-12 "><strong>Present Illness:</strong></div>
+						<div class="grid-md-1"></div><div class="grid-md-10 wrap-word">{{patientCurrentCaseSheet.presentIllNess}}</div>
+						
+					</div>
+				</div>
+				<div class="row"> 
+					<div class="row">
+						<div class="grid-md-12 "><strong>Past Illness:</strong></div>
+						<div class="grid-md-1"></div><div class="grid-md-10 wrap-word">{{patientCurrentCaseSheet.pastIllNess}}</div>
+						
+					</div>
+				</div>
+				<div class="row"> 
+					<div class="row">
+						<div class="grid-md-12 "><strong>Family History:</strong></div>
+						<div class="grid-md-1"></div><div class="grid-md-10 wrap-word">{{patientCurrentCaseSheet.familyHistory}}</div>
+						
+					</div>
+				</div>
+				<div class="row"> 
+					<div class="row">
+						<div class="grid-md-12 font-14"><strong>General Examination:</strong></div>
+						<div class="grid-md-1"></div><div class="grid-md-10 wrap-word">{{patientCurrentCaseSheet.genExamination}}</div>
+						
+					</div>
+				</div>
+				<div class="row"> 
+					<div class="row">
+						<div class="grid-md-12 font-14"><strong>Pro Diagnosis:</strong></div>
+						<div class="grid-md-1"></div><div class="grid-md-10 wrap-word">{{patientCurrentCaseSheet.proDiagnosis}}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--prescription  -->
+		<div ng-if="prescription.prescriptionMedicines.length">
+			<div class="text-bold border-bottom-2 font-16 color-dark-orange">
+				Prescription	
+			</div>
+			<div>
+			<table class="table">
+				<tr >
+					<th class="grid-md-1 no-padding text-center">S.No</th>
+					<th class="grid-md-4 no-padding text-left" >Trade Name</th>
+					<th class="grid-md-1 no-padding text-center">Qty</th>
+					<th class="grid-md-1pnt5 no-padding text-left">ఉ </th>
+					<th class="grid-md-1pnt5 no-padding text-left">మ</th>
+					<th class="grid-md-1pnt5 no-padding text-left">సా</th>
+					<th class="grid-md-1pnt5 no-padding text-left">రా </th>
+				</tr>
+				<tr ng-repeat="sm in prescription.prescriptionMedicines">
+					<td class="grid-md-1 no-padding text-center">{{$index+1}}</td>
+					<td class="grid-md-4 no-padding text-left" >
+						<div>{{sm.purchasedMedicine.medicineCategoryName|tcCamelCase}}-{{sm.purchasedMedicine.medicineName|uppercase}}</div>
+						<!-- <strong>{{sm.purchasedMedicine.medicineDrugName | uppercase}}</strong> -->
+					</td>
+					<td class="grid-md-1 no-padding text-center">{{sm.quantity}}</td>
+					<td class="grid-md-1pnt5 no-padding text-left" ng-if="sm.dosageMorningRemarks!=null">{{sm.dosageMorningDescription}}&nbsp;{{sm.dosageMorningRemarks}}</td>
+						<td class="grid-md-1pnt5 no-padding text-left" ng-if="sm.dosageMorningRemarks==null">0</td>
+					
+					<td class="grid-md-1pnt5 no-padding text-left" ng-if="sm.dosageAfterNoonRemarks!=null">{{sm.dosageAfterNoonDescription}}&nbsp;{{sm.dosageAfterNoonRemarks}}</td>
+						<td class="grid-md-1pnt5 no-padding text-left" ng-if="sm.dosageAfterNoonRemarks==null">0</td>
+					
+					<td class="grid-md-1pnt5 no-padding text-left" ng-if="sm.dosageEveningRemarks!=null">{{sm.dosageEveningDescription}}&nbsp;{{sm.dosageEveningRemarks}}</td>
+						<td class="grid-md-1pnt5 no-padding text-left" ng-if="sm.dosageEveningRemarks==null">0</td>
+					
+					<td class="grid-md-1pnt5 no-padding text-left" ng-if="sm.dosageNightRemarks!=null">{{sm.dosageNightDescription}}&nbsp;{{sm.dosageNightRemarks}}</td>
+						<td class="grid-md-1pnt5 no-padding text-left" ng-if="sm.dosageNightRemarks==null">0</td>
+				</tr>
+			</table>
+			
+			</div>
+		</div>
+		<div ng-if="savedInvestigations">
+			<div class="text-bold border-bottom-2 font-16 color-dark-orange">
+				Labs
+			</div>
+			<div>
+				<div class="grid-md-6 no-padding" ng-repeat="(categoryName, tests) in savedInvestigations">
+				<div class="grid-md-12  " ng-if="(($index%2)==0)">
+					<div class="border-bottom">
+						<strong>{{categoryName}}</strong>
+					</div>
+					<table class=" grid-md-12">
+						<tr ng-repeat="node in tests">
+							<td class="grid-md-10">{{node.testName}}</td>
+							<td class="grid-md-2">{{node.cost}}</td>
+							<td><strong></strong></td> 
+						</tr>
+					</table>
+				</div>
+				<div class="grid-md-12 " ng-if="(($index%2)==1)">
+					<div class="border-bottom">
+						<strong>{{categoryName}}</strong>
+					</div>
+					<table class="grid-md-12">
+						<tr ng-repeat="node in tests">
+							<td class="grid-md-10">{{node.testName}}</td>
+							<td class="grid-md-2">{{node.cost}}</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			</div>
+		</div>
+	</div>
+</div>

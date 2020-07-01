@@ -1,0 +1,257 @@
+<div class="row no-padding  grade-linear hidden-print">
+	<div class="row">
+		<!-- Patient Card Section Starts -->
+		<div class="grid-md-3 ">
+			<div class="card card-full-height-28">
+				<img
+					src="/hc-rest/patient/getphoto?patientId={{opPatient.patient.id}}"
+					class="patient-img"
+					style="margin-left: 100px; height: 85px; width: 100px;" />
+				<table class="table">
+					<tr>
+						<td class="text-center font-13"><strong
+							class="color-sky-blue">{{opPatient.patient.name
+								|tcCamelCase}} - </strong> <strong class="color-orange">{{opPatient.complaint}}</strong>
+						</td>
+					</tr>
+					<tr>
+						<td class="text-center"><strong><em>{{opPatient.patient.idLabel}}</em></strong></td>
+					</tr>
+				</table>
+
+			</div>
+			<div class="card card-full-height-55 relative">
+				<div class="slider-container card-full-height-55">
+					<div class="slider-child-container " ng-class="showPatientActions">
+						<div class="slider-child  grid-md-12">
+							<span class="slider-navigation-icon" ng-click="slideToShowInfo()">
+								<a class="color-purple"> OP Info</a>
+							</span>
+							<!-- <table>
+								<tr>
+									<td class="font-em-2"><strong class="color-sky-blue">{{opPatient.patient.name |tcCamelCase}} - </strong>
+										<strong class="color-orange">{{opPatient.complaint}}</strong>
+									</td>
+								</tr>
+							</table> -->
+							<div class="patient-actions-list vertical-scroll">
+								<ul>
+									<li class="patient-actions-link-{{complaintPanelStatus}}"
+										ng-click="currentPanel = 'complaintPanel'">
+										<div class="main-panel">
+											<span>Complaint</span>
+											<div class="patient-actions-icon-box pull-right">
+												<i class="fa fa-check"
+													ng-show="complaintPanelStatus=='complete'"></i>
+											</div>
+										</div>
+									</li>
+									<li class="patient-actions-link-{{caseSheetPanelStatus}}"
+										ng-click="currentPanel ='caseSheetPanel'">
+										<div class="main-panel">
+											<span>Case Sheet</span>
+											<div class="patient-actions-icon-box pull-right">
+												<i class="fa fa-check"
+													ng-show="caseSheetPanelStatus=='complete'"></i>
+											</div>
+										</div>
+									</li>
+									<li class="patient-actions-link-{{prescriptionPanelStatus}}"
+										ng-click="prescriptionPanelStatus!='disable' && changeCurrentPanel('prescriptionPanel');getCurrentOPPrescriptions()">
+										<div class="main-panel">
+											<span>Prescription</span>
+											<div class="patient-actions-icon-box pull-right">
+												<i class="fa fa-check"
+													ng-show="prescriptionPanelStatus=='complete'"></i>
+											</div>
+										</div>
+									</li>
+									<li class="patient-actions-link-{{labsPanelStatus}}"
+										ng-click="labsPanelStatus!='disable' && changeCurrentPanel('labsPanel')">
+										<div class="main-panel">
+											<span>Lab Test</span>
+											<div class="patient-actions-icon-box pull-right">
+												<i class="fa fa-check" ng-show="labsPanelStatus=='complete'"></i>
+											</div>
+										</div>
+									</li>
+									<li class="patient-actions-link-{{referToDoctorPanelStatus}}"
+										ng-click="referToDoctorPanelStatus!='disable' && changeCurrentPanel('referToDoctorPanel')">
+										<div class="main-panel">
+											<span>Refer To Other</span>
+											<div class="patient-actions-icon-box pull-right">
+												<i class="fa fa-check"
+													ng-show="referToDoctorPanelStatus=='complete'"></i>
+											</div>
+										</div>
+									</li>
+									<li class="patient-actions-link-{{ipPanelStatus}}"
+										ng-click="ipPanelStatus!='disable' && changeCurrentPanel('ipPanel')">
+										<div class="main-panel">
+											<span>IP</span>
+											<div class="patient-actions-icon-box pull-right">
+												<i class="fa fa-check" ng-show="ipPanelStatus=='complete'"></i>
+											</div>
+										</div>
+									</li>
+									<li class="patient-actions-link-{{allPanelsStatus}}"
+										ng-click="ipPanelStatus!='disable' && changeCurrentPanel('allPanels')">
+										<div class="main-panel">
+											<span>All</span>
+										</div>
+									</li>
+										<li  ng-click="changeCurrentPanel('patientHistoryPanel')">
+										<div class="main-panel">
+											<span>Patient History</span>
+										</div>
+									</li>
+								</ul>
+										<div class="card-full-height-5">
+											<span>&nbsp;</span>
+										</div>
+									
+							</div>
+						</div>
+						<div class="slider-child grid-md-12 patient-card ">
+							<span class="slider-navigation-icon"
+								ng-click="slideToShowActions()"> <a
+								class="color-sky-blue">Actions</a>
+							</span>
+							<!-- <img src="/hc-rest/patient/getphoto?patientId={{opPatient.patient.id}}" class="patient-img" style="margin-left:100px;" />
+							
+							<div class="patient-details">
+								<div class="name">
+									<div>{{opPatient.patient.name }}</div>
+									<small><em>{{opPatient.patient.idLabel}}</em></small>
+								</div>
+								<div class="complaint">{{opPatient.complaint}}</div>
+							</div> -->
+							<div class="grid-md-3 clear-fix"></div>
+							<div class="row" style="margin-right: -18px;">
+								<div class="row text-left">
+									<div class="grid-md-6">
+										<div class="grid-md-2"></div>
+										<div class="grid-md-5">Height</div>
+										<div class="grid-md-5 color-blue">{{opPatient.height}}</div>
+									</div>
+									<div class="grid-md-6">
+										<div class="grid-md-2"></div>
+										<div class="grid-md-5">Weight</div>
+										<div class="grid-md-5 color-blue">{{opPatient.weight}}</div>
+									</div>
+								</div>
+								<div class="row text-left">
+									<div class="grid-md-6">
+										<div class="grid-md-2"></div>
+										<div class="grid-md-5">Temp.</div>
+										<div class="grid-md-5 color-blue">
+											{{opPatient.temperature}}</div>
+									</div>
+									<div class="grid-md-6">
+										<div class="grid-md-2"></div>
+										<div class="grid-md-5">BP</div>
+										<div class="grid-md-5 color-blue">{{opPatient.bp}}</div>
+									</div>
+								</div>
+								<div class="row text-left">
+									<div class="grid-md-6">
+										<div class="grid-md-2"></div>
+										<div class="grid-md-5">Sugar</div>
+										<div class="grid-md-5 color-blue">{{opPatient.sugar}}</div>
+									</div>
+									<div class="grid-md-6">
+										<div class="grid-md-2"></div>
+										<div class="grid-md-5">Pulse</div>
+										<div class="grid-md-5 color-blue">{{opPatient.Pulse}}</div>
+									</div>
+								</div>
+								<div class="row text-left">
+									<div class="grid-md-2"></div>
+									<div class="grid-md-5">Village</div>
+									<div class="grid-md-5 color-blue">
+										{{opPatient.patient.village |tcCamelCase}}</div>
+								</div>
+								<div class="row text-left">
+									<div class="grid-md-2"></div>
+									<div class="grid-md-5">Mobile No</div>
+									<div class="grid-md-5 color-blue">
+										{{opPatient.patient.mobileNo}}</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="row actions-back-menu ">
+					<div class="grid-md-9 pull-left">
+						<button class="btn btn-purple"
+							ui-sref="opPatientSearch({opId : opPatient.op.id})">
+							Back to OpPatients</button>
+					</div>
+					<div class="grid-md-3 pull-right font-18">
+						<span ng-if="opPatient.status!='Consulted'"
+							ng-click="skipPatient()"
+							ui-sref="opPatientSearch({opId : opPatient.op.id})"> <a
+							class="color-red">Skip</a>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Patient Card Section Ends -->
+
+		<!-- Patient Dash board -->
+		<div class="grid-md-9 no-padding-top">
+			<!-- Prescription Dash board -->
+			<div ng-show="currentPanel == 'complaintPanel'">
+				<ng-include src="'./views/includes/complaint/complaintPanel.html'"></ng-include>
+			</div>
+			<div ng-show="currentPanel == 'caseSheetPanel'">
+				<ng-include src="'./views/includes/casesheet/caseSheetPanel.html'"></ng-include>
+			</div>
+			<div ng-show="currentPanel == 'prescriptionPanel'">
+				<ng-include
+					src="'./views/includes/prescription/prescriptionPanel.html'"></ng-include>
+			</div>
+			<div ng-show="currentPanel == 'labsPanel'">
+				<ng-include src="'./views/includes/labs/labsPanel.html'"></ng-include>
+			</div>
+			<div ng-show="currentPanel == 'referToDoctorPanel'">
+				<ng-include
+					src="'./views/includes/refertodoctor/referToDoctorPanel.html'"></ng-include>
+			</div>
+			<div ng-show="currentPanel == 'ipPanel'">
+				<ng-include src="'./views/includes/ip/ipPanel.html'"></ng-include>
+			</div>
+			<div ng-show="currentPanel == 'allPanels'">
+				<ng-include src="'./views/includes/allPanels/allPanels.html'"></ng-include>
+			</div>
+			<div ng-show="currentPanel == 'patientHistoryPanel'">
+				<ng-include
+					src="'./views/includes/patientHistory/patientHistoryPanel.html'"></ng-include>
+			</div>
+		</div>
+	</div>
+	<div class="prescription-products-overlay"
+		ng-show="expanded.prescription"></div>
+</div>
+<div class="overlay absolute" ng-class="{'show':formLoader}"></div>
+<div class="form-loader" ng-class="{'show':formLoader}">
+	<i class="fa fa-spinner fa-spin"></i>
+</div>
+<!-- Prescription Print -->
+<div ng-show="currentPanel == 'prescriptionPanel'">
+	<ng-include src="'./views/includes/prescriptionPrint.html'"></ng-include>
+</div>
+
+<!-- Labs Print -->
+<div class="visible-print-block"
+	ng-show="currentPanel == 'labsPanel' && isPrescribed">
+	<ng-include
+		src="'./views/print/labs/labprints/lab-tests-with-price-print.html'"></ng-include>
+</div>
+<div class="visible-print-block"
+	ng-show="currentPanel == 'labsPanel' && isReport">
+	<ng-include src="'./views/print/labs/labprints/lab-tests-report.html'"></ng-include>
+</div>

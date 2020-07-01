@@ -1,0 +1,52 @@
+<!-- <complaint-directive op-patient-data="{{opPatient}}" patient-complaint="patientComplaints"on-confirm="changeComplaintStatus()" on-click="setPrescriptionComplaint(comDesc)"></complaint-directive> -->
+<style>
+	.complaint-header{
+		text-decoration:underline;
+		font-size:16px;
+		font-weight:bold;
+	}
+</style>
+<div class="row no-padding">
+	<div class="grid-md-6 card card-full-height-86">
+		<div class="grid-md-6" ng-if="previousComplaints.id">
+			<div class="complaint-header">
+				Confirmed Complaint
+			</div>
+			<div>
+				<table class="table">
+					<tr>
+						<th>Complaint Desc</th>
+					</tr>
+					<tr >
+						<td>{{previousComplaints.complaint.comDesc}}</td>
+					</tr>
+				</table>
+				<div class="row">
+					<button class="btn btn-sm btn-purple " ng-click="modifyComplaint()">Modify</button>
+				</div>
+			</div>
+		</div>
+		<div class="grid-md-6" ng-show="showSelectedComplaint">
+			<div class="complaint-header">Selected Complaint</div>
+			<table class="table">
+				<tr>
+					<th>Complaint Desc</th>
+				</tr>
+				<tr>
+					<td>{{presentComplaint.comDesc}}</td>
+				</tr>
+			</table>
+			<div class="row">
+					<button class="btn btn-sm btn-blue " ng-click="confirmComplaint(presentComplaint)">Confirm</button>
+			</div>
+		</div>
+	</div>
+	<div class="grid-md-6 no-padding-top">
+		<div class="grid-md-12 card-full-height-86 no-padding">
+			<complaint on-modify="showOldCom"patient-op-id="opPatient.patient.id" on-select="setComplaint(selectedComplaint)" on-check="showSelectedList(state)"></complaint>
+		</div>
+		
+	</div>
+
+</div>
+

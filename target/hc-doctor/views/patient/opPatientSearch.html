@@ -1,0 +1,470 @@
+<style>
+.custom-tab .nav-tabs{
+	width: 36%;
+    float: right !important;
+    position: relative;
+}
+</style>
+<div class="row hidden-print">
+	<div class="row no-padding">
+		<div class="grid-md-3 card-full-height-86" style="padding: 40px 25px;background-image: repeating-linear-gradient(-45deg, transparent, transparent 1px, #ddd 4px);">
+			<div class="" ng-init="op='view'">
+				<div class="patient-count-card bg-color-sky-blue row no-padding" ng-click="getOpPatientsByIdStatus('All');bgColor='bg-color-sky-blue'">
+					<div class="grid-md-3"><i class="fa fa-users"></i></div>
+					<div class="grid-md-9">
+						<div class="grid-md-12 count-number" ng-bind="totalCount"></div>
+						<div class="grid-md-12 count-title">Total</div>
+					</div>
+				</div>
+				<div class="patient-count-card bg-color-blue row no-padding" ng-click="getOpPatientsByIdStatus('New');bgColor='bg-color-blue'">
+					<div class="grid-md-3"><i class="fa fa-user-plus"></i></div>
+					<div class="grid-md-9">
+						<div class="grid-md-12 count-number" ng-bind="newCount"></div>
+						<div class="grid-md-12 count-title">New</div>
+					</div>
+				</div>
+				<div class="patient-count-card bg-color-green row no-padding" ng-click="getOpPatientsByIdStatus('Consulted');bgColor='bg-color-green'">
+					<div class="grid-md-3"><i class="fa fa-user"></i></div>
+					<div class="grid-md-9">
+						<div class="grid-md-12 count-number" ng-bind="consultPrescriptionCount"></div>
+						<div class="grid-md-12 count-title">Consulted</div>
+					</div>
+				</div>
+				<div class="patient-count-card bg-color-red row no-padding" ng-click="getOpPatientsByIdStatus('Skipped');bgColor='bg-color-red'">
+					<div class="grid-md-3"><i class="fa fa-user-times"></i></div>
+					<div class="grid-md-9 no-padding">
+						<div class="grid-md-12 count-number" ng-bind="skippedCount"></div>
+						<div class="grid-md-12 count-title">Skipped</div>
+					</div>
+				</div>
+				<div class="patient-count-card bg-color-orange row no-padding" ng-click="getOpPatientsByIdStatus('Lab');bgColor='bg-color-orange'">
+					<div class="grid-md-3"><i class="fa fa-user-md"></i></div>
+					<div class="grid-md-9 no-padding">
+						<div class="grid-md-12 count-number" ng-bind="labCount"></div>
+						<div class="grid-md-12 count-title">Lab</div>
+					</div>
+				</div>
+			</div>
+		</div>	
+		<div class="grid-md-6pnt5 no-padding  card-full-height-86 list-panel">
+			<div class="overlay absolute" ng-class="{'show':showMenu}" ng-click="showMenu=false" ng-show="showMenu"></div>
+			<div class="grid-md-12 list-panel-heading bg-color-blue" ng-class="bgColor">
+				<strong class="">{{oppatient.status || 'All'}}</strong>
+				<div class="dropdown-icon">
+				    <a href="" ng-show="!showMenu" ng-click="showMenu=!showMenu"><i class="fa fa-bars"></i></a>
+				    <a href="" ng-show="showMenu" ng-click="showMenu=!showMenu"><i class="fa fa-times-circle"></i></a>
+				</div>
+			</div>
+			<div class="op-list-dropdown-menu" ng-class="{'active':showMenu}">
+				<ul>
+					<li ng-click="getOpPatientsByIdStatus('All')"><span>All</span></li>
+					<li ng-click="getOpPatientsByIdStatus('New')"><span>New</span></li>
+					<li ng-click="getOpPatientsByIdStatus('Consulted')"><span>Consulted Prescription</span></li>
+					<li ng-click="getOpPatientsByIdStatus('Consulted-Lab')"><span>Consulted Lab</span></li>
+					<li ng-click="getOpPatientsByIdStatus('Skipped')"><span>Skipped</span></li>
+				</ul>
+			</div>
+			<div class=" " >
+				<uib-tabset active="active">
+					<uib-tab heading="General ({{generalOpList.length}})" >
+						<div class="grid-md-12 mar-top-10 text-center padding-left-right-15" ng-if="generalOpList.length ">
+							<input type="search" class="form-field grid-md-12 padding-5" placeholder="Search Patients..." ng-model="search.patient.name"/>
+						</div>
+						<div class="row color-black vertical-scroll card-full-height-64 padding-left-right-15" ng-if=" generalOpList.length">
+							<div class="patient-card middle-card row pointer-cursor" ng-repeat="patient in generalOpList | orderBy: 'createdOn' | filter:search.patient.name" ng-click="selectOPPatient(patient)">
+								<img ng-src="/hc-rest/patient/getphoto?patientId={{patient.patient.id}}" class="grid-md-2 no-padding circle"/>
+								<div class="grid-md-4 patient-info ">
+									<div class="grid-md-12 text-left padding-left-right-15">
+										<div class="grid-md-12 font-14">{{patient.patient.name |tcCamelCase}}</div>
+										<div class="grid-md-12 font-14">{{patient.complaint |tcCamelCase}}</div>
+										<div class="grid-md-12 row no-padding text-left font-12">
+											<div class="grid-md-6 no-padding">
+												<div class="row no-padding">
+													<div class="grid-md-6 no-padding">Ht</div> <div class="color-blue grid-md-6 no-padding">{{patient.height}}</div>
+												</div>
+												<div class="row no-padding">
+													<div class="grid-md-6 no-padding">Wt</div> <div class="color-blue grid-md-6 no-padding">{{patient.weight}}</div>
+												</div>
+												<div class="row no-padding">
+													<div class="grid-md-6 no-padding">BMI</div> <div class="color-blue grid-md-6 no-padding">{{patient.bmi}}</div>
+												</div>
+											</div>
+											<div class="grid-md-6 no-padding">
+												<div class="row no-padding">
+													<div class="grid-md-6 no-padding">Temp</div> <div class="color-blue grid-md-6 no-padding">{{patient.temperature}}</div>
+												</div>
+												<div class="row no-padding">
+													<div class="grid-md-6 no-padding">BP </div><div class="color-blue grid-md-6 no-padding">{{patient.bp}}</div>
+												</div>
+												<div class="row no-padding">
+													<div class="grid-md-6 no-padding">Sugar</div> <div class="color-blue grid-md-6 no-padding">{{patient.sugar}}</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="grid-md-3">
+									<div class="grid-md-12">{{patient.patient.mobileNo}}</div>
+									<div class="grid-md-12">{{patient.patient.village |tcCamelCase}}</div>
+								</div>
+								<div class="grid-md-3">
+									<div class="font-14 bg-color-sky-blue">{{patient.opType.opType|tcCamelCase}}</div>
+									<div class=" ">Regd.time: <span class="color-orange font-20" >{{patient.createdOn|date:'HH:mm'}}</span></div>
+									<div ng-if="patient.consultedOn" class=" ">Cons.time: <span class="color-green font-20" >{{patient.consultedOn|date:'HH:mm'}}</span></div>
+									<div class="color-sky-blue">{{patient.createdOn|date:'dd-MM-yyyy'}}</div>
+								</div>
+							</div>
+						</div>
+						<div ng-if="!generalOpList.length "><h2 style="color:#fff;margin-left: 250px;margin-top: 250px;">No Patients Found</h2></div>
+					</uib-tab>
+					<uib-tab heading="Emergency ({{emergencyOpList.length}})" >
+						<div class="grid-md-12 mar-top-10 text-center padding-left-right-15" ng-if="emergencyOpList.length ">
+							<input type="search" class="form-field grid-md-12 padding-5" placeholder="Search Patients..." ng-model="search.patient.name"/>
+						</div>
+						<div class="row color-black vertical-scroll card-full-height-64 padding-left-right-15" ng-if=" emergencyOpList.length">
+							<div class="patient-card middle-card row pointer-cursor" ng-repeat="patient in emergencyOpList | orderBy: 'createdOn' | filter:search.patient.name" ng-click="selectOPPatient(patient)">
+								<img ng-src="/hc-rest/patient/getphoto?patientId={{patient.patient.id}}" class="grid-md-2 no-padding circle"/>
+								<div class="grid-md-4 patient-info ">
+									<div class="grid-md-12 text-left padding-left-right-15">
+										<div class="grid-md-12 font-14">{{patient.patient.name |tcCamelCase}}</div>
+										<div class="grid-md-12 font-14">{{patient.complaint |tcCamelCase}}</div>
+										<div class="grid-md-12 row no-padding text-left font-12">
+											<div class="grid-md-6 no-padding">
+												<div class="row no-padding">
+													<div class="grid-md-6 no-padding">Ht</div> <div class="color-blue grid-md-6 no-padding">{{patient.height}}</div>
+												</div>
+												<div class="row no-padding">
+													<div class="grid-md-6 no-padding">Wt</div> <div class="color-blue grid-md-6 no-padding">{{patient.weight}}</div>
+												</div>
+												<div class="row no-padding">
+													<div class="grid-md-6 no-padding">BMI</div> <div class="color-blue grid-md-6 no-padding">{{patient.bmi}}</div>
+												</div>
+											</div>
+											<div class="grid-md-6 no-padding">
+												<div class="row no-padding">
+													<div class="grid-md-6 no-padding">Temp</div> <div class="color-blue grid-md-6 no-padding">{{patient.temperature}}</div>
+												</div>
+												<div class="row no-padding">
+													<div class="grid-md-6 no-padding">BP </div><div class="color-blue grid-md-6 no-padding">{{patient.bp}}</div>
+												</div>
+												<div class="row no-padding">
+													<div class="grid-md-6 no-padding">Sugar</div> <div class="color-blue grid-md-6 no-padding">{{patient.sugar}}</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="grid-md-3">
+									<div class="grid-md-12">{{patient.patient.mobileNo}}</div>
+									<div class="grid-md-12">{{patient.patient.village |tcCamelCase}}</div>
+								</div>
+								<div class="grid-md-3">
+									<div class="font-14 bg-color-sky-blue">{{patient.opType.opType|tcCamelCase}}</div>
+									<div class=" ">Regd.time: <span class="color-orange font-20" >{{patient.createdOn|date:'HH:mm'}}</span></div>
+									<div ng-if="patient.consultedOn" class=" ">Cons.time: <span class="color-green font-20" >{{patient.consultedOn|date:'HH:mm'}}</span></div>
+									<div class="color-sky-blue">{{patient.createdOn|date:'dd-MM-yyyy'}}</div>
+								</div>
+							</div>
+						</div>
+						<div ng-if="!opPatientsList.length "><h2 style="color:#fff;margin-left: 250px;margin-top: 250px;">No Patients Found</h2></div>
+					</uib-tab>
+					<uib-tab heading="Phone Call ({{phoneCallOpList.length}})">
+						<div class="grid-md-12 mar-top-10 text-center padding-left-right-15" ng-if="phoneCallOpList.length ">
+							<input type="search" class="form-field grid-md-12 padding-5" placeholder="Search Patients..." ng-model="search.patient.name"/>
+						</div>
+						<div class="row color-black vertical-scroll card-full-height-64 padding-left-right-15" ng-if=" phoneCallOpList.length">
+							<div class="patient-card middle-card row pointer-cursor" ng-repeat="patient in phoneCallOpList | orderBy: 'createdOn' | filter:search.patient.name" ng-click="selectOPPatient(patient)">
+								<img ng-src="/hc-rest/patient/getphoto?patientId={{patient.patient.id}}" class="grid-md-2 no-padding circle"/>
+								<div class="grid-md-4 patient-info ">
+									<div class="grid-md-12 text-left padding-left-right-15">
+										<div class="grid-md-12 font-14">{{patient.patient.name |tcCamelCase}}</div>
+										<div class="grid-md-12 font-14">{{patient.complaint |tcCamelCase}}</div>
+										<div class="grid-md-12 row no-padding text-left font-12">
+											<div class="grid-md-6 no-padding">
+												<div class="row no-padding">
+													<div class="grid-md-6 no-padding">Ht</div> <div class="color-blue grid-md-6 no-padding">{{patient.height}}</div>
+												</div>
+												<div class="row no-padding">
+													<div class="grid-md-6 no-padding">Wt</div> <div class="color-blue grid-md-6 no-padding">{{patient.weight}}</div>
+												</div>
+												<div class="row no-padding">
+													<div class="grid-md-6 no-padding">BMI</div> <div class="color-blue grid-md-6 no-padding">{{patient.bmi}}</div>
+												</div>
+											</div>
+											<div class="grid-md-6 no-padding">
+												<div class="row no-padding">
+													<div class="grid-md-6 no-padding">Temp</div> <div class="color-blue grid-md-6 no-padding">{{patient.temperature}}</div>
+												</div>
+												<div class="row no-padding">
+													<div class="grid-md-6 no-padding">BP </div><div class="color-blue grid-md-6 no-padding">{{patient.bp}}</div>
+												</div>
+												<div class="row no-padding">
+													<div class="grid-md-6 no-padding">Sugar</div> <div class="color-blue grid-md-6 no-padding">{{patient.sugar}}</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="grid-md-3">
+									<div class="grid-md-12">{{patient.patient.mobileNo}}</div>
+									<div class="grid-md-12">{{patient.patient.village |tcCamelCase}}</div>
+								</div>
+								<div class="grid-md-3">
+									<div class="font-14 bg-color-sky-blue">{{patient.opType.opType|tcCamelCase}}</div>
+									<div class=" ">Regd.time: <span class="color-orange font-20" >{{patient.createdOn|date:'HH:mm'}}</span></div>
+									<div ng-if="patient.consultedOn" class=" ">Cons.time: <span class="color-green font-20" >{{patient.consultedOn|date:'HH:mm'}}</span></div>
+									<div class="color-sky-blue">{{patient.createdOn|date:'dd-MM-yyyy'}}</div>
+								</div>
+							</div>
+						</div>
+						<div ng-if="!phoneCallOpList.length "><h2 style="color:#fff;margin-left: 250px;margin-top: 250px;">No Patients Found</h2></div>
+					</uib-tab>
+					<uib-tab heading="Review Op ({{reviewOpList.length}})">
+						<div class="grid-md-12 mar-top-10 text-center padding-left-right-15" ng-if="reviewOpList.length">
+							<input type="search" class="form-field grid-md-12 padding-5" placeholder="Search Patients..." ng-model="search.patient.name"/>
+						</div>
+						<div class="row color-black vertical-scroll card-full-height-64 padding-left-right-15" ng-if=" reviewOpList.length">
+							<div class="patient-card middle-card row pointer-cursor" ng-repeat="patient in reviewOpList | orderBy: 'createdOn' | filter:search.patient.name" ng-click="selectOPPatient(patient)">
+								<img ng-src="/hc-rest/patient/getphoto?patientId={{patient.patient.id}}" class="grid-md-2 no-padding circle"/>
+								<div class="grid-md-4 patient-info ">
+									<div class="grid-md-12 text-left padding-left-right-15">
+										<div class="grid-md-12 font-14">{{patient.patient.name |tcCamelCase}}</div>
+										<div class="grid-md-12 font-14">{{patient.complaint |tcCamelCase}}</div>
+										<div class="grid-md-12 row no-padding text-left font-12">
+											<div class="grid-md-6 no-padding">
+												<div class="row no-padding">
+													<div class="grid-md-6 no-padding">Ht</div> <div class="color-blue grid-md-6 no-padding">{{patient.height}}</div>
+												</div>
+												<div class="row no-padding">
+													<div class="grid-md-6 no-padding">Wt</div> <div class="color-blue grid-md-6 no-padding">{{patient.weight}}</div>
+												</div>
+												<div class="row no-padding">
+													<div class="grid-md-6 no-padding">BMI</div> <div class="color-blue grid-md-6 no-padding">{{patient.bmi}}</div>
+												</div>
+											</div>
+											<div class="grid-md-6 no-padding">
+												<div class="row no-padding">
+													<div class="grid-md-6 no-padding">Temp</div> <div class="color-blue grid-md-6 no-padding">{{patient.temperature}}</div>
+												</div>
+												<div class="row no-padding">
+													<div class="grid-md-6 no-padding">BP </div><div class="color-blue grid-md-6 no-padding">{{patient.bp}}</div>
+												</div>
+												<div class="row no-padding">
+													<div class="grid-md-6 no-padding">Sugar</div> <div class="color-blue grid-md-6 no-padding">{{patient.sugar}}</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="grid-md-3">
+									<div class="grid-md-12">{{patient.patient.mobileNo}}</div>
+									<div class="grid-md-12">{{patient.patient.village |tcCamelCase}}</div>
+								</div>
+								<div class="grid-md-3">
+									<div class="font-14 bg-color-sky-blue">{{patient.opType.opType|tcCamelCase}}</div>
+									<div class=" ">Regd.time: <span class="color-orange font-20" >{{patient.createdOn|date:'HH:mm'}}</span></div>
+									<div ng-if="patient.consultedOn" class=" ">Cons.time: <span class="color-green font-20" >{{patient.consultedOn|date:'HH:mm'}}</span></div>
+									<div class="color-sky-blue">{{patient.createdOn|date:'dd-MM-yyyy'}}</div>
+								</div>
+							</div>
+							<!-- <div class="animate-repeat" ng-if="results.length == 0">
+								<strong>No results found...</strong>
+							</div> -->
+						</div>
+						
+						<div ng-if="!reviewOpList.length "><h2 style="color:#fff;margin-left: 250px;margin-top: 250px;">No Patients Found</h2></div>
+					</uib-tab>
+					<uib-tab heading="Free Op ({{freeOpList.length}})">
+						<div class="grid-md-12 mar-top-10 text-center padding-left-right-15" ng-if="freeOpList.length">
+							<input type="search" class="form-field grid-md-12 padding-5" placeholder="Search Patients..." ng-model="search.patient.name"/>
+						</div>
+						<div class="row color-black vertical-scroll card-full-height-64 padding-left-right-15" ng-if=" freeOpList.length">
+							<div class="patient-card middle-card row pointer-cursor" ng-repeat="patient in freeOpList | orderBy: 'createdOn' | filter:search.patient.name" ng-click="selectOPPatient(patient)">
+								<img ng-src="/hc-rest/patient/getphoto?patientId={{patient.patient.id}}" class="grid-md-2 no-padding circle"/>
+								<div class="grid-md-4 patient-info ">
+									<div class="grid-md-12 text-left padding-left-right-15">
+										<div class="grid-md-12 font-14">{{patient.patient.name |tcCamelCase}}</div>
+										<div class="grid-md-12 font-14">{{patient.complaint |tcCamelCase}}</div>
+										<div class="grid-md-12 row no-padding text-left font-12">
+											<div class="grid-md-6 no-padding">
+												<div class="row no-padding">
+													<div class="grid-md-6 no-padding">Ht</div> <div class="color-blue grid-md-6 no-padding">{{patient.height}}</div>
+												</div>
+												<div class="row no-padding">
+													<div class="grid-md-6 no-padding">Wt</div> <div class="color-blue grid-md-6 no-padding">{{patient.weight}}</div>
+												</div>
+												<div class="row no-padding">
+													<div class="grid-md-6 no-padding">BMI</div> <div class="color-blue grid-md-6 no-padding">{{patient.bmi}}</div>
+												</div>
+											</div>
+											<div class="grid-md-6 no-padding">
+												<div class="row no-padding">
+													<div class="grid-md-6 no-padding">Temp</div> <div class="color-blue grid-md-6 no-padding">{{patient.temperature}}</div>
+												</div>
+												<div class="row no-padding">
+													<div class="grid-md-6 no-padding">BP </div><div class="color-blue grid-md-6 no-padding">{{patient.bp}}</div>
+												</div>
+												<div class="row no-padding">
+													<div class="grid-md-6 no-padding">Sugar</div> <div class="color-blue grid-md-6 no-padding">{{patient.sugar}}</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="grid-md-3">
+									<div class="grid-md-12">{{patient.patient.mobileNo}}</div>
+									<div class="grid-md-12">{{patient.patient.village |tcCamelCase}}</div>
+								</div>
+								<div class="grid-md-3">
+									<div class="font-14 bg-color-sky-blue">{{patient.opType.opType|tcCamelCase}}</div>
+									<div class="font-14 bg-color-sky-blue">{{patient.opSubType.opSubType|tcCamelCase}}</div>
+									<div class=" ">Regd.time: <span class="color-orange font-20" >{{patient.createdOn|date:'HH:mm'}}</span></div>
+									<div ng-if="patient.consultedOn" class=" ">Cons.time: <span class="color-green font-20" >{{patient.consultedOn|date:'HH:mm'}}</span></div>
+									<div class="color-sky-blue">{{patient.createdOn|date:'dd-MM-yyyy'}}</div>
+								</div>
+							</div>
+							<!-- <div class="animate-repeat" ng-if="results.length == 0">
+								<strong>No results found...</strong>
+							</div> -->
+						</div>
+						
+						<div ng-if="!reviewOpList.length "><h2 style="color:#fff;margin-left: 250px;margin-top: 250px;">No Patients Found</h2></div>
+					</uib-tab>
+					<uib-tab heading="Labs">
+						<uib-tabset class="custom-tab">
+						    <uib-tab heading="Inprogress ({{labTestsInprogressList.length}})">
+							    <div class="grid-md-12 mar-top-10 text-center padding-left-right-15" ng-if="labTestsInprogressList.length">
+									<input type="search" class="form-field grid-md-12 padding-5" placeholder="Search Patients..." ng-model="search.patient.name"/>
+								</div>
+								<div class="row color-black vertical-scroll card-full-height-64 padding-left-right-15" ng-if=" labTestsInprogressList.length">
+									<div class="patient-card middle-card row pointer-cursor" ng-repeat="patient in labTestsInprogressList | filter:search.patient.name" ng-if="patient.opPatient" ng-click="selectOPPatient(patient.opPatient)">
+										<img ng-src="/hc-rest/patient/getphoto?patientId={{patient.patient.id}}" class="grid-md-2 no-padding circle"/>
+										<div class="grid-md-4 patient-info ">
+											<div class="grid-md-12 text-left padding-left-right-15">
+												<div class="grid-md-12 font-14">{{patient.patient.name |tcCamelCase}}</div>
+												<div class="grid-md-12 font-14">{{patient.opPatient.complaint |tcCamelCase}}</div>
+												<div class="grid-md-12 row no-padding text-left font-12">
+													<div class="grid-md-6 no-padding">
+														<div class="row no-padding">
+															<div class="grid-md-6 no-padding">Ht</div> <div class="color-blue grid-md-6 no-padding">{{patient.opPatient.height}}</div>
+														</div>
+														<div class="row no-padding">
+															<div class="grid-md-6 no-padding">Wt</div> <div class="color-blue grid-md-6 no-padding">{{patient.opPatient.weight}}</div>
+														</div>
+														<div class="row no-padding">
+															<div class="grid-md-6 no-padding">BMI</div> <div class="color-blue grid-md-6 no-padding">{{patient.opPatient.bmi}}</div>
+														</div>
+													</div>
+													<div class="grid-md-6 no-padding">
+														<div class="row no-padding">
+															<div class="grid-md-6 no-padding">Temp</div> <div class="color-blue grid-md-6 no-padding">{{patient.opPatient.temperature}}</div>
+														</div>
+														<div class="row no-padding">
+															<div class="grid-md-6 no-padding">BP </div><div class="color-blue grid-md-6 no-padding">{{patient.opPatient.bp}}</div>
+														</div>
+														<div class="row no-padding">
+															<div class="grid-md-6 no-padding">Sugar</div> <div class="color-blue grid-md-6 no-padding">{{patient.opPatient.sugar}}</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="grid-md-3">
+											<div class="grid-md-12">{{patient.patient.mobileNo}}</div>
+											<div class="grid-md-12">{{patient.patient.village |tcCamelCase}}</div>
+										</div>
+										<div class="grid-md-3">
+											<div class="font-14 bg-color-sky-blue">{{patient.opPatient.opType.opType|tcCamelCase}}</div>
+											<div class=" ">Regd.time: <span class="color-orange font-20" >{{patient.opPatient.createdOn|date:'HH:mm'}}</span></div>
+											<div ng-if="patient.consultedOn" class=" ">Cons.time: <span class="color-green font-20" >{{patient.opPatient.consultedOn|date:'HH:mm'}}</span></div>
+											<div class="color-sky-blue">{{patient.opPatient.createdOn|date:'dd-MM-yyyy'}}</div>
+										</div>
+									</div>
+								</div>
+								<div ng-if="!labTestsInprogressList.length "><h2 style="color:#fff;margin-left: 250px;margin-top: 250px;">No Patients Found</h2></div>
+						    </uib-tab>
+						    <uib-tab  >
+							    <uib-tab-heading>
+							      <span>Completed ({{labTestsCompletedList.length}})</span>
+							    </uib-tab-heading>
+						    	<div class="grid-md-12 mar-top-10 text-center padding-left-right-15" ng-if="labTestsCompletedList.length">
+									<input type="search" class="form-field grid-md-12 padding-5" placeholder="Search Patients..." ng-model="search.patient.name"/>
+								</div>
+								<div class="row color-black vertical-scroll card-full-height-64 padding-left-right-15" ng-if=" labTestsCompletedList.length">
+									<div class="patient-card middle-card row pointer-cursor" ng-repeat="patient in labTestsCompletedList | filter:search.patient.name" ng-if="patient.opPatient " ng-click="selectOPPatient(patient.opPatient)">
+										<img ng-src="/hc-rest/patient/getphoto?patientId={{patient.patient.id}}" class="grid-md-2 no-padding circle"/>
+										<div class="grid-md-4 patient-info ">
+											<div class="grid-md-12 text-left padding-left-right-15">
+												<div class="grid-md-12 font-14">{{patient.patient.name |tcCamelCase}}</div>
+												<div class="grid-md-12 font-14">{{patient.opPatient.complaint |tcCamelCase}}</div>
+												<div class="grid-md-12 row no-padding text-left font-12">
+													<div class="grid-md-6 no-padding">
+														<div class="row no-padding">
+															<div class="grid-md-6 no-padding">Ht</div> <div class="color-blue grid-md-6 no-padding">{{patient.opPatient.height}}</div>
+														</div>
+														<div class="row no-padding">
+															<div class="grid-md-6 no-padding">Wt</div> <div class="color-blue grid-md-6 no-padding">{{patient.opPatient.weight}}</div>
+														</div>
+														<div class="row no-padding">
+															<div class="grid-md-6 no-padding">BMI</div> <div class="color-blue grid-md-6 no-padding">{{patient.opPatient.bmi}}</div>
+														</div>
+													</div>
+													<div class="grid-md-6 no-padding">
+														<div class="row no-padding">
+															<div class="grid-md-6 no-padding">Temp</div> <div class="color-blue grid-md-6 no-padding">{{patient.opPatient.temperature}}</div>
+														</div>
+														<div class="row no-padding">
+															<div class="grid-md-6 no-padding">BP </div><div class="color-blue grid-md-6 no-padding">{{patient.opPatient.bp}}</div>
+														</div>
+														<div class="row no-padding">
+															<div class="grid-md-6 no-padding">Sugar</div> <div class="color-blue grid-md-6 no-padding">{{patient.opPatient.sugar}}</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="grid-md-3">
+											<div class="grid-md-12">{{patient.patient.mobileNo}}</div>
+											<div class="grid-md-12">{{patient.patient.village |tcCamelCase}}</div>
+										</div>
+										<div class="grid-md-3">
+											<div class="font-14 bg-color-sky-blue">{{patient.opPatient.opType.opType|tcCamelCase}}</div>
+											<div class=" ">Regd.time: <span class="color-orange font-20" >{{patient.opPatient.createdOn|date:'HH:mm'}}</span></div>
+											<div ng-if="patient.consultedOn" class=" ">Cons.time: <span class="color-green font-20" >{{patient.opPatient.consultedOn|date:'HH:mm'}}</span></div>
+											<div class="color-sky-blue">{{patient.opPatient.createdOn|date:'dd-MM-yyyy'}}</div>
+										</div>
+									</div>
+								</div>
+								<div ng-if="!labTestsCompletedList.length "><h2 style="color:#fff;margin-left: 250px;margin-top: 250px;">No Patients Found</h2></div>
+						    </uib-tab>
+					 	</uib-tabset>
+					 </uib-tab>
+				</uib-tabset>
+				<div class="dropdown-icon">
+				    <a href="" ng-show="!showMenu" ng-click="showMenu=!showMenu"><i class="fa fa-bars"></i></a>
+				    <a href="" ng-show="showMenu" ng-click="showMenu=!showMenu"><i class="fa fa-times-circle"></i></a>
+				</div>
+			</div>
+		</div>
+		<div class="grid-md-2pnt5 card-full-height-86" style="padding: 40px 25px;background-image: repeating-linear-gradient(-45deg, transparent, transparent 1px, #ddd 4px);">
+			<div class="card no-padding">
+				<div class="row ">
+					<div class="grid-md-8">
+						<button class="btn btn-info" ng-click="OpPatientForm()">Add OpPatient</button>
+					</div>
+				</div>
+			</div>
+			<div class="row card no-padding card-min-height-100" >
+				<strong class="grid-md-12 padding-5">Recently Visited </strong>
+				<div class="patient-card row pointer-cursor" ng-repeat="patient in opPatientsList| limitTo:3" ng-click="selectOPPatient(patient)">
+					<div class="grid-md-12 patient-info">
+						<div class="row no-padding">
+							<div class="pull-left">{{patient.patient.name |tcCamelCase}}</div>
+							<div class="pull-right">{{patient.patient.mobileNo}}</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

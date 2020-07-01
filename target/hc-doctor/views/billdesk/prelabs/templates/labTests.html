@@ -1,0 +1,30 @@
+<style>
+	.highlight {
+	    color: red;
+	}
+</style>
+<div ng-repeat="node in tree.subTests track by $index">
+	<ul style="padding-left: 20px ">
+		<li ng-if="!node.isTest" style="list-style-type: none;" >
+			<div class="row tree-selector parent">
+				<div class="grid-md-1 no-padding" ng-click="node.showChilds = !node.showChilds">
+					<span ng-if="!node.showChilds"><i class="fa fa-1x fa-caret-right"></i></span>
+					<span ng-if="node.showChilds"><i class="fa fa-1x fa-caret-down"></i></span>
+				</div>
+				<div class="grid-md-1 no-padding">
+					<input class=""type="checkbox" ng-model="node.isSelected" id = "parent"  ng-click="onCheckCallBack(node,node.isSelected)" />
+				</div>
+				<div class="grid-md-10 no-padding" ng-click="node.showChilds = !node.showChilds" ng-class="{'highlight': node.highlight}">
+					{{node.testName}}
+				</div>
+			</div>
+		</li>
+		<tree-node ng-if="!node.isTest && node.showChilds" tree="node" on-check="onCheckCallBack($tests, $checkStatus)"></tree-node>
+		<li ng-if="node.isTest" style="list-style-type: none;margin-left:46px;">
+			<div class="tree-selector child" ng-click="toggleSelect(node)">
+				<input type="checkbox" ng-change="onCheckCallBack(node, node.isSelected)" id = "child" ng-model="node.isSelected" >
+					<span ng-class="{'highlight': node.highlight}">{{node.testName}}</span>
+			</div>
+		</li>
+	</ul>
+</div>

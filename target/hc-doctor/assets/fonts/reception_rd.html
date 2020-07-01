@@ -1,0 +1,28 @@
+<html ng-app="simpleApp">
+<head>
+
+	<link rel="styleSheet" type="text/css" href="../assets/css/open-sans.css" />
+	<link rel="styleSheet" type="text/css" href="../assets/css/font-awesome.min.css" />
+	<link rel="styleSheet" type="text/css" href="../assets/css/hospital.css" />
+</head>
+	<script type="text/javaScript" src="../assets/js/lib/angular.min.js"></script>
+	<script type="text/javaScript" src="../assets/js/lib/angular-sanitize.min.js"></script>
+	<script type="text/javaScript" src="../assets/js/lib/angular-ui-router.min.js"></script>
+	<script type="text/javaScript" src="../assets/js/lib/jquery.min.js"></script>
+	<script type="text/javaScript" src="../assets/js/lib/angular-messages.min.js"></script>
+	<script type="text/javaScript" src="../assets/js/lib/ui-bootstrap-tpls-2.2.0.min.js"></script>
+	<script type="text/javaScript" src="../assets/js/lib/webcam-directive.js"></script>
+	<script type="text/javaScript" src="../assets/js/lib/webcam.js"></script>
+	<script type="text/javaScript" src="../assets/js/common/hospitalModule.js"></script>
+	<script type="text/javaScript" src="../assets/js/common/patient/patientModule.js"></script>
+	<script type="text/javaScript" src="../assets/js/common/patient/directives/patientAutoSuggest.js"></script>
+<body ng-controller="simpleCtrl">
+	<patient-auto-suggest output-model="opPatient.patient" options="{}" display-key="patientName"></patient-auto-suggest>
+	<script>
+	var app=angular.module('simpleApp',['hospital','patientModule'])
+	app.controller('simpleCtrl',function($scope){
+		
+	});
+	</script>
+</body>
+</html>

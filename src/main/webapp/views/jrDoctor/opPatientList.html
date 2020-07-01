@@ -1,0 +1,107 @@
+<style>
+	.img-patient{
+		height : 80px;
+		width : 80px;
+	}
+</style>
+<div class="card">
+	<form name="opSearch" novalidate>
+		<div class="row">
+			<div class="grid-md-4">
+				<label for="opDoctor">Op Doctor </label>
+				<select class="form-field grid-md-12" id="opDoctor" data-ng-model="op.doctor" name="opDoctor"
+					data-ng-options="doctor as doctor.name for doctor in doctors" required>
+					<option value="">Select Doctor</option>
+					</select> <span class="error-msg"
+					data-ng-messages="opSearch.opDoctor.$error"> <span
+					data-ng-message="required">Doctor Name Required</span></span>
+			</div>
+			<div class="grid-md-4">
+				<label for="opDate">Op Date</label>
+				<div class="grid-md-12 relative">
+					<tc-date-picker placeholder="Select Date" ng-model="op.opDate"></tc-date-picker>
+				</div>
+			</div>
+			<div class="grid-md-2">
+				<label for="opSearch"></label>
+				<div class="grid-md-12">
+					<button class="btn btn-sky-blue btn-sm"
+						ng-disabled="opSearch.$invalid" ng-click="getOpList(op.doctor.id,op.opDate)">Search</button>
+				</div>
+			</div>
+		</div>
+	</form>
+	<div class="row padding-10px mar-top-5">
+		<div class="grid-md-12 card" ng-if="opList.length">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>S.No</th>
+						<th>Op Name</th>
+						<th>Actions</th>												
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="op in opList">
+						<td>{{$index+1}}</td>
+						<td>{{op.name}}</td>
+						<td>	
+							<button class="btn btn-md btn-sky-blue" type="button" title="view" tooltip="View OP List" ng-click="getOpPatients(op)">
+								<i class="fa fa-eye"></i>
+							</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>																							
+		</div>
+	</div>
+	<div class="card card-full-height-70 vertical-scroll"ng-if="opPatientList.length && opList.length">
+		<div class="grid-md-12 text-center" >
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>S.No</th>
+						<th>Photo</th>
+						<th>Patient Name</th>
+						<th>OpType</th>
+						<th>Mobile No.</th>
+						<th>Compliant</th>
+						<th ng-click="sort(false)"><span class="sort">Created Time <i class="fa fa-sort"></i></span></th>
+						<th ng-click="sort(true)"><span class="sort">Status <i class="fa fa-sort"></i></span></th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="row">
+					    <td>&nbsp;</td>
+						<td>
+							<input type="text" class="form-field grid-md-12 padding-10" placeholder="Enter Patient Name" ng-model="search.patient.name"/>
+						</td>
+					</tr>
+					<tr ng-repeat="opPatient in opPatientList | filter:search | orderBy:'name'">
+						<td>{{$index+1}}</td>
+						<td><img  src="/hc-rest/patient/getphoto?patientId={{opPatient.patient.id}}" class="img-patient"  style="border:2px solid gray"></td>
+						<td>{{opPatient.patient.name}}</td>
+						<td>{{opPatient.opType.opType}}</td>
+						<td>{{opPatient.patient.mobileNo}}</td>
+						<td>{{opPatient.complaint}}</td>
+						<td>{{opPatient.createdOn |date:"dd/MM/yyyy h:mma"}}</td>
+						<td>{{opPatient.status}}</td>
+						<td>
+							<div class="row text-center">
+								<div class="grid-md-6 ngDialog-buttons">
+									<button type="button" class="btn btn-sm btn-light-green btn-rounded" ui-sref="addPrescription({opPatient:opPatient})" title="Add Prescription">
+									 	<i class="fa fa-plus"></i>
+									</button>
+									<div>
+										<strong class="font-12 color-green">Presc</strong>
+									</div>
+								</div>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

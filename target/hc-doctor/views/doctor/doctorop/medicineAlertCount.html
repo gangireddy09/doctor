@@ -1,0 +1,165 @@
+<head>
+	<style>
+	.medicine-details-header{
+		background-color: #FFF;
+	    color: #000;
+	    height: 5vh;
+	    border: 1px solid lightgray;
+	}
+	.search-text{
+		margin-top: 5px;
+    	height: 37px;
+	}
+	.m-l{
+		 margin-left: 78px;
+	}
+	</style>
+</head>
+<body ng-controller="medicineAlertCountCtrl">
+		<h2 class="page-title padding-left-10">Alerts Info</h2>
+		<div class="row bg-color-linear">	
+		<div class="slider-container card-full-height-80">
+			<div class="slider-child-container"  ng-class="showMedicineAlerts">
+				<div class="slider-child grid-md-12">
+					<div class="row card">
+						<div>
+							<h3 class="pull-left">Medicine Alert Count</h3>
+							<div class="pull-right mar-top-10">
+								<button type="button" title="View Expiry Medicines List" class="btn btn-md btn-green" ng-click="slideToExpiryList()">Expiry Alert</button>
+							</div>
+						</div>	
+						<div class="grid-md-12">
+							<div class="row card card-full-height-5 medicine-details-header">
+								<table class="table">
+									<tr>	
+										<td class="grid-md-3 text-left no-padding"><strong class="font-14">Drug Content</strong></td>
+										<td class="grid-md-2 no-padding">
+											<div class="row no-padding">
+												<strong class="font-14 grid-md-3 no-padding text-left">Medicines</strong>
+												<strong class="font-14 grid-md-3 no-padding">Exp.</strong>
+												<strong class="font-14 grid-md-3 no-padding">Batch</strong>
+												<strong class="font-14 grid-md-3 no-padding">Avl.</strong>
+											</div>
+										</td>
+										<td class="grid-md-1 text-center no-padding-left"><strong class="font-14">Total Count</strong></td>
+										<td class="grid-md-2 text-center no-padding-left"><strong class="font-14">Min Count</strong></td>
+										<td class="grid-md-2 text-center no-padding-left"><strong class="font-14">Max Count</strong></td>
+									</tr>
+								</table>
+							</div>
+							<div class="grid-md-12 no-padding-bottom">
+								<input type="text" class="grid-md-12 form-field search-text" placeholder="Search Drug Name...." ng-model="drugName" ng-change="filterMedicines(drugName)"/>
+							</div>
+							<div class="overlay absolute" ng-class="{'show':formLoader}"></div>
+							<div class="form-loader" ng-class="{'show':formLoader}">
+								<i class="fa fa-spinner fa-spin"></i>
+							</div>
+							<div class="row card card-full-height-60 vertical-scroll no-padding" style="border: 1px solid lightgray">
+								<table  class="table">
+									<tr ng-repeat="(drugContent, obj) in visiblePurchasedMedicineObject">
+										<td class="grid-md-3 text-left">
+											{{drugContent}}
+										</td>
+										<td class="grid-md-2 text-left no-padding">
+											<div class="grid-md-12">
+												<table  class="table">
+													<tr ng-repeat="med in obj.medicines" >
+														<td class="grid-md-3">{{med.medicineName}}</td>
+														<td class="grid-md-3 text-left">{{med.expiryMonth}}/{{med.expiryYear}}</td>
+														<td class="grid-md-3">{{med.medicineBatch}}</td>
+														<td class="grid-md-3">{{med.availability}}</td>
+													</tr>
+												</table>	
+											</div>
+										</td>
+										<td class="grid-md-1 text-center">
+											{{obj.availability}}
+										</td>
+										<td class="grid-md-2 text-center">
+											{{obj.minAlertCount}}<br><span ng-show="obj.availability <= obj.minAlertCount" class="color-red font-14 "><i class="fa fa-bell-o mar-right-5" aria-hidden="true"></i><strong>medicine count is Low</strong></span>
+										</td>
+										<td class="grid-md-2 text-center">
+											{{obj.maxAlertCount}}<br><span ng-show="obj.availability >= obj.maxAlertCount" class="color-violet font-14"><i class="fa fa-bell-o mar-right-5" aria-hidden="true"></i><strong>medicine count is High</strong></span>
+										</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="slider-child grid-md-12">
+					<div class="row card">
+						<div>
+							<h3 class="pull-right">Expired Medicines</h3>
+							<div class="pull-left mar-top-10">
+								<button type="button" title="View Count Alerts" class="btn btn-md btn-green" ng-click="slideToCountAlert()">Count Alert</button>
+							</div>
+						</div>
+						
+						<div class="clear"></div>
+						<div class="overlay absolute" ng-class="{'show':formLoader}"></div>
+						<div class="form-loader" ng-class="{'show':formLoader}">
+							<i class="fa fa-spinner fa-spin"></i>
+						</div>
+						<div class="row">
+							<div class="grid-md-3">
+								<label class="grid-md-12" for="date">Date</label>
+								<!-- <input type="date" class="form-field grid-md-12" ng-model="purchaseMedicineObj.date"> -->
+								<div class="relative">
+						            <input type="text" class="form-field grid-md-12" uib-datepicker-popup ng-model="search.searchDate" is-open="opSearchCalendar.opened" datepicker-options="dateOptions"  close-text="Close" />
+						            <span class="form-field-icon">
+						              <button type="button" class="btn btn-sm btn-sky-blue" ng-click="openCalendar('opSearchCalendar')"><i class="fa fa-calendar"></i></button>
+						            </span>
+					            </div>
+							</div>
+							<!-- <div class="grid-md-12 card row no-padding border-around">
+								<div class="grid-md-2">
+									<label class="grid-md-12" for="Date"><strong>Month</strong></label>
+									<input type="text" class="form-field grid-md-12"  ng-model="search.month" placeholder="Enter Month ex:5"/>	 
+								</div>
+								<div class="grid-md-2">
+									<label class="grid-md-12" for="Date"><strong>Year</strong></label>
+									<input type="text" class="form-field grid-md-12"  ng-model="search.year" placeholder="Enter Year ex:2017"/>	 
+								</div>
+							</div> -->
+							<div class="grid-md-6">
+								<label class="grid-md-12"> &nbsp;</label>
+								<button class="btn btn-md btn-light-green padding-8 pull-left" ng-click="getExpiredMedicinesList(search)" style="margin-top:18px ">Search</button>	
+							</div>
+						</div>
+						
+						<div class="row">
+							<div class="card hidden-print card-full-height-60 vertical-scroll border-around">
+								<div class="row no-padding">
+									<table class="table">
+										<tr>
+											<th>S.NO</th> 
+											<th class="grid-md-2">Medicine Name</th>
+											<th class="grid-md-3">Drug Content</th>
+											<th>Medicine HSN Code</th>
+											<th>Batch</th>
+											<th>Mrp</th>
+											<th>Exp</th>
+											<th>Available</th>
+										</tr>
+										<tr ng-repeat="expiry in expiredMedicinesList">
+											<td>{{$index+1}}</td>
+											<td class="grid-md-2">{{expiry.medicineName}}</td>
+											<td class="grid-md-3">{{expiry.medicineDrugContent}}</td>
+											<td>&nbsp;{{expiry.medicineHsnCode}}</td>
+											<td>{{expiry.medicineBatch}}</td>
+											<td>{{expiry.medicineMrp}}</td>
+											<td>{{expiry.medicineExpiryMonth}}/{{expiry.medicineExpiryYear}}</td>
+											<td>{{expiry.purchaseBillMedicineAvailability}}</td>
+										</tr>
+									</table>
+								</div>
+						   </div>
+						</div>	
+					</div>	
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

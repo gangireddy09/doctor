@@ -1,0 +1,157 @@
+<style>
+@media print {
+	 .page-content {
+       width:100%; 
+    }
+    .row { width: 100%; position: relative; padding: 5px;}
+    .no-float [class*='grid-']{ float: none !important; padding: 5px;}
+	.row:BEFORE, .row:AFTER, .clear {
+		clear: both;
+		content: '';
+		display: table;
+	}
+	.logo-img {
+		position: relative;
+		top: -50px;
+		width: 140px;
+	}
+	.logo-img img {
+		width: 160px;
+		height: auto;
+	}
+	.head-right {
+		margin-top: 68px;
+	}
+	* {
+		box-sizing: border-box;
+	}
+	.patient-profile {
+		float: left;
+		width: calc(100% -182px);
+		padding: 5px;
+	}
+	.patient-info {
+		width: 100%;
+		float: right;
+	}
+	.print-header * {
+		margin-bottom: 0;
+		margin-top: 0;
+	}
+	.heading {
+		text-align: left;
+		font-size: 38px;
+		font-weight: 700;
+	}
+	.doctor-info * {
+		text-align: left !important;
+		font-size: 12px;
+	}
+	.doctor-info .doctor-name {
+		float: left;
+		font-size: 24px;
+		font-weight: 700;
+	}
+	.doctor-info .spacialization-regdno {
+		float: left;
+		padding-left: 3px;
+		font-size: 12px;
+	}
+	.doctor-info .spacialization-regdno div {
+		margin-top: 8px;
+	}
+	.side-menu {
+		margin-top: -30px;
+	}
+	.right-border {
+		border-right: 1p solid lightgrey;
+	}
+	.mar-top-10 {
+		margin-top: 10px;
+	}
+	.mar-top-20 {
+		margin-top: 20px;
+	}
+	.text-center {
+		text-align: center;
+	}
+	table tr td, table tr th{
+		text-align:left;
+	}
+	.underline{
+	   text-decoration: underline;
+	}
+	.border-bottom{
+	 border-bottom: 1px solid lightgray;
+	}
+	.padding-left{
+	  padding-left:10px;
+	}
+	table tr td{
+		font-size:12px;
+	}
+	.pad-left-20{
+		padding-left:20px  
+	}
+	
+	.content-wrapper{
+		top:0;
+		height: auto;
+	    overflow: visible;
+	    position: relative;
+	}
+	.sign-image{
+		width: 140px;
+    	height: auto;
+	}
+}
+</style>
+<div class="header-hsptl grid-md-12 no-padding mar-bottom-5">
+	<ng-include src="'./views/print/labs/includes/patient-labtests-print-header.html'"></ng-include>
+</div>
+<div class="grid-md-12 mar-top-20 no-float">
+	<div ng-repeat="lab in printReport.labs" class="m-t-7">
+		<table class="lab-table mar-top-20  grid-md-12" ng-if="!lab.isXray && !lab.isScan && !lab.isEcg">
+			<tr>
+				<td colspan="4" class="border text-center"><b>{{lab.categoryName}}</b></td>
+			</tr>
+			<tr >
+				<th  class="grid-md-3">INVESTIGATION</th>
+				<th class="grid-md-4">RESULT</th>
+				<th class="grid-md-5">NORMAL RANGE</th>
+				<th class="grid-md-3" style="white-space: nowrap" ng-init="spLabel = getSpecialLab(lab);" ng-show="spLabel">{{spLabel}}</th>
+			</tr>
+			<tr ng-repeat="reportObj in lab.reports" ng-if="reportObj.test.isFeePaid">
+				<td class="grid-md-3" ng-attr-rowspan="{{reportObj.count}}" ng-if="reportObj.count" >{{reportObj.test.testName}}</td>
+				<td class="grid-md-4">
+					<span ng-if="reportObj.label != 'Result'">
+						{{reportObj.label}} : {{reportObj.result ? (reportObj.result + ' ' + reportObj.units) :'Pending'}}
+					</span>
+					<span ng-if ="reportObj.label == 'Result'">
+						 {{reportObj.result ? (reportObj.result + ' ' + reportObj.units) :'Pending'}}
+					</span>
+				</td>
+				<td class="grid-md-5">{{reportObj.normalRange}} {{reportObj.units}}</td>
+				<td class="grid-md-3" ng-show="spLabel">
+					{{reportObj.spResult}}
+				</td>
+			</tr>
+			<tr ng-if="lab.reports[0].test.note"><td colspan="4" >Notes: {{lab.reports[0].test.note}}</td></tr>
+		</table>
+	</div>
+	<div class="mar-top-30">
+		<span class="font-10 m-t-20"><b>*</b>THE ABOVE INVESTIGATINS ONLY MENT FOR CLINICAL CORRELATION LIABILITY ONLY UPTO REPETITION IF REQURIED</span>
+	</div>
+</div>
+<div class="row mar-top-30">
+	<div class="pull-left mar-top-30"><div class="grid-md-12 font-18">
+		<div class="grid-md-12 font-18">
+			<img class="sign-image" alt="" src="">
+		</div></div>SIGNATURE OF THE DOCTOR</div>
+	<div class="pull-right text-center mar-top-30">
+		<div class="grid-md-12 font-18">
+			<img class="sign-image" alt="" src="./assets/images/lab_tech_sign.png">
+		</div>
+		SIGNATURE OF THE LAB TECHNICIAN
+	</div>
+</div>

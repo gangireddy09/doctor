@@ -1,0 +1,100 @@
+<style>
+@media print{
+	.logo-img {
+		position: relative;
+		top: -50px;
+		width: 140px;
+	}
+	.logo-img img {
+		width: 160px;
+		height: auto;
+	}
+	.head-right {
+		margin-top: 68px;
+	}
+	* {
+		box-sizing: border-box;
+	}
+	
+	.patient-profile {
+		float: left;
+		width: calc(100% -182px);
+		padding: 5px;
+	}
+	.patient-info {
+		width: 100%;
+		float: right;
+		
+	}
+	.patient-img {
+		width: 100px;
+	}
+	.print-header * {
+		margin-bottom: 0;
+		margin-top: 0;
+	}
+	.heading {
+		text-align: left;
+		font-size: 38px;
+		font-weight: 700;
+	}
+	.doctor-info * {
+		text-align: left !important;
+		font-size: 12px;
+	}
+	.doctor-info .doctor-name {
+		float: left;
+		font-size: 24px;
+		font-weight: 700;
+	}
+	.doctor-info .spacialization-regdno {
+		float: left;
+		padding-left: 3px;
+		font-size: 12px;
+	}
+	.doctor-info .spacialization-regdno div{
+		margin-top:8px;
+	}
+	.side-menu{
+	margin-top:-30px;
+	}
+	.underline{
+	   text-decoration: underline;
+	}
+	.border-bottom{
+	 border-bottom: 1px solid lightgray;
+	}
+	.padding-left{
+	  padding-left:10px;
+	}
+}
+</style>
+<div class="header-hsptl grid-md-12 no-padding">
+		<ng-include src="'../views/billdesk/lab/includes/patient-labtests-print-header.html'"></ng-include>
+</div>
+<div class="row no-padding tests bordered">
+     <div  class="text-center no-padding underline"><h3>Investigations Receipt</h3></div>
+		<div  ng-repeat="(categoryName, tests) in testsData"  >
+					<div  class="grid-md-6 padding-left" ng-if="$index%2==0">
+					    <div class="border-bottom">
+					    	<strong>{{categoryName}}</strong>
+					    </div>
+						<table class="grid-md-6">
+							<tr ng-repeat="node in tests">
+								<td class="grid-md-11">{{node.testName}}</td>
+							</tr>
+						</table>
+					</div>
+					
+					<div class="grid-md-6 padding-left" ng-if="$index%2==1">
+					    <div class="border-bottom">
+					    	<strong>{{categoryName}}</strong>
+					    </div>
+						<table class="grid-md-6">  
+							<tr ng-repeat="node in tests">
+								<td>{{node.testName}}</td>
+							</tr>
+						</table>
+					</div>
+		</div>	
+</div>

@@ -1,0 +1,138 @@
+<head>
+<style>
+@media print{
+	.patient-img{
+	    height:100px;
+		width:100px;
+		position:absolute;
+		top:10px;
+		right:10px;  
+	}
+	.patient-img img{
+		height: 100px;
+    	width: 100px;
+	}
+	.grid-md-1pnt5{ width: 12.5%; }
+	.rx-img{
+		height: 20px;
+	}
+	.rx-img img{
+		height: 12px;
+		width: 12px;
+	}
+}
+</style>
+</head>
+<div class="grid-md-12 no-padding patient-profile" style="position:relative;">
+	<table class="no-padding">
+		<tr>
+			<td>
+				<table>
+					<tr>
+						<td><label>Name</label></td>
+						<td><strong>{{opPatient.patient.name}}</strong></td>
+					</tr>
+					<tr>
+						<td><label>P Id</label></td>
+						<td><strong>{{opPatient.patient.idLabel}}</strong></td>
+					</tr>
+					<tr>
+						<td><label>Height</label></td>
+						<td><strong>{{opPatient.height}} cm</strong></td>
+					</tr>
+					<tr>
+						<td><label>Sugar</label></td>
+						<td><strong>{{opPatient.sugar}}</strong></td>
+					</tr>
+					<tr>
+						<td><label>Village</label></td>
+						<td><strong>{{opPatient.patient.village}}</strong></td>
+					</tr>
+					<tr>
+						<td><label>Complaint</label></td>
+						<td><strong>{{opPatient.complaint}}</strong></td>
+					</tr>
+				</table>
+			</td>
+			<td>
+				<table>
+					<tr>
+						<td><label>Mobile</label></td>
+						<td> <strong>{{opPatient.patient.mobileNo}}</strong></td>
+					</tr>
+					<tr>
+						<td><label>Weight</label></td>
+						<td><strong>{{opPatient.weight}}</strong></td>
+					</tr>				
+					<tr>
+						<td><label>BP</label></td>
+						<td><strong>{{opPatient.bp}}</strong></td>
+					</tr>
+					<tr>
+						<td><label>Date & Time</label></td>
+						<td><strong>{{currentDate | date: 'dd-MMM-yyyy hh:mm:ss'}}</strong></td>
+					</tr>
+					<tr>
+						<td><label>&nbsp</label></td>
+						<td><strong>&nbsp</strong></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+<div class="patient-img">
+	<img src='/hc-rest/patient/getphoto?patientId={{opPatient.patient.id}}'/>
+</div>
+</div>
+<div class="grid-md-12 no-padding  rx-img">
+	<img src="./assets/images/rx.png">
+</div>
+<div class="grid-md-12 no-padding mar-bottom-10">
+	<table class="table" cellpadding="5"> 
+		<tr>
+			<th class="grid-md-1 no-padding text-center">S.No</th>
+			<th class="grid-md-4 no-padding text-left" ng-if="selectPrint=='medName'">Medicine Name</th>
+			<th class="grid-md-4 no-padding text-left" ng-if="selectPrint=='drugName'">Drug Name</th>
+			<th class="grid-md-1 no-padding text-center">Qty</th>
+			<th class="grid-md-1pnt5 no-padding text-left">ఉ</th>
+			<th class="grid-md-1pnt5 no-padding text-left">మ</th>
+			<th class="grid-md-1pnt5 no-padding text-left">సా</th>
+			<th class="grid-md-1pnt5 no-padding text-left">రా </th>
+		</tr>
+		<tr ng-repeat-start="sm in printPrescriptionObj">
+			<td class="grid-md-1 no-padding text-center">{{$index+1}}</td>
+			<td class="grid-md-4 no-padding text-left" ng-if="selectPrint=='medName'">
+				<div>
+					<span ng-if="sm.category!='OTHERS'">
+						{{sm.category | tcCamelCase}}-
+					</Span>
+					{{sm.medicineName | uppercase}}
+				</div>
+			</td>
+			<td class="grid-md-4 no-padding text-left" ng-if="selectPrint=='drugName'">
+				<div>{{sm.drugContent | tcCamelCase}}&nbsp;</div>
+			</td>
+			<td class="grid-md-1 no-padding text-center">{{sm.quantity}}</td>
+			<td class="grid-md-1pnt5 no-padding text-left">{{sm.dosageMorningDescription}}&nbsp;{{sm.dosageMorningRemarks}}</td>
+			<td class="grid-md-1pnt5 no-padding text-left">{{sm.dosageAfterNoonDescription}}&nbsp;{{sm.dosageAfterNoonRemarks}}</td>
+			<td class="grid-md-1pnt5 no-padding text-left">{{sm.dosageEveningDescription}}&nbsp;{{sm.dosageEveningRemarks}}</td>
+			<td class="grid-md-1pnt5 no-padding text-left">{{sm.dosageNightDescription}}&nbsp;{{sm.dosageNightRemarks}}</td>
+		</tr>
+		<tr ng-repeat-end ng-if="sm.remarks" style="margin:0px 10px ">
+			<td colspan="7" class="text-right">
+				{{sm.remarks}}&emsp;
+			</td>
+		</tr>
+	</table>
+</div>
+<div class="row no-padding">
+	<span class="grid-md-1">&nbsp;</span>
+	<label class="grid-md-2">Report:</label>
+	<div class="grid-md-9">
+		<textarea rows="4" class="grid-md-12'"></textarea>
+	</div>
+</div>
+
+
+
+

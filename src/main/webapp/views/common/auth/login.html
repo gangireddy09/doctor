@@ -1,0 +1,30 @@
+<div class="login-body">
+	<form name="loginForm"  class="login-form" novalidate>
+		<div class="login-logo">
+			<img src="./assets/images/hospital-logo.png" alt="Hospital LOGO"/>
+			<i class="fa fa-key fa-3x"></i>
+		</div>
+		<div class="login-title text-center">
+			<h1>LOGIN</h1>
+			<h4>Please login here to proceed</h4>
+			<h3 class="color-red" ng-if="invalidLogin">Invalid Login Credentials</h3>
+		</div>
+		<div class="field-container">
+			<label>User Name <span>*</span></label>
+			<input type="text" name="userName" placeholder="User Name" ng-model="user.userId" required="required" autocomplete="off"/>
+			<div class="error-msg login-err-msg" ng-messages="loginForm.userName.$error">
+				<div ng-message="required">Name Is Required</div>
+			</div>
+		</div>
+		<div class="field-container">
+			<label>Password <span>*</span></label>
+			<input type="password" name="password" placeholder="Password" ng-model="user.userpwd" required="required"/>
+			<span class="error-msg login-err-msg" ng-messages="loginForm.password.$error">
+				<span ng-message="required">Password Is Required</span>
+			</span>
+		</div>
+		<div class="field-container">
+			<button class="btn" type="submit" ng-disabled="loginForm.$invalid" ng-click="submit()">Login</button>
+		</div>
+	</form>
+</div>

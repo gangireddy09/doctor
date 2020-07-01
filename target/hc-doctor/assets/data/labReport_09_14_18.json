@@ -1,0 +1,583 @@
+{
+  "TEXT_0": [
+    {
+      "type": "text",
+      "label": "Result"
+    }
+  ],
+  "TEXT_1": [
+    {
+      "type": "text",
+      "label": "Result",
+      "normalRange": "70-110",
+      "units": "mg/dl"
+    }
+  ],
+  "TEXT_2": [
+    {
+      "type": "text",
+      "label": "Result",
+      "normalRange": "110-160",
+      "units": "mg/dl"
+    }
+  ],
+  "TEXT_3": [
+    {
+      "type": "text",
+      "label": "Result",
+      "normalRange": "up to 1",
+      "units": "mg/dl"
+    }
+  ],
+  "TEXT_4": [
+    {
+      "type": "text",
+      "label": "Result",
+      "normalRange": "up to 0.25",
+      "units": "mg/dl"
+    }
+  ],
+  "TEXT_5": [
+    {
+      "type": "text",
+      "label": "Result",
+      "normalRange": "up to 40",
+      "units": "iu/l"
+    }
+  ],
+  "TEXT_6": [
+    {
+      "type": "text",
+      "label": "Result",
+      "normalRange": "20-30(ch)60-270(i)40-300"
+    }
+  ],
+  "TEXT_7": [
+    {
+      "type": "text",
+      "label": "Result",
+      "normalRange": "up to 12",
+      "units": "mg/dl"
+    }
+  ],
+  "TEXT_8": [
+    {
+      "type": "text",
+      "label": "Result",
+      "normalRange": "0.6-1.2",
+      "units": "mg/dl"
+    }
+  ],
+  "TEXT_9": [
+    {
+      "type": "text",
+      "label": "Result",
+      "normalRange": "10-45",
+      "units": "mg/dl"
+    }
+  ],
+  "TEXT_10": [
+    {
+      "type": "text",
+      "label": "Result",
+      "normalRange": "m:3.4-7.0,f:2.4-5.7"
+    }
+  ],
+  "TEXT_11": [
+    {
+      "type": "text",
+      "label": "Result",
+      "normalRange": "135-155",
+      "units": "mmoi/l"
+    }
+  ],
+  "TEXT_12": [
+    {
+      "type": "text",
+      "label": "Result",
+      "normalRange": "3.5-5.5",
+      "units": "mmoi/l"
+    }
+  ],
+  "TEXT_13": [
+    {
+      "type": "text",
+      "label": "Result",
+      "normalRange": "8-10.8",
+      "units": "mg/dl"
+    }
+  ],
+  "TEXT_14": [
+    {
+      "type": "text",
+      "label": "Result",
+      "normalRange": "98-109",
+      "units": "mmoi/l"
+    }
+  ],
+  "TEXT_15": [
+    {
+      "type": "text",
+      "label": "Result",
+      "normalRange": "15-250",
+      "units": "mg/dl"
+    }
+  ],
+  "TEXT_16": [
+    {
+      "type": "text",
+      "label": "Result",
+      "normalRange": "35-160",
+      "units": "mg/dl"
+    }
+  ],
+  "TEXT_17": [
+    {
+      "type": "text",
+      "label": "Result",
+      "normalRange": "30-70",
+      "units": "mg/dl"
+    }
+  ],
+  "TEXT_18": [
+    {
+      "type": "text",
+      "label": "Result",
+      "normalRange": "7.0-35",
+      "units": "mg/dl"
+    }
+  ],
+  "TEXT_19": [
+    {
+      "type": "text",
+      "label": "Result",
+      "normalRange": "up to 150",
+      "units": "mg/dl"
+    }
+  ],
+  "TEXT_20": [
+    {
+      "type": "text",
+      "label": "Result",
+      "normalRange": "25-140",
+      "units": "Iu/l"
+    }
+  ],
+  "TEXT_21": [
+    {
+      "type": "text",
+      "label": "Result",
+      "normalRange": "Negative"
+    }
+  ],
+  "TEXT_22": [
+    {
+      "type": "text",
+      "label": "Result",
+      "normalRange": "4000-10000",
+      "units": "cu mm"
+    }
+  ],
+  "TEXT_23": [
+    {
+      "type": "text",
+      "label": "Result",
+      "normalRange": "1.5-4.0",
+      "units": "lacks/cu mm"
+    }
+  ],
+  "TEXT_24": [
+    {
+      "type": "text",
+      "label": "Result",
+      "normalRange": "83-101"
+    }
+  ],
+  "TEXT_25": [
+    {
+      "type": "text",
+      "label": "Result",
+      "normalRange": "27.32",
+      "units": "pg"
+    }
+  ],
+  "TEXT_26": [
+    {
+      "type": "text",
+      "label": "Result",
+      "normalRange": "31.5-34.5",
+      "units": "gm/dl"
+    }
+  ],
+  "TEXT_27": [
+    {
+      "type": "text",
+      "label": "Result",
+      "normalRange": "40-80",
+      "units": "%"
+    }
+  ],
+  "TEXT_28": [
+    {
+      "type": "text",
+      "label": "Result",
+      "normalRange": "20-40",
+      "units": "%"
+    }
+  ],
+  "TEXT_29": [
+    {
+      "type": "text",
+      "label": "Result",
+      "normalRange": "2-10",
+      "units": "%"
+    }
+  ],
+  "TEXT_30": [
+    {
+      "type": "text",
+      "label": "Result",
+      "normalRange": "0-1"
+    }
+  ],
+  "TEXT_31": [
+    {
+      "type": "text",
+      "label": "Result",
+      "normalRange": "M:upto 15mm, F:upto 20mm",
+      "units": "mm"
+    }
+  ],
+  "TEXT_32": [
+    {
+      "type": "text",
+      "label": "Result",
+      "normalRange": "upto 440",
+      "units": "cells/cumm"
+    }
+  ],
+  "TEXT_33": [
+    {
+      "type": "text",
+      "label": "Result",
+      "normalRange": "2-7",
+      "units": "min"
+    }
+  ],
+  "TEXT_34": [
+    {
+      "type": "text",
+      "label": "Result",
+      "normalRange": "5-11",
+      "units": "min"
+    }
+  ],
+  "TEXT_35": [
+    {
+      "type": "text",
+      "label": "Result",
+      "normalRange": "M: 4.5-5.5, F: 3.8-4.8",
+      "units": "mill/cu mm"
+
+    }
+  ],
+  "TEXT_36": [
+    {
+      "type": "text",
+      "label": "Result",
+      "normalRange": "M: 40-45  F:36-46",
+      "units": "vol%"
+    }
+  ],
+   "TEXT_37": [
+    {
+      "type": "text",
+      "label": "Result",
+      "normalRange": "M:13-17.0 gm/dl F:12-15 gm/dl",
+      "units": "gm/dl"
+    }
+  ],
+  "BLOOD_GTT": [
+    {
+      "type": "text",
+      "label": "1st Hour",
+      "normalRange": "70-110",
+      "units": "mg/dl"
+    },
+    {
+      "type": "text",
+      "label": "After 2 Hours",
+      "normalRange": "110-160",
+      "units": "mg/dl"
+    }
+  ],
+  "FEVER_WIDAL": [
+    {
+      "type": "text",
+      "label": "\"S\" TYPHI \"O\"",
+      "normalRange": "Negative"
+    },
+    {
+      "type": "text",
+      "label": "\"S\" TYPHI \"H\"",
+      "normalRange": "Negative"
+    },
+    {
+      "type": "text",
+      "label": "\"S\" PARA TYPHI (A)H",
+      "normalRange": "Negative"
+    },
+    {
+      "type": "text",
+      "label": "\"S\" PARA TYPHI (B)H",
+      "normalRange": "Negative"
+    }
+  ],
+    "DENGUE_TEST": [
+    {
+      "type": "text",
+      "label": "NS1 AG",
+      "normalRange": "Negative"
+    },
+    {
+      "type": "text",
+      "label": "Ig M",
+      "normalRange": "Negative"
+    },
+    {
+      "type": "text",
+      "label": "Ig G",
+      "normalRange": "Negative"
+    },
+    {
+	  "type": "textarea",
+      "label": "Result",
+      "normalRange": ""
+    }
+  ],
+  "VIRAL_MARKER_BG_RH_TYPE": [
+    {
+      "type": "text",
+      "label": "Blood Group"
+    },
+    {
+      "type": "text",
+      "label": "RH Typing",
+      "normalRange": ""
+    }
+  ],
+  "TEXT_AREA" : [
+	  {
+	   "type": "textarea",
+	   "label": "Result"
+	  }
+  ],
+  "THIRD_PARTY": [
+    {
+      "type": "textarea",
+      "label": "Result",
+      "fghlkhg": ""
+    },
+    {
+      "type": "file",
+      "label": "Report Result"
+    }
+  ],
+  "URINE_SUGAR_FASTING":[
+  	{
+      "type": "text",
+      "label": "Result",
+      "normalRange": "70-110",
+      "units": "mg/dl",
+      "spLabel": "URINE SUGAR"
+    }
+  ],
+  "URINE_SUGAR_PPBS_RBS": [
+    {
+      "type": "text",
+      "label": "Result",
+      "normalRange": "110-160",
+      "units": "mg/dl",
+      "spLabel": "URINE SUGAR"
+    }
+  ],
+  "SEMEN_TEST": [
+    {
+      "type": "text",
+      "label": "MODE OF COLLECTION",
+      "normalRange": "By Coitus interptus/Masturbation"
+    },
+    {
+      "type": "text",
+      "label": "COLOUR & APPEARANCE",
+      "normalRange": "White or Gray - white"
+    },
+    {
+      "type": "text",
+      "label": "CONSISTENCY & VISCOSITY",
+      "normalRange": "Normal Viscosity"
+    },
+    {
+      "type": "text",
+      "label": "VOLUME",
+      "normalRange": "The normal semen volume average 3.5ml, with a usual range of 1.5 to 5.0ml",
+      "units": "ml"
+    },
+    {
+      "type": "text",
+      "label": "REACTION/PH",
+      "normalRange": "Alkaline/Acidic(7.7)"
+    },
+    {
+      "type": "text",
+      "label": "LIQUIFACTION TIME",
+      "normalRange": "5 MINUTES",
+      "units": "MINUTES"
+    },{
+      "type": "text",
+      "label": "MOTILITY:",
+      "normalRange": "Normal semen contains more than 70% motile sperms."
+    },{
+      "type": "text",
+      "label": "MOTILE",
+      "normalRange": "",
+      "units": "%"
+    },{
+      "type": "text",
+      "label": "NON-MOTILE",
+      "normalRange": "",
+      "units": "%"
+    },{
+      "type": "text",
+      "label": "SLUGGISHLY MOTILE",
+      "normalRange": "",
+      "units": "%"
+    },{
+      "type": "text",
+      "label": "SPERMATOZOA COUNT:",
+      "normalRange": "Normal sperm count range is 60 to 150 millions/ml. With an average of 100 millions/ml. Total Spermatozoa count of less than 20 millions/ml are considered distinctly abnormal.",
+      "units": "millions"
+    }
+  ],
+  "MICROSCOPY":[
+  	{
+      "type": "text",
+      "label": "Pus cells",
+      "normalRange": "",
+      "units": "H.P.F"
+    },{
+      "type": "text",
+      "label": "R.B.C",
+      "normalRange": "",
+      "units": "H.P.F"
+    },{
+      "type": "text",
+      "label": "Epithelial cells",
+      "normalRange": "",
+      "units": "H.P.F"
+    }
+  ],
+  "MICROSCOPY_MALE":[
+  	{
+      "type": "text",
+      "label": "Pus cells",
+      "normalRange": "",
+      "units": "H.P.F"
+    },{
+      "type": "text",
+      "label": "R.B.C",
+      "normalRange": "",
+      "units": "H.P.F"
+    },{
+      "type": "text",
+      "label": "Epithelial cells",
+      "normalRange": "",
+      "units": "H.P.F"
+    },{
+      "type": "text",
+      "label": "Crystals",
+      "normalRange": "",
+      "units": ""
+    },{
+      "type": "text",
+      "label": "Casts",
+      "normalRange": "",
+      "units": ""
+    },{
+      "type": "text",
+      "label": "Spermatozoa",
+      "normalRange": "",
+      "units": ""
+    },{
+      "type": "text",
+      "label": "Bacteria",
+      "normalRange": "",
+      "units": ""
+    }
+  ],
+  "MICROSCOPY_FEMALE":[
+  	{
+      "type": "text",
+      "label": "Pus cells",
+      "normalRange": "",
+      "units": "H.P.F"
+    },{
+      "type": "text",
+      "label": "R.B.C",
+      "normalRange": "",
+      "units": "H.P.F"
+    },{
+      "type": "text",
+      "label": "Epithelial cells",
+      "normalRange": "",
+      "units": "H.P.F"
+    },{
+      "type": "text",
+      "label": "Crystals",
+      "normalRange": "",
+      "units": ""
+    },{
+      "type": "text",
+      "label": "Casts",
+      "normalRange": "",
+      "units": ""
+    },{
+      "type": "text",
+      "label": "Bacteria",
+      "normalRange": "",
+      "units": ""
+    }
+  ],
+  "LIVER_FUNCTION_TEST":[
+  	{
+      "type": "text",
+      "label": "TOTAL BILIRUBIN",
+      "normalRange": "up to 1",
+      "units": "mg/dl"
+    },{
+      "type": "text",
+      "label": "DIRECT BILIRUBIN",
+      "normalRange": "up to 1",
+      "units": "mg/dl"
+    },{
+      "type": "text",
+      "label": "INDIRECT BILIRUBIN",
+      "normalRange": "up to 0.25",
+      "units": "mg/dl"
+    },{
+      "type": "text",
+      "label": "SGOT",
+      "normalRange": "up to 40",
+      "units": "iu/l"
+    },{
+      "type": "text",
+      "label": "SGPT",
+      "normalRange": "up to 40",
+      "units": "iu/l"
+    },{
+      "type": "text",
+      "label": "ALKALINE PHOSPHATASE",
+      "normalRange": "20-30(ch)60-270(i)40-300"
+    }
+  ]
+}

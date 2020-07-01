@@ -1,0 +1,305 @@
+<style>
+	.popup-width{
+		width:40% 
+	}
+	.borderd-bottom {
+		border-bottom: 1px solid lightgray;
+	}
+	.grade-linear {
+		background-image: repeating-linear-gradient(-45deg, transparent, transparent 1px, #ddd 4px);
+	}
+</style>
+<div class="row no-padding">
+	<div class="row card-full-height-90 grade-linear">
+		<div class="card card-full-height-88">
+			<div class="panel-heading borderd-bottom">
+				<h3 class="no-margin padding-5">Employee Pay Form <span class="color-red pull-right pointer-cursor" ng-click="toggleBoolean('showPayForm')"><i class="fa fa-times-circle-o font-18"></i></span></h3>
+			</div>
+			<div class="row borderd-bottom">
+				<div class="grid-md-4">
+					<label for=employeeName class="grid-md-2">Employee Name:</label>
+					<strong class=" grid-md-12 color-sky-blue init-cap"	ng-bind="currentEmp.employeeProfile.employeeName"></strong>
+				</div>
+				<div class="grid-md-4">
+					<label for=mobileNumber class="grid-md-2">Mobile No:</label>
+					<strong class=" grid-md-12 color-sky-blue init-cap"	ng-bind="currentEmp.employeeProfile.mobileNumber"></strong>
+				</div>
+				<div class="grid-md-4">
+					<label for=village class="grid-md-2">Village:</label>
+					<strong class="grid-md-12 color-sky-blue init-cap"	ng-bind="currentEmp.employeeProfile.village"></strong>
+				</div>
+			</div>
+			<div class="row">
+				<div class="grid-md-4">
+					<label for=village class="grid-md-2">Designation:</label>
+					<strong class=" grid-md-12 color-sky-blue init-cap"	ng-bind="currentEmp.employeeProfile.designation"></strong>
+				</div>
+				<div class="grid-md-4">
+					<label for=village  class="grid-md-2">Credit Amount:</label>
+					<strong class="grid-md-12 init-cap color-orange font-18">{{remainingBalance}}</strong>
+				</div>
+			</div>
+			<div class="row">
+				<span>
+					<div class="form-msg {{formMsgClass}}"  ng-show="formMsgData" style="margin-right: 250px;margin-top: -141px;width: 50%;">
+						<i class="fa fa-times-circle pull-right" ng-click="formMsgData=undefined"></i>
+						<span ng-bind="formMsgData"></span>
+					</div>
+				</span>
+			</div>
+			
+			<div class="row">
+				<div class="tabs">	
+					<div class="block-tabs-btn clear">
+						<div class="tabs-btn active" data-tabs-id="tabs1">
+								Salary Form
+						</div>
+						<div class="tabs-btn" data-tabs-id="tabs2">
+								Credit/Debit Form
+						</div>
+						<div class="tabs-btn" data-tabs-id="tabs3">
+								Credit/Debit Transactions
+						</div>
+						<div class="tabs-btn" data-tabs-id="tabs4">
+								Salary Transactions
+						</div>						
+					</div>
+					<div class="tabs-bordered container-tabs  active" data-tabs-id="cont-tabs1">
+						<div class="row no-padding">
+							<div class="row no-padding">
+								<form name="form.salaryForm" novalidate>
+									<div class="row">
+										<div class="grid-md-1"></div>
+										<label class="grid-md-2">Amount</label>
+										<div class="grid-md-6">
+											<input type="text" class="form-field grid-md-12" name="salaryAmount" placeholder="Salary Amount" ng-model="salary.paidAmount" required>
+											<span class="error-msg" ng-if="form.salaryForm.salaryAmount.$dirty && form.salaryForm.salaryAmount.$error.required">*Amount  is Required</span>
+										</div>
+									</div>
+									<div class="row">
+					                    <div class="grid-md-1"></div>
+					                    <div class="grid-md-2">Month &amp; Year</div>
+					                    <div class="grid-md-6">
+					                        <div class="row no-padding">
+					                        	<div class="grid-md-6 no-padding">
+													<select ng-model="salary.month" name="salaryMonth" class="grid-md-12 form-field" ng-options="month as month for month in monthsList" required></select>
+													<span class="error-msg" ng-show="form.salaryForm.salaryMonth.$dirty && form.salaryForm.salaryMonth.$error.required">*Month is Required</span>
+												</div>
+												<div class="grid-md-6 no-padding">
+													<select ng-model="salary.year" name="salaryYear" class="grid-md-12 form-field" ng-options="year as year for year in yearsList" required></select>
+													<span class="error-msg" ng-show="form.salaryForm.salaryYear.$dirty && form.salaryForm.salaryYear.$error.required">*Year is Required</span>
+												</div>
+					                        </div>
+					                    </div>
+					                </div>
+									<div class="row">
+										<div class="grid-md-1"></div>
+										<label class="grid-md-2">Deductions</label>
+										<div class="grid-md-6">
+											<input type="text" class="form-field grid-md-12" name="salaryDeductions" placeholder="Deductions" ng-model="salary.deduction" required>
+											<span class="error-msg" ng-if="form.salaryForm.salaryDeductions.$dirty && form.salaryForm.salaryDeductions.$error.required">*Deductions  is Required</span>
+										</div>
+									</div>
+									<div class="row">
+										<div class="grid-md-1"></div>
+										<label class="grid-md-2">Recovery</label>
+										<div class="grid-md-6">
+											<input type="text" class="form-field grid-md-12" name="salaryRecovery" placeholder="Recovery" ng-model="salary.recoveryAmount" required>
+											<span class="error-msg" ng-if="form.salaryForm.salaryRecovery.$dirty && form.salaryForm.salaryRecovery.$error.required">*Recovery  is Required</span>
+										</div>
+									</div>
+									<div class="row">
+										<div class="grid-md-1"></div>
+										<label class="grid-md-2">Bonus</label>
+										<div class="grid-md-6">
+											<input type="text" class="form-field grid-md-12" name="salaryBonus" placeholder="Bonus" ng-model="salary.bonus" required>
+											<span class="error-msg" ng-if="form.salaryForm.salaryBonus.$dirty && form.salaryForm.salaryBonus.$error.required">*Bonus  is Required</span>
+										</div>
+									</div>
+									<div class="row">
+										<div class="grid-md-1"></div>
+										<label class="grid-md-2">Paid By</label>
+										<div class="grid-md-6">
+											<input type="text" class="form-field grid-md-12" name="salaryPaidBy" placeholder="Paid By" ng-model="salary.paidBy" required>
+											<span class="error-msg" ng-if="form.salaryForm.salaryPaidBy.$dirty && form.salaryForm.salaryPaidBy.$error.required">*Paid By  is Required</span>
+										</div>
+									</div>
+									<div class="row">
+										<div class="grid-md-1"></div>
+										<label class="grid-md-2"></label>
+										<button class="btn btn-light-green" name="salbtn"  ng-click="saveEmpSalary()">Submit</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+					
+					<div class="tabs-bordered container-tabs" data-tabs-id="cont-tabs2">
+						<div class="row no-padding">
+							<div class="row no-padding">
+								<form name="form.creditForm" novalidate>
+									<div class="row">
+										<div class="grid-md-1"></div>
+										<label class="grid-md-2">Type</label>
+										<div class="grid-md-6">
+											<select  class="form-field grid-md-12 font-14" name="creditType" ng-model="payType.type" ng-change="calRemainAmount()" ng-options="type as type for type in typesList" required></select>
+											<span class="error-msg" ng-show="form.creditForm.creditType.$dirty && form.salaryForm.creditType.$error.required">*Credit Type  is Required</span>
+										</div>
+									</div>
+									<div class="row">
+										<div class="grid-md-1"></div>
+										<label class="grid-md-2">Balace is :</label>
+										<div class="grid-md-6">{{remainingBalance}}</div>
+									</div>
+									<div class="row">
+										<div class="grid-md-1"></div>
+										<label class="grid-md-2">Amount</label>
+										<div class="grid-md-6">
+											<input type="text" class="form-field grid-md-12" name="creditAmount" placeholder="Enter Amount" ng-change="calRemainAmount()" ng-model="payType.paidAmount" required>
+											<span class="error-msg" ng-if="form.creditForm.creditAmount.$dirty && form.creditForm.creditAmount.$error.required">*Amount  is Required</span>
+										
+											<strong ng-show="!form.salesPaymentForm.paidAmount.$invalid">
+												<span class="color-green" ng-if="remainingBalance > 0 && payType.type == 'Debit'">{{remainingBalance}} Less.</span>
+												<span class="color-red"  ng-if="remainingBalance < 0 && payType.type == 'Debit'" >{{remainingBalance}} Exceeded.</span>
+											 	<span class="color-sky-blue"  ng-if="remainingBalance == 0 && payType.type == 'Debit'" >Bill Amount Cleared.</span>
+											</strong>
+										</div>	
+									</div>
+									<div class="row">
+										<div class="grid-md-1"></div>
+										<label class="grid-md-2">Paid By</label>
+										<div class="grid-md-6">
+											<input type="text" class="form-field grid-md-12" name="creditPaidBy" placeholder="Paid By" ng-model="payType.paidBy" required>
+											<span class="error-msg" ng-if="form.creditForm.creditPaidBy.$dirty && form.creditForm.creditPaidBy.$error.required">*Paid By  is Required</span>
+										</div>
+									</div>
+									<div class="row">
+										<div class="grid-md-1"></div>
+										<label class="grid-md-2">Comment</label>
+										<div class="grid-md-6">
+											<textarea type="text" class="form-field grid-md-12" name="creditPaidComment" placeholder="Comment" ng-model="payType.comments" required></textarea>
+											<span class="error-msg" ng-if="form.creditForm.creditPaidComment.$dirty && form.creditForm.creditPaidComment.$error.required">*PaidBy Comment  is Required</span>
+										</div>
+									</div>
+									<div class="row">
+										<div class="grid-md-1"></div>
+										<label class="grid-md-2"></label>
+										<button class="btn btn-light-green" name="salbtn"  ng-click="saveData(payType)">Submit</button>
+									</div>
+								</form>	
+							</div>
+						</div>
+					</div>
+					<div class="tabs-bordered container-tabs" data-tabs-id="cont-tabs3">
+						<div class="row no-padding">
+							<div class="row">
+								<div class="grid-md-3">
+									<label class="grid-md-12" for="fromDate">From Date</label>
+									<div class="relative">
+										<input type="text" class="form-field grid-md-12" uib-datepicker-popup ng-model="searchObjCredit.fromDate" is-open="fromDateCalendar.opened" datepicker-options="dateOptions" close-text="Close" />
+										<span class="form-field-icon">
+										  <button type="button" class="btn btn-sm btn-sky-blue" ng-click="openCalendar('fromDateCalendar')"><i class="fa fa-calendar"></i></button>
+										</span>
+									</div>
+								</div>
+								<div class="grid-md-3">
+									<label class="grid-md-12" for="toDate">To Date</label>
+									<div class="relative">
+										<input type="text" class="form-field grid-md-12" uib-datepicker-popup ng-model="searchObjCredit.toDate" is-open="toDateCalendar.opened" datepicker-options="dateOptions" close-text="Close" />
+										<span class="form-field-icon">
+										  <button type="button" class="btn btn-sm btn-sky-blue" ng-click="openCalendar('toDateCalendar')"><i class="fa fa-calendar"></i></button>
+										</span>
+									</div>
+								</div>
+								<div class="grid-md-2">
+									<label class="grid-md-12"> &nbsp;</label>
+									<button class="btn btn-md btn-blue" ng-click="getEmpCreditTransactions(searchObjCredit)">Find</button>
+								</div> 
+							</div>
+							<div class="card card-full-height-50 vertical-scroll">
+								<div class="row" ng-if="!empCreditTransactionsList.length">
+									<div class="grid-md-4"></div>	
+				     				<div class="grid-md-4"><strong class="text-center color-orange font-16">{{creditTransMsg}}</strong></div>
+								</div>
+								<table class="table" ng-if="empCreditTransactionsList.length">
+									<tr>
+										<th class="text-center">S.No</th>
+										<th class="text-center">Amount</th>
+										<th class="text-center">Pay Type</th>
+										<th class="text-center">Paid On</th>
+										<th class="text-center">Paid By</th>
+										<th class="text-center grid-md-3">Comments</th>
+									</tr>
+									<tr  ng-repeat="obj in empCreditTransactionsList">
+										<td class="text-center"><span ng-bind="$index+1"></span></td>
+										<td class="text-center"><span ng-bind="obj.paidAmount"></span></td>
+										<td class="text-center"><span ng-bind="obj.type"></span></td>
+										<td class="text-center"><span ng-bind="obj.createdOn |date:'dd-MM-yyyy'"></span></td>
+										<td class="text-center"><span ng-bind="obj.paidBy"></span></td>
+										<td class="text-center grid-md-3" ><span ng-bind="obj.comments"></span></td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="tabs-bordered container-tabs" data-tabs-id="cont-tabs4">
+						<div class="row no-padding">
+							<div class="row">
+								<div class="grid-md-3">
+									<label class="grid-md-12" for="fromDate">From Date</label>
+									<div class="relative">
+										<input type="text" class="form-field grid-md-12" uib-datepicker-popup ng-model="searchObjSalary.fromDate" is-open="fromDateCalendar.opened" datepicker-options="dateOptions" close-text="Close" />
+										<span class="form-field-icon">
+										  <button type="button" class="btn btn-sm btn-sky-blue" ng-click="openCalendar('fromDateCalendar')"><i class="fa fa-calendar"></i></button>
+										</span>
+									</div>
+								</div>
+								<div class="grid-md-3">
+									<label class="grid-md-12" for="toDate">To Date</label>
+									<div class="relative">
+										<input type="text" class="form-field grid-md-12" uib-datepicker-popup ng-model="searchObjSalary.toDate" is-open="toDateCalendar.opened" datepicker-options="dateOptions" close-text="Close" />
+										<span class="form-field-icon">
+										  <button type="button" class="btn btn-sm btn-sky-blue" ng-click="openCalendar('toDateCalendar')"><i class="fa fa-calendar"></i></button>
+										</span>
+									</div>
+								</div>
+								<div class="grid-md-2">
+									<label class="grid-md-12"> &nbsp;</label>
+									<button class="btn btn-md btn-blue" ng-click="getEmpSalaryTransactions(searchObjSalary)">Find</button>
+								</div> 
+							</div>
+							<div class="card card-full-height-50 vertical-scroll">
+								<div class="row" ng-if="!empSalaryTransactionsList.length">
+									<div class="grid-md-4"></div>
+				     				<div class="grid-md-4"><strong class="text-center color-orange font-16">{{salaryTransMsg}}</strong></div>
+								</div>
+								<table class="table" ng-if="empSalaryTransactionsList.length">
+									<tr>
+										<th class="text-center">S.No</th>
+										<th class="text-center">Month/Year</th>
+										<th class="text-center">Amount</th>
+										<th class="text-center">Recovery</th>
+										<th class="text-center">Deduction</th>
+										<th class="text-center">Bonus</th>
+										<th class="text-center">Paid On</th>
+										<th class="text-center">Paid By</th>
+									</tr>
+									<tr  ng-repeat="obj in empSalaryTransactionsList">
+										<td class="text-center"><span ng-bind="$index+1"></span></td>
+										<td class="text-center"><span ng-bind="obj.paidMonth"></span></td>
+										<td class="text-center"><span ng-bind="obj.paidAmount"></span></td>
+										<td class="text-center"><span ng-bind="obj.recoveryAmount"></span></td>
+										<td class="text-center"><span ng-bind="obj.deduction"></span></td>
+										<td class="text-center"><span ng-bind="obj.bonus"></span></td>
+										<td class="text-center"><span ng-bind="obj.createdOn |date:'dd-MM-yyyy'"></span></td>
+										<td class="text-center"><span ng-bind="obj.paidBy"></span></td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>	
+</div>

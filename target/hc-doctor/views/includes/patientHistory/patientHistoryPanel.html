@@ -1,0 +1,182 @@
+<div class="grade-linear">
+	<div class="row">
+		<!-- <div class="grid-md-2">&nbsp;</div> -->
+		<div class="grid-md-12">
+			<div class="row">
+				<div class="grid-md-12">
+					<div class=" card card-full-height-86">
+
+						<div class="row text-center font-18 no-padding">
+							<strong class="color-orange ng-binding">Patient History</strong>
+						</div>
+						<div class="row no-padding card">
+							<div class="grid-md-12 row ">
+								<div class="grid-md-4  ">
+									<label><b>Name</b></label> <strong
+										class="color-sky-blue init-cap">:{{patientHistoryList.patient.name}}</strong>
+								</div>
+								<div class="grid-md-4 ">
+									<label><b>Phone No</b></label> <strong
+										class="color-sky-blue init-cap">:
+										{{patientHistoryList.patient.mobileNo}}</strong>
+								</div>
+								<div class="grid-md-4 ">
+									<label><b>Sex/Age</b></label> <strong
+										class="color-sky-blue init-cap">:{{patientHistoryList.patient.gender}}/{{prespcriptionHistoryListpateint.age}}</strong>
+								</div>
+							</div>
+							<div class="grid-md-12 row ">
+								<div class="grid-md-4 ">
+									<label><b>Aadhar No</b></label> <strong
+										class="color-sky-blue init-cap">:{{patientHistoryList.patient.aadharNo}}</strong>
+								</div>
+								<div class="grid-md-4 ">
+									<label><b>Address</b></label> <strong
+										class="color-sky-blue init-cap">:
+										{{patientHistoryList.patient.village}}</strong>
+								</div>
+								<!-- <div class="grid-md-4 ">
+									<label><b>Ht/Wt</b></label>
+									<strong class="color-sky-blue init-cap">:{{pateint.height}}/{{patient.Weight}}</strong>
+								</div> -->
+							</div>
+						</div>
+						<div class="row no-padding  vertical-scroll card-full-height-60">
+							<div ng-if="patientHistoryList.opsList.length"
+								ng-repeat="opsList in patientHistoryList.opsList"
+								class="row no-padding card">
+								<div class="row  card">
+									<div class="row no-padding">
+										<div class="text-bold grid-md-4   ">
+											<span class="color-dark-orange  font-16">Op Date : </span>&nbsp;
+											<strong>{{opsList.opPatient.createdOn |
+												date:'dd-MMM-yyyy'}}</strong>
+										</div>
+									</div>
+
+									<div class="row  gird-md-12 text-center"
+										ng-if="!opsList.prescriptionsList.length && !opsList.labsList[0].labList.length">
+										<strong class="color-red  init-cap">NO PRESCRIPTIONS
+											AND LABS </strong>
+									</div>
+
+									<!--prescription  -->
+									<div ng-repeat="prescriptionsList in opsList.prescriptionsList">
+
+										<div class="text-bold   font-16 color-dark-orange">
+											Prescription</div>
+										<div>
+											<table class="table">
+												<tr>
+													<th class="grid-md-1 no-padding text-center">S.No</th>
+													<th class="grid-md-4 no-padding text-left">Trade Name</th>
+													<th class="grid-md-1 no-padding text-center">Qty</th>
+													<th class="grid-md-1pnt5 no-padding text-left">ఉ</th>
+													<th class="grid-md-1pnt5 no-padding text-left">మ</th>
+													<th class="grid-md-1pnt5 no-padding text-left">సా</th>
+													<th class="grid-md-1pnt5 no-padding text-left">రా</th>
+												</tr>
+												<tr
+													ng-repeat="prescriptionMedicines in prescriptionsList.prescriptionMedicines">
+													<td class="grid-md-1 no-padding text-center">{{$index+1}}</td>
+													<td class="grid-md-4 no-padding text-left">
+														<div>{{prescriptionMedicines.category|tcCamelCase}}-{{prescriptionMedicines.medicineName|uppercase}}</div>
+														<!-- <strong>{{sm.purchasedMedicine.medicineDrugName | uppercase}}</strong> -->
+													</td>
+													<td class="grid-md-1 no-padding text-center">{{prescriptionMedicines.quantity}}</td>
+													<td class="grid-md-1pnt5 no-padding text-left"
+														ng-if="prescriptionMedicines.dosageMorningRemarks!=null">{{prescriptionMedicines.dosageMorningDescription}}&nbsp;{{prescriptionMedicines.dosageMorningRemarks}}</td>
+													<td class="grid-md-1pnt5 no-padding text-left"
+														ng-if="prescriptionMedicines.dosageMorningRemarks==null">0</td>
+
+													<td class="grid-md-1pnt5 no-padding text-left"
+														ng-if="prescriptionMedicines.dosageAfterNoonRemarks!=null">{{prescriptionMedicines.dosageAfterNoonDescription}}&nbsp;{{prescriptionMedicines.dosageAfterNoonRemarks}}</td>
+													<td class="grid-md-1pnt5 no-padding text-left"
+														ng-if="prescriptionMedicines.dosageAfterNoonRemarks==null">0</td>
+
+													<td class="grid-md-1pnt5 no-padding text-left"
+														ng-if="prescriptionMedicines.dosageEveningRemarks!=null">{{prescriptionMedicines.dosageEveningDescription}}&nbsp;{{prescriptionMedicines.dosageEveningRemarks}}</td>
+													<td class="grid-md-1pnt5 no-padding text-left"
+														ng-if="prescriptionMedicines.dosageEveningRemarks==null">0</td>
+
+													<td class="grid-md-1pnt5 no-padding text-left"
+														ng-if="prescriptionMedicines.dosageNightRemarks!=null">{{prescriptionMedicines.dosageNightDescription}}&nbsp;{{prescriptionMedicines.dosageNightRemarks}}</td>
+													<td class="grid-md-1pnt5 no-padding text-left"
+														ng-if="prescriptionMedicines.dosageNightRemarks==null">0</td>
+												</tr>
+											</table>
+
+										</div>
+									</div>
+
+
+
+
+									<!-- Labs -->
+									<div class="row"
+										ng-repeat="report in opsList.labsList[0].labReportList">
+										<div class="text-bold   font-16 color-dark-orange">Lab
+											Reports</div>
+
+										<div class="row card">
+											<div class="grid-md-12 card">
+												<div class="row">
+													<div class="grid-md-4">
+														<b>Lab Test Name</b>
+													</div>
+													<!-- <div class="grid-md-2"><b>Status</b></div> -->
+													<div class="grid-md-4">
+														<b>Result</b>
+													</div>
+													<div class="grid-md-2">
+														<b>Normal Range</b>
+													</div>
+												</div>
+											</div>
+											<div class="grid-md-12"
+												ng-repeat="lab in report.labReportJson.labs">
+
+												<i class="fa fa-caret-right"></i> <span
+													class="padding-left-5">{{lab.categoryName}}</span>
+												<div class="row padding-left-10"
+													ng-repeat="test in lab.tests">
+													<div class="grid-md-4">
+														<span class="">{{$index+1}}.</span><span
+															class="padding-left-5">{{test.testName}}</span>
+													</div>
+													<!-- <div class="grid-md-2">
+					{{test.isFeePaid? 'Paid': 'Not Paid'}}
+				</div> -->
+													<div class="grid-md-4">{{test.report[0].result ?
+														(test.report[0].result + ' ' + test.report[0].units)
+														:'Pending'}}</div>
+													<div class="grid-md-2" ng-if="test.report.length == 1">
+														{{test.report[0].normalRange}}</div>
+													<div class="grid-md-2"
+														ng-if="test.report.length > 1 && test.report[1].type == 'file'">
+														<button class="btn btn-md btn-sky-blue" type="button"
+															title="view" tooltip="View File"
+															ng-click="viewFile(report.id,lab.categoryName,test.testName)"
+															ng-disabled="!test.isFeePaid">
+															<i class="fa fa-eye"></i>
+														</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="overlay absolute" ng-class="{'show':formLoader}"></div>
+							<div class="form-loader" ng-class="{'show':formLoader}">
+								<i class="fa fa-refresh fa-spin"></i>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>

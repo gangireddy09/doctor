@@ -1,0 +1,144 @@
+<head>
+	<style>
+		.popup-pres{
+			width: 35%;
+		    min-height: 16vh;
+		}
+</style>
+</head>
+<div class="row no-padding" ng-if="!prescriptionView">
+	<div class="grid-md-12 no-padding-top">
+		<div class="card" ng-if="!prescription.prescriptionMedicines.length">
+			<p ng-if="!oldPrescriptions.length">No prescription added to <strong>{{opPatient.patient.patientName}}</strong>.</p>
+			<p ng-if="oldPrescriptions.length">Previous Prescriptions already purchased by the patient: <strong>{{opPatient.patient.patientName}}</strong>.</p>
+			<div>Click <a href="" class="color-sky-blue" ng-click="changePrescriptionView('prescription')">Here</a> to add New Prescription.</div>
+		</div>
+		
+		<div class="card" ng-if="prescription.prescriptionMedicines.length">
+			<table class="table">
+				<tr>
+					<th>S.No</th>
+					<th>Medicine</th>
+					<th>Batch</th>
+					<th>Expiry Date</th>
+					<th>Avl<span class="grid-md-5 pull-right">Qty</span></th>
+					<th>Cost</th>
+					<th>ఉ</th>
+					<th>మ</th>	
+					<th>సా</th>
+					<th>రా</th>
+				</tr>
+				<tr ng-repeat="pm in prescription.prescriptionMedicines">
+					<td>{{$index+1}}</td>
+					<td>{{pm.medicineName | uppercase}}
+						<!-- <div class="color-grey font-10">{{pm.drugContent |tcCamelCase}}</div> -->
+					</td>
+					<td>{{pm.batch}}</td>
+					<td>{{pm.expiryMonth}}/{{pm.expiryYear}}</td>
+					<td class="grid-md-2 line-height-30">
+						{{pm.available}}
+						<span class="grid-md-5 pull-right" ng-bind="pm.quantity"></span>
+					</td>
+					<td>{{pm.mrp * pm.quantity / pm.noOfUnits | number: 2}}</td>
+					<td><i class="fa" ng-class="{'fa-check ': pm.dosageMorning, 'fa-times': !pm.dosageMorning}"></i></td>
+					<td><i class="fa" ng-class="{'fa-check ': pm.dosageAfterNoon, 'fa-times': !pm.dosageAfterNoon}"></i></td>
+					<td><i class="fa" ng-class="{'fa-check ': pm.dosageEvening, 'fa-times': !pm.dosageEvening}"></i></td>
+					<td><i class="fa" ng-class="{'fa-check ': pm.dosageNight, 'fa-times': !pm.dosageNight}"></i></td>
+				</tr>
+			</table>
+			<div class="grid-md-12 row" >
+				<button class="btn btn-sm btn-purple pull-right" ng-click="editPatientPrescription()">
+					<i class="fa fa-edit"></i> &nbsp; Edit
+				</button>
+				 <div class="grid-md-1 pull-right"></div>
+				<div>
+					<button class="btn btn-sm btn-green pull-right"  ng-click="toggleAddPopup('new')">
+						<i class="fa fa-print"></i> &nbsp; Print
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div ng-if="oldPrescriptions.length">
+		<div class="card" ng-repeat="oldPrescription in oldPrescriptions">
+			<table class="table">
+				<tr>
+					<th>S.No</th>
+					<th>Medicine</th>
+					<th>Batch</th>
+					<th>Avl<span class="grid-md-5 pull-right">Qty</span></th>
+					<th>Cost</th>
+					<th>ఉ</th>
+					<th>మ</th>
+					<th>సా</th>
+					<th>రా</th>
+				</tr>
+				<tr ng-repeat="pm in oldPrescription.prescriptionMedicines">
+					<td>{{$index+1}}</td>
+					<td>{{pm.medicineName | uppercase}}
+						<div class="color-grey font-10">{{pm.drugContent |tcCamelCase}}</div>
+					</td>
+					<td>{{pm.batch}}</td>
+					<td class="grid-md-2 line-height-30">
+						{{pm.available}}
+						<span class="grid-md-5 pull-right" ng-bind="pm.quantity"></span>
+					</td>
+					<td>{{pm.mrp * pm.quantity / pm.noOfUnits | number: 2}}</td>
+					<td><i class="fa" ng-class="{'fa-check ': pm.dosageMorning, 'fa-times': !pm.dosageMorning}"></i></td>
+					<td><i class="fa" ng-class="{'fa-check ': pm.dosageAfterNoon, 'fa-times': !pm.dosageAfterNoon}"></i></td>
+					<td><i class="fa" ng-class="{'fa-check ': pm.dosageEvening, 'fa-times': !pm.dosageEvening}"></i></td>
+					<td><i class="fa" ng-class="{'fa-check ': pm.dosageNight, 'fa-times': !pm.dosageNight}"></i></td>
+				</tr>
+			</table>
+			<div class="grid-md-12 row">
+				<button class="btn btn-sm btn-green pull-right" ng-click="toggleAddPopup('old');">
+					<i class="fa fa-print"></i> &nbsp; Print
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Prescription Lab Dash board -->
+<div class="overlay" ng-class="{'show':showAddPopup}" ng-click="toggleAddPopup()"></div>
+
+<div class="popup popup-pres absolute" ng-if="showAddPopup" ng-class="{'show':showAddPopup}" style="margin-top:12%;">
+	<div class="row" style="margin-top:15px">
+		<div class="text-center font-16">Print With</div>
+						<!--New Prescription-->
+		<div class="row" ng-if="selectPresPrint=='new'" style="margin-top: 20px;">				
+			<div class="grid-md-6 text-center">
+				<button class="btn btn-md btn-green " ng-click="printPage(prescription.prescriptionMedicines,'medName')">
+					<i class="fa fa-print"></i>Trade Name
+				</button>
+			</div>
+			<div class="grid-md-6  text-center">
+				<button class="btn btn-md btn-purple" ng-click="printPage(prescription.prescriptionMedicines,'drugName')">
+					<i class="fa fa-print"></i>Drug Name
+				</button>
+			</div>
+		</div>
+						<!--old prescription-->
+		<div class="row" ng-if="selectPresPrint=='old'" style="margin-top: 20px;">				
+			<div class="grid-md-6 text-center">
+				<button class="btn btn-md btn-green " ng-click="printPage( oldPrescriptions[0].prescriptionMedicines,'medName')">
+					<i class="fa fa-print"></i>  Trade Name
+				</button>
+			</div>
+			<div class="grid-md-6  text-center">
+				<button class="btn btn-md btn-purple "  ng-click="printPage( oldPrescriptions[0].prescriptionMedicines,'drugName')">
+					<i class="fa fa-print"></i> Drug Name
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row no-padding" ng-if="prescriptionView==='prescription'">
+	<prescription-generator on-toggle-selected-list="toggleOverlay($expanded)"
+				prescription="prescription"
+				options="{'saveBtnTxt': prescription.id? 'Update' : 'Save'}"
+				on-save="savePrescription($prescriptionMedicines)">
+	</prescription-generator>
+</div>

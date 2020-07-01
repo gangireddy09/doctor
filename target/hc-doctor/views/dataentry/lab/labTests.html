@@ -1,0 +1,110 @@
+<div class="page-content-margin hidden-print">
+	<h2 class="page-title">LabTests</h2>
+	<div class="row bg-color-linear no-padding-left no-padding-right no-padding-bottom">
+		<div class="grid-md-12 card grade-linear min-height-300 no-padding">
+			<div class="row card ">
+				<div class="grid-md-1">&nbsp;</div>
+				<div class="grid-md-2">
+					<label for="date"><b>Date</b></label>
+					<div class="relative">
+						<tc-date-picker placeholder="Choose a date" ng-model="searchDate"></tc-date-picker>
+					</div>
+				</div>
+				<div class="grid-md-2" align="center" >
+					<label class="grid-md-12">&nbsp;</label>
+					<div>
+						<button class="btn btn-md btn-light-green" ng-click="getLabtests(searchDate)">Search</button>
+					</div>
+				</div>
+				<div class="grid-md-3">&nbsp;</div>
+				<div class="grid-md-4" ng-if="role == 'DOCTOR'">
+					<div class="pull-left mar-right-10 mar-top-10 font-22">
+						<span class="color-sky-blue"><b>Day Sales :</b></span> <i class="fa fa-rupee color-green"></i> {{totalSales}}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="row bg-color-linear" ng-if="data.length">
+		<div class="row border-bottom-2 card ">
+			<div class="grid-md-1"><b>S.No.</b></div>
+			<div class="grid-md-2"><b>Patient Id</b></div>
+			<div class="grid-md-2"><b>Patient Name</b></div>
+			<div class="grid-md-2"><b>Doctor Name</b></div>
+			<div class="grid-md-2 "><b>Hospital</b></div>
+			<div class="grid-md-1"><b>Cost</b></div>
+			<div class="grid-md-1 text-center"><b>Lab Tests</b></div>
+			<div class="grid-md-1 text-center" ng-if="role == 'BILLDESK' "><b>Actions</b></div>
+			<div class="grid-md-1 text-center" ng-if="role != 'BILLDESK' "><b>Report</b></div>
+		</div>
+		<div class="row no-padding">
+			<div class="grid-md-1">&nbsp;</div>
+			<div class="grid-md-2">&nbsp;</div>
+			<div class="grid-md-4 no-padding">
+				<input type="text" class="form-field grid-md-12 padding-10" placeholder="Search Patient Name " ng-model="search.patient.name"/>
+			</div>
+		</div>
+		<div class="card-full-height-80 card vertical-scroll">
+			<div class="row border-around" ng-repeat="labData in data | filter:search | orderBy:'name'">
+				<div class="grid-md-1">{{$index+1}}</div>
+				<div class="grid-md-2">{{labData.patient.idLabel}}</div>
+				<div class="grid-md-2">{{labData.patient.name |tcCamelCase}}</div>
+				<div class="grid-md-2">{{labData.doctorName}}</div>
+				<div class="grid-md-2">{{labData.hospitalName}}</div>
+				<div class="grid-md-1">{{labData.fee}}</div>
+				<div class="grid-md-1 text-center">
+					<div >{{labData.paidTests}}({{labData.prescribedTests}}) </div>
+				</div>
+				<div class="grid-md-1 no-padding text-center">
+					<div class="row no-padding">
+						<div class="grid-md-12" ng-if="role == 'DATAENTRY' ">
+							<button class="btn btn-md btn-sky-blue" type="button" title="view" tooltip="View Tests" ui-sref="patientWise({opLabPatientId : labData.id})">
+								<i class="fa fa-eye"></i>
+							</button>
+							<button type="button" class="btn btn-md btn-purple" ng-click="print(labData)">
+								<i class="fa fa-print"></i>&nbsp;
+							</button>
+						</div>
+						<div class="grid-md-12" ng-if="role == 'BILLDESK'">
+							<button class="btn btn-md btn-sky-blue " type="button" title="view tests" tooltip="View tests" ng-click="viewLabTests(labData)">
+									<i class="fa fa-eye"></i>
+							</button>
+							<button class="btn btn-md btn-purple" type="button" title="edit tests" tooltip="Edit test" ui-sref="labTestsEntry({labPatientId : labData.opLabPatient.id})" ng-disabled="false">
+								<i class="fa fa-edit"></i>
+							</button>
+							<button type="button" class="btn btn-md btn-purple" title="print slip"ng-click="print(labData)">
+								<i class="fa fa-print"></i>&nbsp;
+							</button>
+							<button type="button" class="btn btn-md btn-purple" title="payment" ng-click="viewPayments(labData)" >
+								<i class="fa fa-rupee"></i>&nbsp;
+							</button>
+							
+						</div>
+						<div class="grid-md-12 text-center" ng-if="role == 'DOCTOR'">
+							<button class="btn btn-sm btn-sky-blue " type="button" title="view" tooltip="View Tests" ng-click="viewLabTests(labData)">
+								<i class="fa fa-eye"></i>
+							</button>
+							<button type="button" class="btn btn-sm btn-purple" title="print"ng-click="print(labData)">
+								<i class="fa fa-print"></i>&nbsp;
+							</button>
+							<i class="fa fa-2x fa-toggle-on  active" title="disable"ng-if="labData.isReportEdit == true" ng-click="changeStatus(labData.id,$index);"></i>
+   							<i class="fa fa-2x fa-toggle-on fa-rotate-180  inactive" title="enable" ng-if="labData.isReportEdit == false" ng-click="changeStatus(labData.id,$index);"></i>
+						</div>
+					</div> 
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="overlay absolute" ng-class="{'show':formLoader}"></div>
+<div class="form-loader"
+	ng-class="{'show':formLoader}">
+	<i class="fa fa-spinner fa-spin"></i>
+</div>
+<div class="visible-print-block" ng-if="role == 'BILLDESK'">
+	<ng-include src="'./views/print/labs/labprints/lab-tests-with-price-print.html'"></ng-include>
+</div>
+<div class="visible-print-block" ng-if="role == 'DOCTOR' || role == 'DATAENTRY'">
+	<ng-include src="'./views/print/labs/labprints/lab-tests-report.html'"></ng-include>
+</div>

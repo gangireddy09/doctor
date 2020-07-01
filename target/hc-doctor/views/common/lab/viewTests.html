@@ -1,0 +1,101 @@
+
+<div class="card">
+	<div class="row">
+		<div class="grid-md-4">
+			<label><b>Patient Name :</b></label>
+			<strong class="color-sky-blue init-cap">{{report.patient.name}}</strong>
+		</div>
+		<div class="grid-md-4">
+			<label><b>Doctor Name :</b></label>
+			<strong class="color-sky-blue init-cap">{{report.doctorName}}</strong>
+		</div>
+		<div class="grid-md-4">
+			<label><b>Hospital Name :</b></label>
+			<strong class="color-sky-blue init-cap">{{report.hospitalName}}</strong>
+		</div>
+	</div>
+	<div class="row">
+		<div class="grid-md-4">
+			<label><b>Cost :</b></label>
+			<strong class="color-sky-blue init-cap">{{report.fee }}</strong>
+		</div>
+		<div class="grid-md-4">
+			<label><b>Prescribed Tests :</b></label>
+			<strong class="color-sky-blue init-cap">{{report.prescribedTests}}</strong>
+		</div>
+		<div class="grid-md-4">
+			<label><b>Tests Taken :</b></label>
+			<strong class="color-sky-blue init-cap">{{report.paidTests}}</strong>
+		</div>
+	</div>
+	<div class="grid-md-4 padding-5" ng-if="isLab">
+		<label><b>Report Edit :</b></label>
+		<i class="fa fa-2x fa-toggle-on  active" title="disable"ng-if="report.isReportEdit == true" ng-click="changeStatus(report.id);"></i>
+		<i class="fa fa-2x fa-toggle-on fa-rotate-180  inactive" title="enable" ng-if="report.isReportEdit == false" ng-click="changeStatus(report.id);"></i>
+	</div>
+	<div class="row">
+		<div class="form-msg {{formMsgClass}}" ng-show="formMsgContent">
+			<i class="fa fa-times-circle pull-right" ng-click="formMsgContent=undefined"></i> 
+			<span ng-bind="formMsgContent"></span>
+		</div>
+	</div>
+	<div class="row card" ng-if="role == 'BILLDESK' || isCost">
+		<div class="grid-md-8 card" >
+			<div class="row">
+				<div class="grid-md-6"><b>Lab Test Name</b></div>
+				<div class="grid-md-3"><b>Cost</b></div>
+				<div class="grid-md-3"><b>Status</b></div>
+			</div>
+		</div>
+		<div class="grid-md-8" ng-repeat="lab in report.labs">
+			<i class="fa fa-caret-right"></i> <span class="padding-left-5">{{lab.categoryName}}</span>
+			<div class="row padding-left-10"ng-repeat="test in lab.tests">
+				<div class="grid-md-6">
+					<span class="">{{$index+1}}.</span><span class="padding-left-5">{{test.testName}}</span>
+				</div>
+				<div class="grid-md-3" ng-if="!test.isWhatsapp">
+					{{test.cost }}
+				</div>
+				<div class="grid-md-3 text-center" ng-if="test.isWhatsapp">
+					{{test.whatsappCost}}(Whatsapp)
+				</div>
+				<div class="grid-md-3" ng-if="role == 'BILLDESK'">
+					{{test.isFeePaid? 'Paid': 'Not Paid'}}
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row card" ng-if="role == 'DOCTOR' || isLab">
+		<div class="grid-md-12 card">
+			<div class="row">
+				<div class="grid-md-4"><b>Lab Test Name</b></div>
+				<div class="grid-md-2"><b>Status</b></div>
+				<div class="grid-md-4"><b>Result</b></div>
+				<div class="grid-md-2"><b>Normal Range</b></div>
+			</div>
+		</div>
+		<div class="grid-md-12" ng-repeat="lab in report.labs">
+			<i class="fa fa-caret-right"></i> <span class="padding-left-5">{{lab.categoryName}}</span>
+			<div class="row padding-left-10"ng-repeat="test in lab.tests">
+				<div class="grid-md-4">
+					<span class="">{{$index+1}}.</span><span class="padding-left-5">{{test.testName}}</span>
+				</div>
+				<div class="grid-md-2">
+					{{test.isFeePaid? 'Paid': 'Not Paid'}}
+				</div>
+				<div class="grid-md-4">
+					{{test.report[0].result ? (test.report[0].result + ' ' + test.report[0].units) :'Pending'}}
+				</div>
+				<div class="grid-md-2" ng-if="test.report.length == 1">
+					{{test.report[0].normalRange}}
+				</div>
+				<div class="grid-md-2" ng-if="test.report.length > 1 && test.report[1].type == 'file'">
+					<button class="btn btn-md btn-sky-blue" type="button" title="view" tooltip="View File" ng-click="viewFile(report.id,lab.categoryName,test.testName)" ng-disabled="!test.isFeePaid">
+						<i class="fa fa-eye"></i>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

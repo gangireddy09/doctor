@@ -1,0 +1,52 @@
+<div class="page-content">
+	<h2 class="page-title">Op</h2>
+	<div class="row no-padding-left no-padding-right no-padding-bottom">
+		<div class="grid-md-12 card grade-linear min-height-300 no-padding">
+			<div class="row card ">
+				<div class="grid-md-2">&nbsp;</div>
+				<div class="grid-md-4">
+					<label for="opDate"><b>Op Date</b></label>
+					<div class="relative">
+						<tc-date-picker placeholder="Choose a date" ng-model="op.opDate"></tc-date-picker>
+					</div>
+				</div>
+				<div class="grid-md-3" align="center" >
+					<label class="grid-md-12">&nbsp;</label>
+					<div>
+						<button class="btn btn-md btn-light-green" ng-click="getOpList()">Search</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row padding-10px mar-top-5">
+		<div class="grid-md-9 color-red text-center font-20" ng-if="!opList.length"><span>No Op's Found . . .</span></div>
+		<div class="grid-md-12 card" ng-if="opList.length">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>S.No</th>
+						<th>Op Name</th>
+						<th>Actions</th>												
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="op in opList">
+						<td>{{$index+1}}</td>
+						<td>{{op.name}}</td>
+						<td>	
+							<button class="btn btn-md btn-sky-blue" type="button" title="view" tooltip="View OP List" ui-sref="opPatientSearch({opId : op.id})">
+								<i class="fa fa-eye"></i>
+							</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>																							
+		</div>
+	</div>
+</div>
+<div class="overlay absolute" ng-class="{'show':formLoader}"></div>
+<div class="form-loader"
+	ng-class="{'show':formLoader}">
+	<i class="fa fa-spinner fa-spin"></i>
+</div>

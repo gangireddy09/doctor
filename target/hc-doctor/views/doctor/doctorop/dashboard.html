@@ -1,0 +1,138 @@
+<div>
+	<h2 class="page-title">Dashboard </h2>
+</div>
+<div class="">
+<div >
+	<div class="card row ">
+		<div class="grid-md-2">
+			<label class="grid-md-12" for="opDoctor">OP Doctor</label>
+			<select class="grid-md-12 form-field" id="opDoctor" ng-model="opSearch.doctor.id" ng-options="doctor.id as doctor.doctorName for doctor in doctorsList"></select>
+		</div>
+		<div class="grid-md-2">
+			<label class="grid-md-12" for="customer">OP Date</label>
+            <div class="relative">
+	            <input type="text" class="form-field grid-md-12" uib-datepicker-popup ng-model="opSearch.opDate" is-open="opSearchCalendar.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+	            <span class="form-field-icon">
+	              <button type="button" class="btn btn-sm btn-sky-blue" ng-click="openCalendar('opSearchCalendar')"><i class="fa fa-calendar"></i></button>
+	            </span>
+            </div>
+		</div>
+		<div class="grid-md-1">
+			<label class="grid-md-12">&nbsp;</label>
+			<button class="btn btn-md btn-light-green margin-top-18" ng-click="getOpByDateDoctor(opSearch)" >Search</button>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="grid-md-3 patient-count-card padding-2px">
+	<div class="row bg-color-sky-blue">
+		<div class="grid-md-3"><i class="fa fa-users"></i></div>
+		<div class="grid-md-9">
+			<div class="grid-md-12 count-number" ng-bind="allOpPatientsList.length" ></div>
+			<div class="grid-md-12 count-title">Total</div>
+		</div>
+	</div>
+	</div>
+	 <div class="grid-md-3 patient-count-card padding-2px ">
+		<div class="row bg-color-blue">
+			<div class="grid-md-3"><i class="fa fa-user-plus"></i></div>
+		<div class="grid-md-9">
+			<div class="grid-md-12 count-number" ng-bind="newCount"></div>
+			<div class="grid-md-12 count-title">New</div>
+		</div>
+	</div>
+	</div>
+	<div class="grid-md-3 patient-count-card padding-2px " >
+		<div class="row bg-color-green">
+			<div class="grid-md-3"><i class="fa fa-user"></i></div>
+			<div class="grid-md-9">
+				<div class="grid-md-12 count-number" ng-bind="consultPrescriptionCount"></div>
+				<div class="grid-md-12 count-title">Consulted</div>
+			</div>
+		</div>
+	</div>
+	<div class="grid-md-3 patient-count-card padding-2px " >
+		<div class="row bg-color-red">
+			<div class="grid-md-3"><i class="fa fa-user-times"></i></div>
+			<div class="grid-md-9">
+				<div class="grid-md-12 count-number" ng-bind="skippedCount"></div>
+				<div class="grid-md-12 count-title">Skipped</div>
+			</div>
+		</div>
+	</div> 
+</div>
+<!-- <div class="row card">
+	<div class="grid-md-2">
+		<label class="grid-md-12" for="Date"><strong>Invoice Date</strong></label>
+		<div class="relative">
+	        <input type="text" class="form-field grid-md-12" uib-datepicker-popup ng-model="search.date" is-open="searchCalendar.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+	          <span class="form-field-icon">
+	              <button type="button" class="btn btn-sm btn-sky-blue " ng-click="openCalendar('searchCalendar')"><i class="fa fa-calendar"></i></button>
+	          </span>
+         </div>
+	</div>
+	 <div class="grid-md-2 margin-top-18">
+		<label class="grid-md-12"></label>
+		<button class="btn btn-md btn-light-green padding-8 pull-left" ng-click="getAllSalesReports()">Reports</button>
+		
+		<label class="grid-md-12"></label>
+		<button class="btn btn-md btn-light-green padding-8 pull-left mar-left-5" ng-click="getAllSalesPaymensts()">Payments</button>	
+	</div>
+</div>	
+<div class="row">
+	<div class="grid-md-2 patient-count-card padding-2px">
+	<div class="row bg-color-sky-blue">
+		<div class="grid-md-3"><i class="fa fa-users"></i></div>
+		<div class="grid-md-9">
+			<div class="grid-md-12 count-number" >{{reportsListForCash.addNonBlanks('salesNetAmount')|number:2}}</div>
+			<div class="grid-md-12 count-title">Cash Reports</div>
+		</div>
+	</div>
+	</div>
+	 <div class="grid-md-2 patient-count-card padding-2px ">
+		<div class="row bg-color-blue">
+			<div class="grid-md-3"><i class="fa fa-user-plus"></i></div>
+			<div class="grid-md-9">
+				<div class="grid-md-12 count-number" >{{reportsListForCredit.addNonBlanks('salesNetAmount')|number:2}}</div>
+				<div class="grid-md-12 count-title">Credit Reports</div>
+			</div>
+		</div>
+	</div>
+	<div class="grid-md-2 patient-count-card padding-2px " >
+		<div class="row bg-color-green">
+			<div class="grid-md-3"><i class="fa fa-user"></i></div>
+			<div class="grid-md-9">
+				<div class="grid-md-12 count-number" >{{reportsListForPartialCredit.addNonBlanks('salesNetAmount')|number:2}}</div>
+				<div class="grid-md-12 count-title">Partial-Credit Reports</div>
+			</div>
+		</div>
+	</div>
+	<div class="grid-md-2 patient-count-card padding-2px " >
+		<div class="row bg-color-red">
+			<div class="grid-md-3"><i class="fa fa-user-times"></i></div>
+			<div class="grid-md-9">
+				<div class="grid-md-12 count-number">{{paymentsListForCash.addNonBlanks('salesPaidAmount')|number:2}}</div>
+				<div class="grid-md-12 count-title">Cash Payments</div>
+			</div>
+		</div>
+	</div> 
+	<div class="grid-md-2 patient-count-card padding-2px ">
+		<div class="row bg-color-blue">
+			<div class="grid-md-3"><i class="fa fa-user-plus"></i></div>
+		<div class="grid-md-9">
+			<div class="grid-md-12 count-number" >{{paymentsListForCredit.addNonBlanks('salesPaidAmount')|number:2}}</div>
+			<div class="grid-md-12 count-title">Credit Payments</div>
+		</div>
+	</div>
+	</div>
+	<div class="grid-md-2 patient-count-card padding-2px " >
+		<div class="row bg-color-green">
+			<div class="grid-md-3"><i class="fa fa-user"></i></div>
+			<div class="grid-md-9">
+				<div class="grid-md-12 count-number" >{{paymentsListForPartialCredit.addNonBlanks('salesPaidAmount')|number:2}}</div>
+				<div class="grid-md-12 count-title">Consulted</div>
+			</div>
+		</div>
+	</div>
+</div> -->
+</div>

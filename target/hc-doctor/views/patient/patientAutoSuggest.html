@@ -1,0 +1,32 @@
+<div class='auto-suggest-container'>
+	<input type='text' autocomplete='off'
+	    class='form-field grid-md-12'
+		placeholder='{{options.placeHolder}}'
+		id='uniqueOpPatientId'
+		ng-required='{{options.isRequired}}'
+		ng-class='options.inputClass'
+		ng-model='suggestModel'
+		ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 300, 'blur': 0 } }"
+		ng-keydown='inputKeyDown($event)'
+		ng-blur='closeList()'
+		ng-disabled='options.disabled'
+		ng-change='changeSuggestInput(suggestModel)' required/>
+	<button ng-if='clearable' class='auto-suggest-clear' ng-click='clearInput(true)'><i class='fa fa-times'></i></button>
+	<ul class='auto-suggest-list' ng-show='suggestList.length' when-scrolled="onListScroll()">
+		<li  ng-repeat='suggestion in suggestList ' ng-click='selectItem(suggestion)'>
+			<div>
+				<table>
+					<tr>
+						<td>{{suggestion.name}}</td>
+					</tr>
+					<tr>
+						<td>{{suggestion.village}}</td>
+					</tr>
+					<tr>
+						<td>{{suggestion.mobileNo}}</td>
+					</tr>
+				</table>
+			</div>
+		</li>
+	</ul>
+</div>

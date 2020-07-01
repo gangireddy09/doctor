@@ -1,0 +1,84 @@
+<div class="grade-linear">
+	<div class="row">
+		<div class="grid-md-2">&nbsp;</div>
+		<div class="grid-md-7">
+			<div class="row">
+				<div class="grid-md-12">
+					<div class="grade-linear">
+						<form name="form.ipPatientForm" class="grid-md-12 card relative" novalidate>
+							<div class="row no-padding">
+								<b>IP Patient Form </b>
+							</div>
+							<div class="row padding-2px">
+								<label class="grid-md-4" for="patientName">Patient Name*</label>
+								<div class="grid-md-8 no-padding">
+									<input ng-model="ipType.ipPatient.patient.name" name="patientName" ng-pattern="/^[\w -,]*$/" class="form-field grid-md-12" required disabled>
+										<span class="alert-msg" ng-if="form.ipPatientForm.patientName.$dirty && form.ipPatientForm.patientName.$error.required">*Enter PatientName</span>
+										<span class="alert-msg" ng-if="form.ipPatientForm.patientName.$dirty && form.ipPatientForm.patientName.$error.pattern">*Enter characters only</span>
+								</div>
+							</div>
+							<div class="row padding-2px">
+								<label class="grid-md-4" for="ipType">IP Type*</label>
+								<div class="grid-md-8 no-padding">
+									<select ng-model="ipType.ipType" name="ipType" class="form-field grid-md-12" required="required"
+										ng-options="iptype as iptype for iptype in ipTypes"></select>
+								</div>
+							</div>
+							<div class="row padding-2px">
+								<label class="grid-md-4" for="ipDoctor">Doctor </label>
+								<div class="grid-md-8 no-padding">
+									<select class="form-field grid-md-12" id="ipDoctor" ng-model="ipType.ipPatient.doctor" name="ipDoctor"
+										ng-options="doctor as doctor.name for doctor in doctors track by doctor.id" required>
+										<option value="">Select Doctor</option>
+									</select> 
+								</div>
+							</div>
+							<div class="row padding-2px">
+								<label class="grid-md-4" for="ipDepartment">Department</label>
+								<div class="grid-md-8 no-padding">
+									<select class="form-field grid-md-12" id="ipDepartment" ng-model="ipType.ipPatient.department" name="ipDepartment"
+										ng-options="department as department.name for department in departmentList track by department.id" required>
+										<option value="">Select Department</option>
+									</select>
+								</div>
+							</div>
+							<!-- <div class="row padding-2px">
+								<label class="grid-md-4" for="admittedBy">Admitted By*</label>
+								<div class="grid-md-8 relative no-padding">
+									<input type="text" name="admittedBy" ng-pattern="/^[\w -,]*$/" ng-model='ipType.ipPatient.admittedBy' class="form-field grid-md-12" placeholder="Admitted By" required /> 
+										<span class="alert-msg" ng-if="ipPatientForm.admittedBy.$dirty && ipPatientForm.admittedBy.$error.required">*Enter AdmittedBy</span>
+										<span class="alert-msg" ng-if="ipPatientForm.admittedBy.$dirty && ipPatientForm.admittedBy.$error.pattern">*Enter characters only</span>
+								</div>
+							</div> -->
+							<div class="row padding-2px">
+								<label class="grid-md-4" for="admittedBy">Reffered Date*</label>
+								<div class="grid-md-8 relative no-padding">
+									<tc-date-picker placeholder="Choose a date" datetime ng-model="ipType.refferedOn"title="Pick A Date"></tc-date-picker>
+								</div>
+							</div>
+							<div class="row padding-2px">
+								<label class="grid-md-4" for="complaint">Complaint*</label>
+								<div class="grid-md-8 relative no-padding">
+									<input type="text" name="complaint" ng-pattern="/^[\w -,]*$/" ng-model='ipType.complaint' class="form-field grid-md-12" placeholder="Complaint" required /> 
+										<span class="alert-msg" ng-if="form.ipPatientForm.complaint.$dirty && form.ipPatientForm.complaint.$error.required">*Enter Complaint</span>
+										<span class="alert-msg" ng-if="form.ipPatientForm.complaint.$dirty && form.ipPatientForm.complaint.$error.pattern">*Enter characters only</span>
+								</div>
+							</div>
+							<div class="row no-padding">
+								<div class="grid-md-4"></div>
+								<div class="grid-md-2 no-padding">
+									<button class="btn btn-md btn-sky-blue grid-md-12" click-and-disable="functionToEnableButton()" ng-click="saveIp(ipType)"title="Save Patient Form" ng-disabled="form.ipPatientForm.$invalid">SAVE</button>
+								</div>
+							</div>
+							<div class="overlay absolute" ng-class="{'show':formLoader}"></div>
+							<div class="form-loader" ng-class="{'show':formLoader}">
+								<i class="fa fa-refresh fa-spin"></i>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>

@@ -1,0 +1,62 @@
+<div class="card">
+	<div class="row">
+		<div class="grid-md-4">
+			<label><b>Patient Name :</b></label>
+			<strong class="color-sky-blue init-cap">{{report.patient.name}}</strong>
+		</div>
+		<div class="grid-md-4">
+			<label><b>Doctor Name :</b></label>
+			<strong class="color-sky-blue init-cap">{{report.doctorName}}</strong>
+		</div>
+		<div class="grid-md-4">
+			<label><b>Hospital Name :</b></label>
+			<strong class="color-sky-blue init-cap">{{report.hospitalName}}</strong>
+		</div>
+	</div>
+	<div class="row">
+		<div class="grid-md-4">
+			<label><b>Cost :</b></label>
+			<strong class="color-sky-blue init-cap">{{report.fee}}</strong>
+		</div>
+		<div class="grid-md-4">
+			<label><b>Prescribed Tests :</b></label>
+			<strong class="color-sky-blue init-cap">{{report.prescribedTests}}</strong>
+		</div>
+		<div class="grid-md-4">
+			<label><b>Tests Taken :</b></label>
+			<strong class="color-sky-blue init-cap">{{report.paidTests}}</strong>
+		</div>
+	</div>
+	<div class="row">
+		<div class="grid-md-5">
+			<div class="form-msg {{formMsgClass}}" ng-show="formMsgContent">
+				<i class="fa fa-times-circle pull-right" ng-click="formMsgContent=undefined"></i> 
+				<span ng-bind="formMsgContent"></span>
+			</div>
+		</div>
+		<div class="grid-md-5 pull-right">
+			<button class="btn btn-md btn-purple pull-right" ng-click="togglePayment()" ng-if="!report.isLabClosed">{{isPayment? 'List Payments' : 'Add Payment'}}</button>
+		</div>
+	</div>
+	<div class="row" ng-if="!isPayment">
+		<div class="row">
+			<div class="grid-md-1"><b>S.No.</b></div>
+			<div class="grid-md-3 "><b>Paid To</b></div>
+			<div class="grid-md-3"><b>Paid By</b></div>
+			<div class="grid-md-3"><b>Paid on</b></div>
+			<div class="grid-md-2"><b>Paid Amount</b></div>
+		</div>
+		<div class="vertical-scroll">
+			<div class="row border-around card" ng-repeat="pay in payments">
+				<div class="grid-md-1">{{$index + 1}}</div>
+				<div class="grid-md-3">{{pay.receivedBy}}</div>
+				<div class="grid-md-3">{{pay.paidBy}}</div>
+				<div class="grid-md-3">{{pay.paidOn |date:'dd-MMM-yyyy'}}</div>
+				<div class="grid-md-2">{{pay.paidAmount}}</div>
+			</div>
+		</div>
+	</div>
+	<div class="row" ng-if="isPayment">
+		<ng-include src="'./views/common/lab/lab-payment-form.html'"></ng-include> 
+	</div>
+</div>

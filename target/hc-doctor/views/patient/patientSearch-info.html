@@ -1,0 +1,57 @@
+<div class="grade-linear padding-10">
+	<div class="card card-full-height-86 padding-10">
+		<h3 class="borderd">
+			Patients List
+		</h3>
+		<div class="grid-md-12">
+			<input type="search" class="grid-md-2 form-field" ng-model="searchObj.idLabel" ng-keydown="searchKeyDown($event)" placeholder="Enter IdLabel..." /> 
+			<input type="search" class="grid-md-2 form-field" ng-model="searchObj.name" ng-keydown="searchKeyDown($event)" placeholder="Enter Name..." /> 
+			<input type="search"class="grid-md-2 form-field" ng-model="searchObj.mobileNo"ng-keydown="searchKeyDown($event)" placeholder="Enter Mobile No..." />
+			<input type="search" class="grid-md-2 form-field"ng-model="searchObj.village" ng-keydown="searchKeyDown($event)"placeholder="Enter Village..." />
+			<button class="btn btn-md btn-blue form-field"ng-click="searchPatient(searchObj)"><i class="fa fa-searh"></i> Search</button>
+			<button class="btn btn-sm btn-sky-blue form-field pull-right" ng-click="patientForm()"><i class="fa fa-plus-circle"></i> PATIENT </button>
+		</div>
+		<div class="no-padding mar-top-5 card-full-height-70 vertical-scroll"  scroller-api = "scrollerApi" when-scrolled = "fewMorePatients()">
+			<div class="op-patient-list row" style="padding: 0px !important;">
+				<div class="row mar-bottom-2 op-patient-card-ribbon bg-color-light-gray"ng-repeat="patient in patients "ng-click="editPatient(patient,$index)">
+					<div class="grid-md-2 card card-full-height-24">
+						<h3 class="no-margin text-center">{{patient.name|tcCamelCase}}</h3>
+						<img ng-src="/hc-rest/patient/getphoto?patientId={{patient.id}}"class="grid-md-10 text-center" />
+					</div>
+					<div class="grid-md-10 no-padding-top no-padding-right font-15">
+						<div class="row card card-full-height-24">
+							<div class="grid-md-12 no-padding">
+								<div class="row no-padding">
+									<div class="grid-md-4">IdLabel:</div>
+									<div class="grid-md-6">{{patient.idLabel}}</div>
+								</div>
+								<div class="row no-padding">
+									<div class="grid-md-4">P Adhaar No:</div>
+									<div class="grid-md-6">{{patient.aadharNo}}</div>
+								</div>
+								<div class="row no-padding">
+									<div class="grid-md-4">P Name:</div>
+									<div class="grid-md-6">
+										{{patient.name|tcCamelCase}}</div>
+								</div>
+								<div class="row no-padding">
+									<div class="grid-md-4">Mobile No:</div>
+									<div class="grid-md-6">{{patient.mobileNo}}</div>
+								</div>
+								<div class="row no-padding">
+									<div class="grid-md-4">Village:</div>
+									<div class="grid-md-6">{{patient.village|tcCamelCase}}</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="overlay absolute" ng-class="{'show':formLoader}"></div>
+		<div class="form-loader"
+			ng-class="{'show':formLoader}">
+			<i class="fa fa-spinner fa-spin"></i>
+		</div>
+	</div>
+</div>

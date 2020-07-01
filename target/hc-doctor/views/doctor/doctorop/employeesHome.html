@@ -1,0 +1,190 @@
+<h2 class="page-title padding-left-10">Employees List</h2>
+<div class="row bg-color-linear">
+	<div class="row no-padding">
+		<div class="card">
+			<div class="tc-panel">
+			 	<div class="">
+			 		<div class="row">
+			 			<div class="grid-md-2"></div>
+			 			<div class="grid-md-8 text-center">
+			 				<!-- <span class="padding-10 form-msg-success" ng-if="successMsg">{{successMsg}}</span> -->
+			 				<span>
+								<div class="form-msg {{formMsgClass}}"   ng-show="formMsgContent" style="margin-top: -25px;width: 40%">
+									<i class="fa fa-times-circle pull-right" ng-click="formMsgContent=undefined"></i>
+									<span ng-bind="formMsgContent"></span>
+								</div>
+							</span>
+			 			</div>
+			 			<div class="grid-md-2">
+					 		<span class="pull-right">
+					 			<button type="button" class="btn btn-md btn-sky-blue" ng-click="openEmpForm()"><span><i class="fa fa-plus-circle"></i></span>Add Employee</button>
+					 		</span>	
+			 			</div>
+			 		</div>
+			 	</div>
+			    <div class="card-full-height-60 vertical-scroll">
+					<div class="row no-padding border-bottom-2 color-grey">
+			            <strong class="grid-md-1">S.No</strong>
+						<strong class="grid-md-2">Name</strong>
+						<strong class="grid-md-2">Mobile</strong>
+						<strong class="grid-md-2">Emergency Contact</strong>
+						<strong class="grid-md-1">Designation</strong>
+						<strong class="grid-md-2">Address</strong>
+						<strong class="grid-md-1">Salary</strong>
+						<strong class="grid-md-1 text-center">Actions</strong>
+					</div>
+					<div>
+						<div class="row no-padding border-bottom-2" ng-repeat="employee in empList">
+							<div class="grid-md-1">{{$index+1}}</div>
+							<div class="grid-md-2">{{employee.employeeProfile.employeeName}}</div>
+							<div class="grid-md-2">{{employee.employeeProfile.mobileNumber}}</div>
+							<div class="grid-md-2">{{employee.employeeProfile.emergencyContactNumber}}</div>
+							<div class="grid-md-1">{{employee.employeeProfile.designation}}</div>
+							<div class="grid-md-2">{{employee.employeeProfile.village}}</div>
+							<div class="grid-md-1">{{employee.amount}}</div>
+							<div class="grid-md-1 text-center">
+								<button  type="button" class="btn btn-purple btn-sm" title="Edit Salary" ng-click="editEmpSalary(employee,$index)"><i class="fa fa-rupee"></i></button>
+								<button  type="button" class="btn btn-info btn-sm" title="Edit Employee Details" ng-click="ediEmployee(employee,$index)"><i class="fa fa-pencil-square-o"></i></button>
+								<button  type="button" class="btn btn-green btn-sm" title="Pay Salary" ng-click="openPayForm(employee)">Pay</button>
+							</div>
+						</div>
+					</div> 
+			   </div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="overlay" ng-class="{'show':showEmpForm}" ng-click="toggleBoolean('showEmpForm')"></div>
+<div class="popup grid-md-7 overflow-hidden" ng-class="{'show':showEmpForm}">
+	<div class="row no-padding">
+		<div class="row card-full-height-75 grade-linear">
+			<div class="card card-full-height-73">
+				<div class="panel-heading borderd-bottom">
+					<h3 class="no-margin padding-5">Employee  Form <span class="color-red pull-right pointer-cursor" ng-click="toggleBoolean('showEmpForm')"><i class="fa fa-times-circle-o font-18"></i></span></h3>
+				</div>
+				<form name="form.empForm" novalidate class="mar-top-10">
+					<div class="row">
+						<label class="grid-md-3">Name</label>
+						<div class="grid-md-9">
+							<input type="text" class="form-field grid-md-12" name="name" placeholder="Name" ng-model="emp.employeeName" required>
+							<span class="error-msg" ng-messages="form.empForm.name.$error">
+								<span ng-message="required">*Enter Employee Name</span>
+							</span>
+						</div>
+					</div>
+					<div class="row">
+						<label class="grid-md-3">Mobile No</label>
+						<div class="grid-md-9">
+							<input type="text" class="form-field grid-md-12" name="mobileNumber" ng-pattern="/^[0-9]*$/" ng-maxlength="10" maxlength="10" placeholder="Mobile No" ng-model="emp.mobileNumber" required>
+							<span class="error-msg" ng-messages="form.empForm.mobileNumber.$error">
+								<span ng-message="required">*Mobile No is Required.</span>
+								<span ng-message="pattern">*Enter 10digits Mobile Number.</span>
+							</span>
+						</div>
+						
+					</div>
+					<div class="row">
+						<label class="grid-md-3">Emergency No</label>
+						<div class="grid-md-9">
+							<input type="text" class="form-field grid-md-12" name="emergencyContactNumber" ng-pattern="/^[0-9]*$/" ng-maxlength="10" maxlength="10" placeholder="Emergency Contact No" ng-model="emp.emergencyContactNumber" required>
+							<span class="error-msg" ng-messages="form.empForm.emergencyContactNumber.$error">
+								<span ng-message="required">*Mobile No is Required.</span>
+								<span ng-message="pattern">*Enter 10digits Mobile Number.</span>
+							</span>
+						</div>
+						
+					</div>
+					<div class="row">
+						<label class="grid-md-3">Designation</label>
+						<div class="grid-md-9">
+							<input type="text" class="form-field grid-md-12" name="designation" placeholder="Designation" ng-model="emp.designation" required>
+							<span class="error-msg" ng-messages="form.empForm.designation.$error">
+								<span ng-message="required">*Enter Employee Designation</span>
+							</span>
+						</div>
+						
+					</div>
+					<div class="row">
+						<label class="grid-md-3">Village</label>
+						<div class="grid-md-9">
+							<input type="text" class="form-field grid-md-12" name="village" placeholder="Village" ng-model="emp.village" required>
+							<span class="error-msg" ng-messages="form.empForm.village.$error">
+								<span ng-message="required">*Enter Employee Village</span>
+							</span>
+						</div>
+					</div>
+					<div class="row" ng-if="!emp.id">
+						<label class="grid-md-3">From Salary</label>
+						<div class="grid-md-9 relative">
+						 	 <input type="text" class="form-field grid-md-12" uib-datepicker-popup ng-model="emp.fromDate" is-open="fromSal.opened" placeholder="yyyy-mm-dd" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+				            <span class="form-field-icon emp-cal">
+				              <button type="button" class="btn btn-sm btn-sky-blue" ng-click="openCalendar('fromSal')"><i class="fa fa-calendar"></i></button>
+				            </span>
+			            </div>
+					</div>
+					<div class="row" ng-if="!emp.id">
+						<label class="grid-md-3">Amount</label>
+						<div class="grid-md-9">
+							<input type="text" class="form-field grid-md-12" name="amount" placeholder="Amount" ng-model="emp.amount" required>
+							<span class="error-msg" ng-messages="form.empForm.amount.$error">
+								<span ng-message="required">*Enter Employee Salary</span>
+							</span>
+						</div>
+					</div>
+					<div class="row">
+						<label class="grid-md-3"></label>
+						<button class="btn btn-light-green" name="empFormBtn" ng-if="!emp.id"  ng-disabled="form.empForm.$invalid" ng-click="saveEmployee()">Save</button>
+						<button class="btn btn-light-green" name="empFormUpdateBtn" ng-if="emp.id" ng-disabled="form.empForm.$invalid" ng-click="updateEmployee()">update</button>
+					</div>
+				</form>
+				
+			</div>
+		</div>
+	</div>		
+</div>
+<div class="overlay" ng-class="{'show':editSalary}" ng-click="toggleBoolean('editSalary')"></div>
+<div class="popup grid-md-7 overflow-hidden card-full-height-66" ng-class="{'show':editSalary}" >
+	<div class="row no-padding">
+		<div class="row card-full-height-68 grade-linear">
+			<div class="card card-full-height-66">
+				<div class="row">
+					<div class="panel-heading borderd-bottom">
+						<h3 class="no-margin padding-5">Update Salary<span class="color-red pull-right pointer-cursor" ng-click="toggleBoolean('editSalary')"><i class="fa fa-times-circle-o font-18"></i></span></h3>
+					</div>
+					<div class="grid-md-2"></div>
+					<div class="grid-md-8">
+						<form name="form.empSalForm" novalidate>
+							<div class="row">
+								<label class="grid-md-3">Amout</label>
+								<div class="grid-md-9 no-padding">
+									<input type="text" class="form-field grid-md-12" name="amout" placeholder="Amount" ng-model="empSal.amount" required>
+								</div>
+								<span class="error-msg" ng-messages="form.empSalForm.name.$error">
+									<span ng-message="required">*Amount is Required.</span>
+								</span>
+							</div>
+							 <div class="row">
+							 		<label class="grid-md-3">from Date</label>
+						           <div class="grid-md-9 relative no-padding">
+						           		 <input type="text" class="form-field grid-md-12" uib-datepicker-popup ng-model="empSal.fromDate" is-open="toDateCalendar.opened" placeholder="yyyy-mm-dd" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+							              <span class="form-field-icon salary-cal emp-cal">
+							             	 <button type="button" class="btn btn-sm btn-sky-blue" ng-click="openCalendar('toDateCalendar')"><i class="fa fa-calendar"></i></button>
+							              </span>
+						           </div>
+				            </div>
+							<div class="row">
+								<label class="grid-md-3"></label>
+								<button class="btn btn-light-green" name="salbtn" ng-disabled="form.empSalForm.$invalid" ng-click="updateSalary()">Submit</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>		
+	
+<div class="overlay" ng-class="{'show':showPayForm}" ng-click="toggleBoolean('showPayForm')"></div>
+<div class="popup grid-md-8  overflow-hidden" ng-class="{'show':showPayForm}">
+	<ng-include src="'../views/doctor/doctorop/employeePaymentForm.html'"></ng-include>
+</div>
